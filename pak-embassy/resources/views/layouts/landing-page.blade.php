@@ -57,10 +57,18 @@
 
 
                     </ul>
-                    <a href="{{ isset($data) ? ($data['NavbarSection']['Sign In Button']['url'] === '#' ? '#' : route($data['NavbarSection']['Sign In Button']['url'])) : route('login') }}"
-                        class="btn btn-right-arrow">
-                        {{ isset($data) ? $data['NavbarSection']['Sign In Button']['Text'] : 'Sign In Button' }}
-                        <img src="assets/images/templates/right-arrow.svg" alt="right-arrow" class="img-fluid">
+                    @php
+                        $signInUrl = $data['NavbarSection']['Sign In Button']['url'] ?? route('login');
+
+                        if ($signInUrl !== '#' && !filter_var($signInUrl, FILTER_VALIDATE_URL)) {
+                            $signInUrl = route($signInUrl);
+                        }
+                    @endphp
+
+                    <a href="{{ $signInUrl }}" class="btn btn-right-arrow">
+                        {{ $data['NavbarSection']['Sign In Button']['Text'] ?? 'Sign In' }}
+
+                        <img src="{{ asset('assets/images/templates/right-arrow.svg') }}" alt="right-arrow" class="img-fluid">
                     </a>
                 </div>
             </div>
