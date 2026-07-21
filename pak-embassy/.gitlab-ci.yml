@@ -1,0 +1,22 @@
+stages:
+  - clone
+
+# -----------------------------
+# DEV PIPELINE
+# -----------------------------
+clone-dev:
+  stage: clone
+  tags:
+    - 162-SERVER
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - cd /var/www/dev-pak-embassy.mytmdev.com
+    - git pull origin dev
+    - echo "Code updated successfully"
+    
+    # Run deploy script
+    - php8.3 artisan optimize:clear
+
+  only:
+    - dev

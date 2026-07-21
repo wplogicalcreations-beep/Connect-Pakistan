@@ -1,0 +1,711 @@
+/* inter font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* urbansit font */
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+/* font-family: "Urbanist", sans-serif; */
+
+/* plus jakarta font */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+/* font-family: "Plus Jakarta Sans", sans-serif; */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+
+  overflow-x: hidden!important;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+/* .container {
+  overflow-x: hidden;
+} */
+.navbar-brand img {
+  width: 182px;
+}
+.btn-right-arrow {
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #0c5b2c;
+  color: #fff;
+}
+.btn-right-arrow:hover {
+  color: #fff;
+}
+.btn-right-arrow img,
+.learn-more img,
+.pak-ksa-content .btn-rgstr img,
+.journey-begins-btn img,
+.event-sec .btn-view-more img {
+  width: 16px;
+  margin-left: 8px;
+}
+a.nav-link {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-transform: capitalize;
+}
+a.nav-link.active {
+  color: #0c5b2c !important;
+}
+.animated-general-modal {
+    opacity: 1 !important;
+    display: block;
+}
+  .nav-tabs-neutral li.active a::before {
+    border-left: 0;
+}
+.strengh-ties-box {
+  background-image: url(../assets/images/templates/banner-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 618px;
+  color: #fff;
+  padding: 46px 0;
+}
+.frame-left-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.strengh-ties .register-btn {
+  background-color: #38f07e;
+  padding: 8px;
+}
+.strengh-ties .learn-more {
+  color: #fff;
+  display: inline-flex;
+  border: 1px solid #fff;
+  padding: 8px;
+  margin-left: 8px;
+}
+.frame-left-content > h2 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  font-size: 44px;
+}
+.frame-left-content > p {
+  font-weight: 400;
+  font-size: 16px;
+}
+.right-frame-main img {
+    height: 488px;
+    width: 100% !important;
+}
+.ambassador-img img {
+    width: 100%;
+    height: 400px;
+}
+.icon-area img {
+    width: 63px;
+    height: 62px;
+}
+.pak-ksa-img img {
+    width: 355px !important;
+    height: 363px !important;
+}
+.benefit-top img {
+    width: 20px;
+    height: 20px;
+}
+.card-main-benefits img {
+    width: 266px;
+    height: 251px;
+}
+a.fot-icon img {
+    width: 14px;
+    height: 9px;
+}
+.news-email img {
+    width: 16px;
+    height: 15px;
+}
+.footer-social-items img {
+    width: 10px;
+    height: 17px;
+}
+.footer-logo-area img {
+    width: 183px;
+    height: 57px;
+}
+/* Dots Container */
+.slick-dots {
+  bottom: 10px;
+}
+
+/* Each dot item */
+.slick-dots li button:before {
+  display: none;
+}
+.slick-dots li {
+  margin: 0 3px;
+  background-color: #afafaf;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+li.slick-active {
+  height: 0.75rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #38f07e;
+  cursor: pointer;
+  transition: width 0.5s;
+  width: 2rem;
+}
+.ambassador-vision,
+.pak-ksa-main {
+  margin: 5rem 0;
+}
+.ambasodor-vision-right-content {
+  padding-top: 3rem;
+}
+.ambasodor-vision-right-content > div span,
+.benefit-top > span,
+.event-top > span,
+.pak-ksa-content > div span {
+  font-family: "Plus Jakarta Sans";
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.ambasodor-vision-right-content h3,
+.pak-ksa-content h3 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  font-size: 44px;
+}
+.ambasodor-vision-right-content h3 span,
+.pak-ksa-content h3 span {
+  color: #0c5b2c;
+}
+.ambasodor-text {
+  position: relative;
+}
+
+.ambasodor-text p img:first-child {
+  position: absolute;
+}
+.ambasodor-vision-right-content p {
+  font-weight: 400;
+  font-size: 26px;
+  padding-left: 28px;
+}
+.pak-ksa-text {
+  color: #727272;
+}
+
+/* TODO: recheck, duplicate class declaration in css/custom-style.css */
+.card-main {
+  display: flex;
+  gap: 24px;
+}
+.card-main .card-single {
+  border: 1px solid #e3dbd8;
+  padding: 2rem;
+  width: 40%;
+  border-radius: 8px;
+}
+.card-main .card-single .icon-area {
+  margin-bottom: 2rem;
+}
+.card-main .card-single > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-main .card-single > div p {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+.card-main .card-text {
+  margin-top: 1rem;
+}
+.pak-ksa-content .btn-rgstr {
+  background-color: #0c5b2c;
+  color: #fff;
+  padding: 10px 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+.pak-ksa-img,
+.pak-ksa-img img {
+  height: 100%;
+}
+.benefits,
+.event-sec {
+  margin: 5rem 0;
+}
+.benefit-top,
+.event-top {
+  text-align: center;
+}
+
+.benefit-top h3,
+.event-top h3 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  font-size: 44px;
+  margin-top: 1rem;
+}
+.benefit-top h3 span,
+.event-top h3 span {
+  color: #0c5b2c;
+}
+
+.card-main-benefits .card-single {
+  border: 1px solid#E3DBD8;
+  padding: 1rem;
+  display: flex;
+  gap: 3rem;
+}
+
+.card-main-benefits .card-single > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.card-single li::marker {
+  content: "●  ";
+  color: #0c5b2c;
+  font-size: 20px;
+}
+.card-single h5 {
+  font-family: "Urbanist";
+  font-weight: 600;
+  font-size: 24px;
+  color: #0c5b2c;
+  margin: 1rem 0 0 0;
+}
+.card-main-benefits .card-single > div img {
+  width: 70px;
+}
+.journey-begins {
+  background-color: #0c5b2c;
+  padding: 2rem;
+  color: #fff;
+}
+.journey-begins .invert-img {
+  filter: invert(1);
+}
+.journey-begins h4 {
+  margin-top: 1rem;
+  font-family: "Urbanist";
+  font-weight: 600;
+  font-size: 44px;
+}
+.single-point {
+  border: 1px solid #e3dbd8;
+  background-color: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #000;
+  padding: 1.5rem 1rem;
+  margin-top: 1rem;
+}
+.single-point span {
+  background-color: #38f07e;
+  border-radius: 50%;
+  padding: 1rem;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 700;
+  font-size: 28px;
+}
+.single-point-text h5 {
+  font-family: "Plus Jakarta Sans";
+  font-weight: 700;
+  font-size: 22px;
+}
+.single-point-text p {
+  color: #727272;
+}
+.journey-right-area {
+  background-image: url(../assets/images/templates/card-img-5.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  border-radius: 4px;
+  position: relative;
+}
+.social-items {
+  background-color: #fff;
+  padding: 8px 1rem;
+  display: flex;
+  width: fit-content;
+  gap: 2rem;
+  position: absolute;
+  bottom: 20px;
+  left: 90px;
+  border-radius: 4px;
+}
+.journey-begins-btn {
+  background-color: #38f07e;
+  padding: 10px 1rem;
+  margin-top: 40px;
+  margin-inline: auto;
+  /* display: block; */
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.event-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 2px solid #eee;
+}
+.event-image-container .event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.event-sec .card-txt {
+  background: #fff;
+  box-shadow: 0px 0px 4px 0px #0000001f;
+  display: flex;
+  gap: 8px;
+  padding: 1.5rem 1rem;
+  width: 95%;
+  transform: translate(22px, -76px);
+  position: relative;
+  z-index: 12;
+  height: 100%;
+  justify-content: space-between;
+}
+.event-sec .card-txt h4 {
+  font-family: "Urbanist";
+  font-weight: 700;
+  font-size: 24px;
+  color: #0c5b2c;
+}
+.event-sec .card-txt p {
+  font-weight: 400;
+  font-size: 13px;
+}
+.event-sec .btn-view-more {
+  background-color: #0c5b2c;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.empowering-wrapper {
+  background-image: url(../assets/images/templates/banner-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 460px;
+  text-align: center;
+  color: #fff;
+  padding: 104px 88px;
+  margin-bottom: 3rem;
+}
+
+.empowering-wrapper p {
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0 8rem;
+}
+.empowering-wrapper h2 {
+  font-family: "Urbanist";
+  font-weight: 600;
+  font-size: 48px;
+}
+.empowering-wrapper .journey-begins-btn {
+  margin-top: 75px;
+}
+footer {
+  padding-top: 6rem;
+  background-image: url(../assets/images/templates/footer-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.footer-logo-area {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4px;
+  margin-bottom: 1rem;
+}
+.footer-text {
+  font-family: "Urbanist";
+  font-weight: 400;
+  font-size: 16px;
+  padding-right: 110px;
+}
+.footer-social-items {
+  display: flex;
+  gap: 25px;
+}
+.useful-links {
+  padding: 0 6rem;
+}
+.useful-links h6 {
+  font-family: "Urbanist";
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+.useful-links ul {
+  padding-left: 0;
+}
+.useful-links li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.useful-links li a {
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.useful-links li a img {
+  padding-right: 6px;
+}
+.news-letter {
+  padding: 0 4rem;
+}
+.news-letter h6 {
+  font-family: "Urbanist";
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: 0%;
+}
+.news-email {
+  display: flex;
+}
+.button-input:hover {
+    background-color: #8ba18b;
+    color: #e2dede;
+}
+.news-email input,
+.form-control:focus {
+  /* background-color: #000; */
+  /* padding: 16px; */
+  /* border-radius: 4px 0 0 4px; */
+  /* color: #fff; */
+}
+.news-email input::placeholder {
+  color: #fff;
+  font-family: "Urbanist";
+}
+.email-send-btn {
+  background-color: #38f07e;
+  padding-inline: 26px;
+  border-radius: 0 4px 4px 0;
+}
+.copy-rights,
+.copy-rights ul {
+  opacity: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.copy-rights li {
+  list-style: none;
+}
+.copy-rights li a {
+  text-decoration: none;
+  color: #000;
+  margin-right: 1rem;
+}
+footer .top-contianer {
+  padding-bottom: 4rem;
+}
+.offcanvas_nav {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .right-frame-main img,
+  .strengh-ties-box {
+    height: auto;
+  }
+
+  .event-sec .card-txt {
+    width: 100%;
+    transform: none;
+    height: auto;
+    display: block;
+  }
+  .news-letter {
+    padding: 0 1rem;
+  }
+  .journey-right-area {
+    background-position: center;
+  }
+  .social-items {
+    left: 50px;
+  }
+  .ambasodor-vision-right-content h3,
+  .pak-ksa-content h3,
+  .benefit-top h3,
+  .event-top h3 {
+    font-size: 30px;
+  }
+  .frame-left-content > h2 {
+    font-size: 34px;
+  }
+  .ambasodor-vision-right-content p {
+    font-size: 18px;
+  }
+  .card-main .card-single {
+    padding: 1rem;
+    width: 45%;
+  }
+  .pak-ksa-img,
+  .pak-ksa-img img {
+    object-fit: fill;
+  }
+  .card-main .card-single .icon-area {
+    margin-bottom: 1rem;
+  }
+  .card-main .card-text {
+    margin-top: 8px;
+  }
+  .ambasodor-vision-right-content > div span,
+  .benefit-top > span,
+  .event-top > span,
+  .pak-ksa-content > div span {
+    font-size: 12px;
+  }
+
+  .icon-area img,
+  .icon-area-2 {
+    height: 38px;
+  }
+  .card-main-benefits .card-single {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .card-main-benefits .card-single > div {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .benefit-top h3,
+  .event-top h3 {
+    margin: 1rem 0;
+  }
+}
+@media (max-width: 768px) {
+  /* test */
+  .map-icon {
+    width: 35px;
+    height: fit-content;
+  }
+  .ambassador-vision,
+.pak-ksa-main,.benefits,
+.event-sec {
+  margin: 2rem 0;
+}
+
+  .offcanvas_nav {
+    display: block;
+  }
+  .offcanvas {
+    transition: transform 0.5s ease-in-out;
+  }
+  .nav_desktop {
+    display: none;
+  }
+
+  /* test */
+  .event-sec .card-txt {
+    display: flex;
+  }
+  .empowering-wrapper {
+    padding: 50px;
+    height: 280px;
+  }
+  .empowering-wrapper h2,
+  .journey-begins h4 {
+    font-size: 30px;
+  }
+  .empowering-wrapper p {
+    font-size: 14px;
+    padding: 0 2rem;
+  }
+  .empowering-wrapper .journey-begins-btn {
+    margin-top: 30px;
+  }
+  .copy-rights {
+    flex-direction: column;
+  }
+  .copy-rights ul {
+    padding-left: 0;
+  }
+  .useful-links {
+    padding-left: 0;
+  }
+  .ambasodor-vision-right-content p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .map-icon{
+    width: 26px;
+  }
+  .side-collapse {
+    width: 210px;
+  }
+  .card-main {
+    flex-direction: column;
+  }
+  .card-main .card-single {
+    width: 100%;
+  }
+  .empowering-wrapper {
+    padding: 10px;
+    height: auto;
+    margin-bottom: 0;
+  }
+  .empowering-wrapper .journey-begins-btn {
+    margin-bottom: 1rem;
+  }
+  .single-point-text h5 {
+    font-size: 18px;
+  }
+  .single-point-text p {
+    font-size: 14px;
+  }
+  .single-point {
+    flex-direction: column;
+  }
+  .empowering-wrapper h2,
+  .journey-begins h4 {
+    font-size: 20px;
+  }
+  .empowering-wrapper p {
+    padding: 0;
+  }
+  .ambasodor-vision-right-content h3,
+  .pak-ksa-content h3,
+  .benefit-top h3,
+  .event-top h3 {
+    font-size: 24px;
+  }
+  .pak-ksa-text,
+  .benefits .card-single li {
+    font-size: 13px;
+  }
+  .card-main-benefits .card-single > div img {
+    width: 50px;
+  }
+  .single-point span {
+    font-size: 18px;
+  }
+  .news-letter {
+    padding: 0;
+  }
+}

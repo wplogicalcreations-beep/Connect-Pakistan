@@ -1,0 +1,277 @@
+.embassay-common-banner-box {
+  background-image: url('/images/banner-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 478px;
+  color: #fff;
+  padding: 46px 0;
+}
+.embassay-common-banner .embassay-register-btn {
+  background-color: #38f07e;
+  padding: 8px;
+  color: #000;
+  font-weight: 600;
+}
+.embassay-common-banner .single-btn .embassay-register-btn {
+  width: 201px;
+}
+.embassay-common-banner .embassay-learn-more {
+  color: #fff;
+  display: inline-flex;
+  border: 1px solid #fff;
+  padding: 8px;
+  margin-left: 8px;
+}
+.embassay-learn-more img {
+  width: 16px;
+  margin-left: 8px;
+}
+.embassay-frame-content i.fa-arrow-right {
+margin: 6px 0 0 6px;
+}
+.embassay-frame-content h2 {
+  font-size: 44px;
+  font-weight: 600;
+}
+.embassay-frame-content {
+  text-align: center;
+}
+.embassay-frame-content p {
+  margin: 1rem 0 2rem 0;
+}
+.get-in-touch-main button {
+  margin-top: 2rem;
+  background-color: #38f07e;
+  color: #000;
+  font-weight: 600;
+}
+.get-in-touch-right {
+  background-color: #0c6f34;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 466px;
+}
+.get-in-touch-right > p {
+  font-size: 20px;
+}
+.get-in-touch-right .get-in-touch-right-inner p {
+  margin-bottom: 4px;
+ 
+}
+.get-in-touch-right .get-in-touch-right-inner p a {
+text-decoration: none;
+  color: #fff;
+}
+.get-in-touch-right > h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.get-in-touch-right > .get-in-touch-right-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  margin: 1.5rem 0;
+}
+.get-in-touch-right > div:last-child {
+  margin-bottom: 0 !important;
+}
+.get-in-touch-right > .get-in-touch-right-inner > img {
+  width: 30px;
+  height: 30px;
+}
+.get-in-touch-main input,
+.get-in-touch-main textarea {
+  border: 1px solid #d6e2dd;
+  padding: 14px 16px !important;
+  border-radius: 8px;
+}
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+.get-in-touch-main label {
+  font-size: 14px;
+  font-weight: 500;
+}
+.contact-us h3 {
+  font-weight: 600;
+  font-size: 40px;
+}
+.contact-us h3 span {
+  color: #0c5b2c;
+}
+.our-location h2 {
+  text-align: center;
+  margin: 2rem 0;
+  font-weight: 600;
+  font-size: 44px;
+}
+.our-location h2 span {
+  color: #0c5b2c;
+}
+.our-location img {
+  max-height: 740px;
+  height: 100%;
+  width: 100%;
+}
+.privacy-policy-content,
+.terms-and-conditions {
+  margin: 2rem 0;
+}
+.common-base-main {
+  margin: 3rem 0;
+}
+.custom-card-common {
+    height: 100%;
+}
+.common-base-main .card-main {
+  border: 1px solid #e1e1e1;
+  padding: 1rem;
+  padding-bottom: 0;
+  border-radius: 2px;
+  height: 100%;
+}
+.common-base-main .card-main img.img-fluid.w-100 {
+    height: 218px;
+    background-size: cover;
+    object-fit: fill;
+}
+.common-base-main .card-main .card-body p a {
+    word-break: break-word;
+}
+.common-base-main .card-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.common-base-main .card-body {
+  padding-left: 0;
+}
+.common-base-main .card-btn a,
+.common-base-main .card-btn a:hover {
+  text-decoration: underline !important;
+  color: #0c5b2c !important;
+}
+.common-base-main .card-btn-applyNow {
+  width: 183px;
+  transform: translateX(-10px);
+}
+
+.common-base-main .card-btn-applyNow a,
+.common-base-main .card-btn-applyNow a:hover {
+  border: 1px solid #0c5b2c;
+  color: #0c5b2c !important;
+  padding: 8px 1rem;
+  border-radius: 2px;
+  display: inline-block;
+  width: 100%;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.common-base-main .card-main .card-head {
+  display: flex;
+  gap: 1rem;
+}
+.common-base-main .card-main .card-head p {
+  font-weight: 600;
+  font-size: 18px;
+}
+.common-base-main .card-main .card-head span {
+  font-size: 14px;
+}
+.custom-card-common .card-body .card-body-common {
+  display: flex;
+  gap: 2px;
+  margin: 1rem 0;
+}
+.custom-card-common .card-body-common > div {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+.custom-card-common .card-body-common > div p {
+  margin-bottom: 0;
+  font-size: 13px;
+}
+.custom-card-common .card-body .card-text {
+  margin-bottom: 1.5rem;
+}
+.embassay-common-banner hr,.common-base-main hr {
+  color: #bcbcbc;
+}
+.section-heading {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 1.5rem;
+}
+.privacy-policy-content h3,
+.terms-and-conditions h3 {
+  font-weight: 700;
+  font-size: 24px;
+}
+.privacy-policy-content p,
+.privacy-policy-content ul li,
+.terms-and-conditions p,
+.terms-and-conditions ul li {
+  font-size: 24px;
+}
+ul li::marker {
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .embassay-common-banner-box {
+    height: 300px;
+  }
+  .custom-card-common .card-body .card-body-common {
+    gap: 1rem;
+  }
+  .privacy-policy-content p, .privacy-policy-content ul li, .terms-and-conditions p, .terms-and-conditions ul li {
+    font-size: 16px;
+  }
+  .get-in-touch-right > .get-in-touch-right-inner {
+    gap: 2rem;
+  }
+  .get-in-touch-right > p {
+  font-size: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .embassay-frame-content h2,
+  .contact-us h3 {
+    font-size: 26px;
+  }
+  .embassay-frame-content p {
+    margin: 1rem;
+    font-size: 14px;
+  }
+  .get-in-touch-right .get-in-touch-right-inner {
+gap: 1.5rem;  
+}
+.get-in-touch-right > p{
+    font-size: 14px;
+}
+.get-in-touch-right h3 {
+    font-size: 18px;
+}
+.section-heading {
+    font-size: 20px;
+}
+.common-base-main .card-title {
+font-size: 16px;
+}
+.common-base-main .card-text,ul li::marker  {
+    font-size: 14px;
+}
+.common-base-main .card-btn-applyNow {
+    transform: none;
+}
+.custom-card-common .card-body .card-body-common p{
+    font-size: 14px;
+    white-space: nowrap;
+}
+.privacy-policy-content h3, .terms-and-conditions h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+}

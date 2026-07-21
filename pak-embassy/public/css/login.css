@@ -1,0 +1,48 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  border-radius: 8px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.image-section {
+  background: url("../images/login-image.png") no-repeat center center / cover;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.login-container .card-body {
+    padding: 3rem 1rem !important;
+}
+.login-container .form-label {
+    /* margin-bottom: 0.5rem; */
+    font-size: 12px;
+    font-weight: 600;
+}
+.login-container button.btn.btn-primary {
+    background: #00509D;
+}
+.login-container a {
+    color: #17908D;
+    font-size: 12px;
+}
+.login-container label {
+    font-size: 12px;
+}
+input::placeholder {
+    color: #e6e3e3;
+}
+@media (max-width: 991.98px) {
+  .image-section {
+    border-radius: 8px 8px 0 0;
+  }
+  .login-card {
+    border: 1px solid #aaa !important;
+    margin: 1rem 0rem;
+}
+}

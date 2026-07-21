@@ -1,0 +1,63 @@
+.modal h1 {
+    padding-top: 2rem;
+}
+
+.modal .card-design1 {
+    padding: 1rem;
+    border: 1px solid #e3dbd8;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.modal .card-design2 {
+    padding: 1rem;
+    border: 1px solid #e3dbd8;
+    border-radius: 4px;
+}
+
+.modal .card-design1 h3,
+.modal .card-design2 h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+
+.modal .card-design1 p,
+.modal .card-design2 p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #363636;
+}
+.modal .reset-email {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: #d8ffe7;
+    border: 1px solid #0c5b2c;
+    border-radius: 4px;
+}
+.modal .reset-email div span {
+    border: 1px solid #0c5b2c;
+    border-radius: 50%;
+    padding: 0 4px;
+}
+.card-design1,.card-design2 {
+    cursor: pointer;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-design1:hover,.card-design2:hover {
+    background-color: #1a5f3c;
+    color: #fff;
+}
+
+.card-design1:hover p,.card-design2:hover p {
+    color: #fff;
+}
+
+.card-design1:hover h3,.card-design2:hover h3 {
+    color: #fff;
+}
