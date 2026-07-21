@@ -1,17 +1,6 @@
-# Security & Utility Scripts
-find-env.php
-env-clear.php
-force-migrate.php
-artisan-script.php
-runseeder.php
-publish-assets.php
-test-assets.php
-templatePageSettingSeeder.php
-templateSeeder.php
 .htaccess
 
 # Logs & Archives
-php_errorlog
 *.zip
 pak-embassy.zip
 
