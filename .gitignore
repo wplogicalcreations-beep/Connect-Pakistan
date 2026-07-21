@@ -1,10 +1,7 @@
 .htaccess
 
-# Logs & Archives
-*.zip
-pak-embassy.zip
+ 
 
 # Dynamic User Uploads & Storage
 user-dash-img/
-pak-embassy/
 storage/
