@@ -59,10 +59,6 @@
                     </ul>
                     @php
                         $signInUrl = $data['NavbarSection']['Sign In Button']['url'] ?? route('login');
-
-                        if ($signInUrl !== '#' && !filter_var($signInUrl, FILTER_VALIDATE_URL)) {
-                            $signInUrl = route($signInUrl);
-                        }
                     @endphp
 
                     <a href="{{ $signInUrl }}" class="btn btn-right-arrow">

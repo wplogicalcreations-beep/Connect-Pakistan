@@ -51,7 +51,7 @@
 
 
                     </ul>
-                    <a href="{{ isset($data) ? ($data['NavbarSection']['Sign In Button']['url'] === '#' ? '#' : route($data['NavbarSection']['Sign In Button']['url'])) : route('login') }}"
+                    <a href="{{ isset($data) ? ($data['NavbarSection']['Sign In Button']['url'] ?? route('login')) : route('login') }}"
                         class="btn btn-right-arrow">
                         {{ isset($data) ? $data['NavbarSection']['Sign In Button']['Text'] : 'Sign In Button' }}
                         <img src="assets/images/templates/right-arrow.svg" alt="right-arrow" class="img-fluid">
