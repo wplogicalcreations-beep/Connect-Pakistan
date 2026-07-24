@@ -4,7 +4,8 @@
             <div class="card-head">
             @if(!empty($job->organization->images) && count($job->organization->images) > 0)
             <img src="{{ asset('storage/' . $job->organization->images[0]->path) }}"
-                alt="Job Image" width="94" height="84">
+                alt="Job Image" width="94" height="84"
+                onerror="this.onerror=null;this.src='{{ asset('user-dash-img/event-date.svg') }}'">
             @else
             <img src="{{ asset('user-dash-img/event-date.svg') }}"
                 alt="Default Event Image" width="94" height="84">
