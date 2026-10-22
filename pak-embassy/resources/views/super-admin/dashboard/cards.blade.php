@@ -28,10 +28,10 @@
 
                     <!-- Date Range Inputs -->
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                        <input type="text" class="form-control" id="from" placeholder="From" autocomplete="off">
+                        <input type="text" class="form-control" id="from" placeholder="From" autocomplete="off" aria-label="From date">
                     </div>
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                        <input type="text" class="form-control" id="to" placeholder="To" autocomplete="off">
+                        <input type="text" class="form-control" id="to" placeholder="To" autocomplete="off" aria-label="To date">
                     </div>
 
                     <!-- Print CSV Button -->

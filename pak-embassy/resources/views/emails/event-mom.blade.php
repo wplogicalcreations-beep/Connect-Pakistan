@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,7 +76,7 @@
         <div class="mom-content">
             <h4 style="margin-top: 0;">Minutes of Meeting:</h4>
             <div>
-                {!! $momContent !!}
+                {!! clean_html($momContent) !!}
             </div>
         </div>
         

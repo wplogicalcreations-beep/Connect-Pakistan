@@ -17,7 +17,7 @@ class ReportsManagementService
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         // paginate directly on query
         $users = User::query()
@@ -73,7 +73,7 @@ class ReportsManagementService
         // You can customize the perPage value (default to 10 if not passed)
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         $jobs = JobPost::with('organization')
             ->withCount('applications')
@@ -103,7 +103,7 @@ class ReportsManagementService
         // Default 10 per page, allow override via ?per_page=20
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         $events = Event::applyFilter($request)
             ->orderBy($sortBy, $sortOrder)
@@ -133,7 +133,7 @@ class ReportsManagementService
 
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         $spaces = CoworkingSpace::applyFilter($request)
             ->orderBy($sortBy, $sortOrder)
@@ -162,7 +162,7 @@ class ReportsManagementService
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         $customers = User::where('is_active', 1)
             ->role('customer')

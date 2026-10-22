@@ -13,7 +13,7 @@ class KnowledgeBaseService
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         $knowledgeBases = KnowledgeBase::withCount('sections')
             ->with(['sections.images'])

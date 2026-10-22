@@ -9,8 +9,6 @@ class Experience extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'experienceable_id',
-        'experienceable_type',
         'job_title',
         'job_type',
         'company_name',

@@ -18,27 +18,27 @@
                         <form id="form-step5" class="passcodeForm">
                             @csrf
                             <div class="mb-4">
-                                <label class="form-label">Enter Passcode</label>
+                                <label for="ds-passcode-group1-digit1" class="form-label">Enter Passcode</label>
                                 <div class="passcode-inputs">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="0">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="1">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="2">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="3">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="4">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="5">
+                                    <input id="ds-passcode-group1-digit1" aria-label="Enter Passcode digit 1" type="text" class="passcode-digit" maxlength="1" data-index="0">
+                                    <input aria-label="Enter Passcode digit 2" type="text" class="passcode-digit" maxlength="1" data-index="1">
+                                    <input aria-label="Enter Passcode digit 3" type="text" class="passcode-digit" maxlength="1" data-index="2">
+                                    <input aria-label="Enter Passcode digit 4" type="text" class="passcode-digit" maxlength="1" data-index="3">
+                                    <input aria-label="Enter Passcode digit 5" type="text" class="passcode-digit" maxlength="1" data-index="4">
+                                    <input aria-label="Enter Passcode digit 6" type="text" class="passcode-digit" maxlength="1" data-index="5">
                                 </div>
                                 <div id="passcode_error" class="text-danger small mt-1"></div>
                             </div>
 
                             <div class="mb-4">
-                                <label class="form-label">Re-Enter Passcode</label>
+                                <label for="ds-passcode-group2-digit1" class="form-label">Re-Enter Passcode</label>
                                 <div class="passcode-inputs">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="6">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="7">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="8">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="9">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="10">
-                                    <input type="text" class="passcode-digit" maxlength="1" data-index="11">
+                                    <input id="ds-passcode-group2-digit1" aria-label="Re-Enter Passcode digit 1" type="text" class="passcode-digit" maxlength="1" data-index="6">
+                                    <input aria-label="Re-Enter Passcode digit 2" type="text" class="passcode-digit" maxlength="1" data-index="7">
+                                    <input aria-label="Re-Enter Passcode digit 3" type="text" class="passcode-digit" maxlength="1" data-index="8">
+                                    <input aria-label="Re-Enter Passcode digit 4" type="text" class="passcode-digit" maxlength="1" data-index="9">
+                                    <input aria-label="Re-Enter Passcode digit 5" type="text" class="passcode-digit" maxlength="1" data-index="10">
+                                    <input aria-label="Re-Enter Passcode digit 6" type="text" class="passcode-digit" maxlength="1" data-index="11">
                                 </div>
                                 <div id="passcode_confirmation_error" class="text-danger small mt-1"></div>
                             </div>

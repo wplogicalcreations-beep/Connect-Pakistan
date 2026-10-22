@@ -12,7 +12,7 @@
                     <form action="{{ route('settings.general.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="img-chose-input">
-                            <label class="picture" for="site_logo" tabindex="0">
+                            <label class="picture" for="site_logo" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('site_logo').click();}">
                                 <span class="picture__image">
                                     <img id="preview_site_logo"
                                         src="{{ $settings?->site_logo ? asset('storage/' . $settings->site_logo) : '/images/logo-2.svg' }}"
@@ -46,7 +46,7 @@
                             
                             <!-- File input below image -->
                             <input type="file" class="form-control mt-2"
-                                name="favicon" id="favicon"
+                                name="favicon" id="favicon" aria-label="Favicon"
                                 onchange="previewImage(this, 'preview_favicon')">
                         </div>
 

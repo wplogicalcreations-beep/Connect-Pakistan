@@ -20,8 +20,8 @@
                     @csrf
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Employer Industry</label>
-                            <select name="industry_area_id" class="form-select text-dark" required>
+                            <label for="ds-industry_area_id" class="form-label">Employer Industry</label>
+                            <select id="ds-industry_area_id" name="industry_area_id" class="form-select text-dark" required>
                                 <option class="text-mute" disabled selected value="">Select Industry Area</option>
                                 @foreach($industry_areas as $industry_area)
                                 <option class="text-dark" value="{{ $industry_area->id }}">{{ $industry_area->name }}</option>
@@ -30,8 +30,8 @@
                             <div id="industry_area_id_error" class="text-danger small"></div>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Work Domain</label>
-                            <select name="work_domain_id" class="form-select text-dark" required>
+                            <label for="ds-work_domain_id" class="form-label">Work Domain</label>
+                            <select id="ds-work_domain_id" name="work_domain_id" class="form-select text-dark" required>
                                 <option class="text-mute" disabled selected value="">Select Work Domain</option>
                                 @foreach($work_domains as $work_domain)
                                 <option class="text-dark" value="{{ $work_domain->id }}">{{ $work_domain->name }}</option>
@@ -45,7 +45,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
                             <div class="dropdown service-domain-dropdown">
-                                <label class="form-label">Skills</label>
+                                <label for="skillsBtn" class="form-label">Skills</label>
                                 <button type="button" class="btn form-select w-100 text-start" data-bs-toggle="dropdown" id="skillsBtn">
                                     Select service domain
                                 </button>

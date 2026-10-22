@@ -1,14 +1,27 @@
+// Returns the absolute URL only if it points to this site's own origin, otherwise null.
+// Prevents AJAX requests (and the HTML they return) from being redirected to another host.
+function toSameOriginUrl(rawUrl) {
+    try {
+        const parsed = new URL(rawUrl, window.location.href);
+        return parsed.origin === window.location.origin ? parsed.href : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 $(document).on('click', '.load-more', function () {
     let button = $(this);
     let page = button.data('page');
     let target = button.data('target');
-    let url = button.data('url');
+    let url = toSameOriginUrl(button.data('url') + "?page=" + encodeURIComponent(page));
+    if (!url) return;
 
     $.ajax({
-        url: url + "?page=" + page,
+        url: url,
         type: "GET",
         success: function (data) {
-            $(target).append(data.html);
+            // find() treats target strictly as a selector (never parsed as HTML)
+            $(document).find(target).append(data.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
             if (data.hasMorePages) {
                 button.data('page', page + 1); // increase page
             } else {
@@ -26,7 +39,7 @@ $(document).ready(function() {
             method: $form.attr('method'),
             data: $form.serialize(),
             success: function(response) {
-                result.html(response.html);
+                result.html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 if (response.hasMorePages) {
                     loadmore.show();

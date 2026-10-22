@@ -14,14 +14,14 @@
                 <p class="text-muted">To authorize Sign Up, please enter the verification code shared via email at <strong id="authModalEmail" class="text-dark"></strong>.</p>
 
                 <div class="mb-4">
-                    <label class="form-label fw-bold mb-0">Enter Verification Code <span class="text-danger h1 pb-4"><sup>.</sup></span></label>
+                    <label for="ds-auth-passcode-group1-digit1" class="form-label fw-bold mb-0">Enter Verification Code <span class="text-danger h1 pb-4"><sup>.</sup></span></label>
                     <div class="passcode-inputs">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="12">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="13">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="14">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="15">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="16">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="17">
+                        <input id="ds-auth-passcode-group1-digit1" aria-label="Enter Verification Code digit 1" type="text" class="passcode-digit" maxlength="1" data-index="12">
+                        <input aria-label="Enter Verification Code digit 2" type="text" class="passcode-digit" maxlength="1" data-index="13">
+                        <input aria-label="Enter Verification Code digit 3" type="text" class="passcode-digit" maxlength="1" data-index="14">
+                        <input aria-label="Enter Verification Code digit 4" type="text" class="passcode-digit" maxlength="1" data-index="15">
+                        <input aria-label="Enter Verification Code digit 5" type="text" class="passcode-digit" maxlength="1" data-index="16">
+                        <input aria-label="Enter Verification Code digit 6" type="text" class="passcode-digit" maxlength="1" data-index="17">
                     </div>
                 </div>
 

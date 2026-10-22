@@ -111,7 +111,7 @@ ClassicEditor.create(document.querySelector("#editor"), {
 
     // Update word and character count
     editor.model.document.on("change:data", () => {
-      const text = editor.getData().replace(/<[^>]*>/g, ""); // Remove HTML tags
+      const text = editor.getData().replace(/<[^<>]*>/g, ""); // Remove HTML tags
       const words = text.trim().split(/\s+/).filter(Boolean);
       const chars = text.length;
 

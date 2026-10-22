@@ -99,7 +99,7 @@
         <!-- Upload Resume -->
         <div class="col-md-6">
             <div class="upload-container">
-                <label for="resumeUpload" class="upload-box w-100" role="button">
+                <label for="resumeUpload" class="upload-box w-100" style="cursor: pointer;">
                     <div class="overlay-text">Click to Upload Resume</div>
                     <div id="resumePreview" class="preview-box">
                         <i class="bi bi-upload fs-3"></i>
@@ -114,7 +114,7 @@
         <!-- Upload Photo -->
         <div class="col-md-6">
             <div class="upload-container">
-                <label for="photoUpload" class="upload-box w-100" role="button">
+                <label for="photoUpload" class="upload-box w-100" style="cursor: pointer;">
                     <div class="overlay-text">Click to Upload Photo</div>
                     <div id="photoPreview" class="preview-box">
                         <i class="bi bi-image fs-3"></i>

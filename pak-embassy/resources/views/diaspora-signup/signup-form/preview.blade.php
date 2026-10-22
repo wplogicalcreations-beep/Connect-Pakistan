@@ -11,7 +11,7 @@
                         <div class="section-header">
                             <h5 class="section-title">1. Personal Information</h5>
                             <div class="section-actions">
-                                <i class="fas fa-edit text-success" onclick="showPersonalInfoModal()"></i>
+                                <i class="fas fa-edit text-success" role="button" tabindex="0" aria-label="Edit personal information" onclick="showPersonalInfoModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"></i>
                             </div>
                         </div>
                         <div class="section-content">
@@ -59,7 +59,7 @@
                             <div class="section-header">
                                 <h5 class="section-title">2. Employment Information</h5>
                                 <div class="section-actions">
-                                    <i class="fas fa-edit text-success" onclick="showEmploymentInfoModal()"></i>
+                                    <i class="fas fa-edit text-success" role="button" tabindex="0" aria-label="Edit employment information" onclick="showEmploymentInfoModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"></i>
                                 </div>
                             </div>
                             <div class="row g-lg-4 row g-3">
@@ -81,7 +81,7 @@
                             <div class="section-header">
                                 <h5 class="section-title">3. Employment Area</h5>
                                 <div class="section-actions">
-                                    <i class="fas fa-edit text-success" onclick="showEmploymentAreaInfoModal()"></i>
+                                    <i class="fas fa-edit text-success" role="button" tabindex="0" aria-label="Edit employment area information" onclick="showEmploymentAreaInfoModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"></i>
                                 </div>
                             </div>
                             <div class="row g-lg-4 row g-3">

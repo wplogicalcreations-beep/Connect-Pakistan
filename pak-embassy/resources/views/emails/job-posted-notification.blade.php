@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,7 +75,7 @@
         <div style="background-color: white; padding: 15px; margin: 15px 0; border-radius: 5px;">
             <h4 style="margin-top: 0;">Job Description:</h4>
             <div>
-                {!! \Illuminate\Support\Str::limit(strip_tags($job->description), 200) !!}
+                {{ \Illuminate\Support\Str::limit(html_entity_decode(strip_tags($job->description), ENT_QUOTES | ENT_HTML5, 'UTF-8'), 200) }}
             </div>
         </div>
         @endif

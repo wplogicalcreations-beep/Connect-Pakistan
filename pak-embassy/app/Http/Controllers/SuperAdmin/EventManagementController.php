@@ -96,7 +96,7 @@ class EventManagementController extends Controller
     public function viewMinutes(Event $event)
     {
         return response()->json([
-            'minutes' => $event->fresh()->event_mom_detail ?? null
+            'minutes' => clean_html($event->fresh()->event_mom_detail) ?: null
         ]);
     }
 
@@ -144,8 +144,8 @@ class EventManagementController extends Controller
             return redirect()->route('events.index')
                 ->with('success', 'Event created successfully.');
         } catch (\Exception $e) {
-            dd($e);
             DB::rollBack();
+            report($e);
 
             return redirect()->back()
                 ->withInput()
@@ -216,8 +216,8 @@ class EventManagementController extends Controller
             return redirect()->route('events.index')
                 ->with('success', 'Event updated successfully.');
         } catch (\Exception $e) {
-            dd($e);
             DB::rollBack();
+            report($e);
 
             return redirect()->back()
                 ->withInput()

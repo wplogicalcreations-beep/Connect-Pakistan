@@ -34,7 +34,7 @@
                                 contenteditable="true">{{ $bannerTitle }}</h2>
 
                             <input type="text"
-                                   id="BannerSection_title"
+                                   id="BannerSection_title" aria-label="Banner title"
                                    name="content[{{ $lang }}][BannerSection][Title]"
                                    value="{{ $bannerTitle }}" hidden>
                         @else
@@ -46,15 +46,15 @@
                             <div class="description-input"
                                 id="content[{{ $lang }}][BannerSection][Description]"
                                 data-text="content[{{ $lang }}][BannerSection][Description]">
-                                {!! $bannerDescription !!}
+                                {!! clean_html($bannerDescription) !!}
                             </div>
 
                             <input type="text" hidden
-                                   id="BannerSection_description"
+                                   id="BannerSection_description" aria-label="Banner description"
                                    name="content[{{ $lang }}][BannerSection][Description]"
                                    value="{{ $bannerDescription }}" />
                         @else
-                            <p>{!! $bannerDescription !!}</p>
+                            <p>{!! clean_html($bannerDescription) !!}</p>
                         @endif
 
                         <!-- Buttons -->
@@ -74,12 +74,12 @@
                                         </a>
 
                                         <input type="text" hidden
-                                               id="register_now_btn_text"
+                                               id="register_now_btn_text" aria-label="Register Now button text"
                                                name="content[{{ $lang }}][BannerSection][Register Now Button][Text]"
                                                value="{{ $registerNowText }}" />
 
                                         <input type="text" hidden
-                                               id="register_now_btn_url"
+                                               id="register_now_btn_url" aria-label="Register Now button URL"
                                                name="content[{{ $lang }}][BannerSection][Register Now Button][Url]"
                                                value="{{ $registerNowUrl }}" />
                                     @else
@@ -103,12 +103,12 @@
                                         </a>
 
                                         <input type="text" hidden
-                                               id="hero_learn_more_btn_text"
+                                               id="hero_learn_more_btn_text" aria-label="Learn More button text"
                                                name="content[{{ $lang }}][BannerSection][Learn More Button][Text]"
                                                value="{{ $learnMoreText }}" />
 
                                         <input type="text" hidden
-                                               id="hero_learn_more_url"
+                                               id="hero_learn_more_url" aria-label="Learn More button URL"
                                                name="content[{{ $lang }}][BannerSection][Learn More Button][Url]"
                                                value="{{ $learnMoreUrl }}" />
                                     @else

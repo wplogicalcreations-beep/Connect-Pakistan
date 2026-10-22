@@ -13,7 +13,7 @@ class UserService
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         return User::with(['department', 'roles'])
             ->whereDoesntHave('roles', function ($query) {

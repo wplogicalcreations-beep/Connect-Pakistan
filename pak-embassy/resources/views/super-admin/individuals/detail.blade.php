@@ -128,7 +128,7 @@
                         <div class="form-check form-switch radio-costum">
                             <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
                                 checked="">
-                            <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                            <label class="form-check-label" for="flexSwitchCheckChecked"><span class="visually-hidden">Enable {{ $skilledIndividual->work_domain?->first()?->name }} for matchmaking</span></label>
                         </div>
                     </div>
                 </div>

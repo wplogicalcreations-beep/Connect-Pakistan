@@ -4,18 +4,18 @@ var baseLabels = data.diaspora_by_level.map(item => item.level_name);
 
 // Extract values (ensure numbers, default 0 if invalid)
 var values = data.diaspora_by_level.map(item => {
-  let val = parseFloat(item.percentage);
-  return isNaN(val) ? 0 : val;
+  let val = Number.parseFloat(item.percentage);
+  return Number.isNaN(val) ? 0 : val;
 });
 
 // Calculate total (safe)
 var total = values.reduce((a, b) => a + b, 0);
-if (isNaN(total)) total = 0;
+if (Number.isNaN(total)) total = 0;
 
 // Create labels with percentages (safe)
 var labelsWithPercent = baseLabels.map((label, i) => {
   let percent = total > 0 ? ((values[i] / total) * 100).toFixed(1) : 0;
-  if (isNaN(percent)) percent = 0;
+  if (Number.isNaN(Number(percent))) percent = 0;
   return `${label} ${percent}%`;
 });
 
@@ -46,7 +46,7 @@ var paymentOptions = {
             label: "",
             formatter: function (w) {
               let totalVal = w.globals.seriesTotals.reduce((a, b) => a + b, 0);
-              return "Total Diapsora: " + (isNaN(totalVal) ? 0 : totalVal);
+              return "Total Diapsora: " + (Number.isNaN(Number(totalVal)) ? 0 : totalVal);
             },
           },
         },
@@ -56,7 +56,7 @@ var paymentOptions = {
   tooltip: {
     custom: function ({ series, seriesIndex }) {
       let value = series[seriesIndex];
-      value = isNaN(value) ? 0 : value;
+      value = Number.isNaN(Number(value)) ? 0 : value;
       return `<div style="padding: 5px;">
                 <strong>${baseLabels[seriesIndex]}:</strong> ${value}
               </div>`;

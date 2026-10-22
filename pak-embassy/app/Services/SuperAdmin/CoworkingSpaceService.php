@@ -12,7 +12,7 @@ class CoworkingSpaceService
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         $coWorkingSpaces = CoworkingSpace::applyFilter($request)->orderBy($sortBy, $sortOrder)->paginate($records);
 
@@ -44,7 +44,7 @@ class CoworkingSpaceService
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         $requests = BookingRequest::with('coworkingSpace', 'status')->applyFilter($request)->orderBy($sortBy, $sortOrder)->paginate($records);
 
@@ -53,7 +53,7 @@ class CoworkingSpaceService
 
     public function getSpaceRequestById($id)
     {
-        $requests = BookingRequest::where('id',$id)->with('coworkingSpace', 'status', 'coworkingSpace.bookingRequests')->orderBy('id', 'desc')->first();
+        $requests = BookingRequest::where('id',$id)->with('coworkingSpace', 'status', 'coworkingSpace.bookingRequests')->orderBy('id', 'desc')->firstOrFail();
 
         return $requests;
     }
@@ -83,7 +83,7 @@ class CoworkingSpaceService
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         $requests = BookingRequest::where('coworking_space_id', $spaceId)
             ->with('coworkingSpace', 'status', 'user')

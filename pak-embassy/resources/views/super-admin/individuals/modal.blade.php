@@ -97,7 +97,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <select class="form-control" id="user-status-dropdown" name="is_active">
+                    <select class="form-control" id="user-status-dropdown" name="is_active" aria-label="User status">
                         <option value="1">Approved</option>
                         <option value="0">Pending</option>
                     </select>

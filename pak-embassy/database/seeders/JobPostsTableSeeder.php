@@ -25,17 +25,17 @@ class JobPostsTableSeeder extends Seeder
                 'responsibilities' => 'Develop web applications, maintain APIs, and collaborate with cross-functional teams.',
                 'requirements'     => 'Proficiency in PHP/Laravel, MySQL, and React. 2+ years experience required.',
                 'benefits'         => 'Health insurance, remote work options, and annual bonuses.',
-                'min_salary'       => rand(50000, 70000),
-                'max_salary'       => rand(80000, 120000),
+                'min_salary'       => random_int(50000, 70000),
+                'max_salary'       => random_int(80000, 120000),
                 'min_experience'   => 1,
                 'max_experience'   => 5,
-                'vacancies'        => rand(1, 5),
+                'vacancies'        => random_int(1, 5),
                 'job_type'         => 'full_time',
-                'work_mode'        => ['onsite', 'remote', 'hybrid'][array_rand(['onsite', 'remote', 'hybrid'])],
+                'work_mode'        => ['onsite', 'remote', 'hybrid'][random_int(0, 2)],
                 'location'         => 'Sydney, Australia',
                 'address'          => "123 Business Street, Sydney NSW $i",
                 'posted_date'      => now(),
-                'expiry_date'      => now()->addDays(rand(15, 60)),
+                'expiry_date'      => now()->addDays(random_int(15, 60)),
             ]);
         }
     }

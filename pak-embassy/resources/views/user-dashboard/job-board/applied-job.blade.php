@@ -123,7 +123,7 @@
                 <div class="pagination-container mb-3">
                     <div class="rows-info">
                         <span>Showing 1 to 30 of 93 entries</span>
-                        <select class="form-select form-select-sm  bg-transparent" style="width: auto;">
+                        <select aria-label="Rows per page" class="form-select form-select-sm  bg-transparent" style="width: auto;">
                             <option value="10">10</option>
                             <option value="30" selected>30</option>
                             <option value="50">50</option>
@@ -134,7 +134,7 @@
                                     class="fas fa-angle-double-left"></i></a></li>
                         <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a>
                         </li>
-                        <input type="number" class="btn-common-bg text-light border-0 text-center" name="number"
+                        <input type="number" aria-label="Page number" class="btn-common-bg text-light border-0 text-center" name="number"
                             id="number" value="1">
                         <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a>
                         </li>

@@ -24,12 +24,12 @@
             <!-- Remove button will be inserted here dynamically -->
         </div>
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">Product Name <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="name" name="name[]" placeholder="Enter Product Name" required>
+                                <label for="product_name" class="form-label">Product Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="product_name" name="name[]" placeholder="Enter Product Name" required>
                             </div>
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">Product Capabilities <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="capabilities" name="capabilities[]" placeholder="Enter Product Capabilities" required>
+                                <label for="product_capabilities" class="form-label">Product Capabilities <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="product_capabilities" name="capabilities[]" placeholder="Enter Product Capabilities" required>
                             </div>
                             
                         </div>

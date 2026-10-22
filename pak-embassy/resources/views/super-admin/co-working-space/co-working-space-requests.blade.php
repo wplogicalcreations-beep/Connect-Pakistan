@@ -14,7 +14,7 @@
                     <button type="button" id="exportExcel" class="btn btn-outline-secondary border-2 button-style mb-md-2">Excel</button>
                     <button type="button" id="exportPDF" class="btn btn-outline-secondary border-2 button-style mb-md-2">PDF</button>
                     <button type="button" id="exportPrint" class="btn btn-outline-secondary border-2 button-style mb-md-2">Print</button>
-                    <button type="button" id="exportExcel" class="btn btn-common-bg mb-md-2">Export CSV</button>
+                    <button type="button" id="exportCSV" class="btn btn-common-bg mb-md-2">Export CSV</button>
                 </div>
 
                 <div class="col-md-12">

@@ -53,14 +53,16 @@
                             <div class="tab-pane p-3 active button_model_data" id="btn-detail" role="tabpanel">
                                 <div class="row align-items-left">
                                     <div class="form-group text-start">
-                                        <label>{{ __('btn_text') }}</label>
+                                        <label class="d-block">{{ __('btn_text') }}
                                         <input type="text" class="form-control" id=""
                                             name="general_btn_text" placeholder="" value="" />
+                                        </label>
                                     </div>
                                     <div class="form-group text-start">
-                                        <label>{{ __('btn_url') }}</label>
+                                        <label class="d-block">{{ __('btn_url') }}
                                         <input type="text" id="" class="form-control" name="general_btn_url"
                                             value="" />
+                                        </label>
                                     </div>
                                     <div class="form-group p-3 text-end">
                                         <button type="button" class="btn btn-theme"

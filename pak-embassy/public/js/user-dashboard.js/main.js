@@ -103,7 +103,7 @@ $(document).on("click", ".ri-close-circle-line", function () {
 });
 
 $(document).on("click", ".iq-film-block", function () {
-    if (parseInt($(this).find("span").text()) > 0) {
+    if (Number.parseInt($(this).find("span").text()) > 0) {
         $(".iq-sidebar-right-menu").addClass("film-side");
     }
 });
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!percentElement) return; // early exit if not found
 
     const percentText = percentElement.textContent.trim();
-    const percentValue = parseFloat(percentText.replace("%", ""));
+    const percentValue = Number.parseFloat(percentText.replace("%", ""));
 
     const totalBars = 4;
     const percentPerBar = 100 / totalBars;
@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const today = new Date();
 
     // Validate date parsing
-    if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+    if (Number.isNaN(startDate.getTime()) || Number.isNaN(endDate.getTime())) {
         console.error("Invalid date format. Use MM/DD/YYYY in HTML.");
         return;
     }

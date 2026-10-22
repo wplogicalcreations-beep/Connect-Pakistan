@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="job-description">
-                    {!!Str::limit($job->description, 100, '...') !!}
+                    {!!clean_html(Str::limit($job->description, 100, '...')) !!}
                 </div>
                 <div class="d-flex gap-3 text-muted mb-2 small">
                     <div><img src="{{ asset('user-dash-img/uil_calender.svg')}}" class="pe-1" alt="calender"></i>{{ $job->created_at->format('M d, Y') }}</div>

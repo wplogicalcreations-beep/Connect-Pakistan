@@ -130,9 +130,9 @@
                     <p>{{ $lov?->name }}</p>
                     <div class="radio">
                         <div class="form-check form-switch radio-costum">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked-{{ $loop->index }}"
                                 checked="">
-                            <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                            <label class="form-check-label" for="flexSwitchCheckChecked-{{ $loop->index }}"><span class="visually-hidden">Enable {{ $lov?->name }} for matchmaking</span></label>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@
             of {{ $items->total() }} entries
         </span>
         <select
+            aria-label="Rows per page"
             class="form-select form-select-sm bg-transparent per-page-select"
             style="width: auto;"
             onchange="window.location.href = '{{ request()->url() }}?per_page=' + this.value;"
@@ -27,7 +28,7 @@
                 <i class="fas fa-angle-left"></i>
             </a>
         </li>
-        <input type="number" min="1" max="{{ $items->lastPage() }}"
+        <input type="number" aria-label="Page number" min="1" max="{{ $items->lastPage() }}"
                value="{{ $items->currentPage() }}"
                class="btn-common-bg text-light border-0 text-center"
                style="width: 60px;"

@@ -29,17 +29,17 @@
                 contenteditable="true">
                 {{ $data ? $data['CallToAction']['Title'] : 'Empowering You to Grow in KSA — One Click Away.' }}
             </h2>
-            <input type="text" hidden id="CallToAction_title"
+            <input aria-label="Call To Action Title" type="text" hidden id="CallToAction_title"
                 name="content[{{ $lang }}][CallToAction][Title]"
                 value="{{ $data ? $data['CallToAction']['Title'] : 'Empowering You to Grow in KSA — One Click Away.' }}" />
             <div class="description-input"
                 id="content[{{ $lang }}][CallToAction][Description]"
                 data-text="content[{{ $lang }}][CallToAction][Description]">
-                {!! $data
+                {!! clean_html($data
                     ? $data['CallToAction']['Description']
                     : 'Create your account today and become part of a trusted, embassy-backed platform connecting
-                                                                                                                                        Pakistani talent and businesses across KSA.' !!}</div>
-            <input type="text" hidden id="CallToAction_description"
+                                                                                                                                        Pakistani talent and businesses across KSA.') !!}</div>
+            <input aria-label="Call To Action Description" type="text" hidden id="CallToAction_description"
                 name="content[{{ $lang }}][CallToAction][Description]"
                 value="{{ $data
                     ? $data['CallToAction']['Description']
@@ -51,10 +51,10 @@
             data-text="content[{{ $lang }}][CallToAction][Get Started Now Button][Text]"
             data-href="{{ $data ? $data['CallToAction']['Get Started Now Button']['Url'] : '#' }}"
             data-url="content[{{ $lang }}][CallToAction][Get Started Now Button][Url]">{{ $data ? $data['CallToAction']['Get Started Now Button']['Text'] : 'Get Started Now' }}</a>
-        <input type="text" hidden id="CallToAction_btn_text"
+        <input aria-label="Call To Action Get Started Now Button Text" type="text" hidden id="CallToAction_btn_text"
             name="content[{{ $lang }}][CallToAction][Get Started Now Button][Text]"
             value="{{ $data ? $data['CallToAction']['Get Started Now Button']['Text'] : 'Get Started Now' }}" />
-        <input type="text" hidden id="CallToAction_btn_url"
+        <input aria-label="Call To Action Get Started Now Button Url" type="text" hidden id="CallToAction_btn_url"
             name="content[{{ $lang }}][CallToAction][Get Started Now Button][Url]"
             value="{{ $data ? $data['CallToAction']['Get Started Now Button']['Url'] : '#' }}" />
     </div>

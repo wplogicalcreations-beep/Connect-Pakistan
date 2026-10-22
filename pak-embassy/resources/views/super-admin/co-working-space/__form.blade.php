@@ -195,7 +195,7 @@
                         <h1 class="mt-5">3- Upload Space Pictures</h1>
                         <div class="col-md-12">
                             <div class="img-chose-input">
-                                <label class="picture" for="picture__input" tabindex="0">
+                                <label class="picture" for="picture__input" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('picture__input').click();}">
                                     <span class="picture__image" id="picturePreview">
                                         <img src="/images/majesticons_image-line.svg" alt="Preview">
                                     </span>

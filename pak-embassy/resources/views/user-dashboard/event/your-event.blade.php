@@ -31,7 +31,8 @@
                 class="form-control bg-location-icon" 
                 name="location" 
                 value="{{ request('location') }}" 
-                placeholder="Location">
+                placeholder="Location"
+                aria-label="Location">
         </div>
 
     <!-- Date Input -->
@@ -42,7 +43,8 @@
             name="start_date" 
             id="date" 
             value="{{ request('start_date') }}" 
-            placeholder="Date">
+            placeholder="Date"
+            aria-label="Date">
     </div>
 
     <!-- Search Button -->

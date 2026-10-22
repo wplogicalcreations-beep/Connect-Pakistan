@@ -26,7 +26,7 @@
                         <!-- Section Content -->
                         @if($section->content)
                             <div class="content-text mb-4">
-                                {!! $section->content !!}
+                                {!! clean_html($section->content) !!}
                             </div>
                         @endif
                         

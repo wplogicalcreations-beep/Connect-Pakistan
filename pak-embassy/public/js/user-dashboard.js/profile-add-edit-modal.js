@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         countries = response.countries;
                         resolve(countries);
                     } else {
-                        reject('Failed to load countries');
+                        reject(new Error('Failed to load countries'));
                     }
                 },
                 error: function (xhr) {
@@ -469,7 +469,7 @@ document.addEventListener("DOMContentLoaded", function () {
         forms.forEach((form) => {
             // Extract the actual form ID from the form's ID attribute
             const formId = form.id.split('-').pop();
-            const id = parseInt(formId);
+            const id = Number.parseInt(formId);
             
             // Validate each form
             if (!validateEducationForm(id)) {
@@ -533,7 +533,7 @@ document.addEventListener("DOMContentLoaded", function () {
         forms.forEach((form) => {
             // Extract the actual form ID from the form's ID attribute
             const formId = form.id.split('-').pop();
-            const id = parseInt(formId);
+            const id = Number.parseInt(formId);
             
             // Validate each form
             if (!validateExperienceForm(id)) {
@@ -599,7 +599,7 @@ document.addEventListener("DOMContentLoaded", function () {
         forms.forEach((form) => {
             // Extract the actual form ID from the form's ID attribute
             const formId = form.id.split('-').pop();
-            const id = parseInt(formId);
+            const id = Number.parseInt(formId);
             
             // Validate each form
             if (!validateCertificationForm(id)) {
@@ -1265,7 +1265,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 startDate = new Date(experience.start_date);
             }
             
-            if (!isNaN(startDate.getTime())) {
+            if (!Number.isNaN(startDate.getTime())) {
                 document.getElementById('edit_exp_start_date').value = startDate.toISOString().split('T')[0];
             }
         }
@@ -1284,7 +1284,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 endDate = new Date(experience.end_date);
             }
             
-            if (!isNaN(endDate.getTime())) {
+            if (!Number.isNaN(endDate.getTime())) {
                 document.getElementById('edit_exp_end_date').value = endDate.toISOString().split('T')[0];
             }
         }
@@ -1433,6 +1433,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 select.innerHTML = '<option value="">Choose...</option>' + 
                     countries.map(country => `<option value="${country.id}">${country.name}</option>`).join('');
             });
+        }).catch(error => {
+            console.error('Failed to load countries:', error);
         });
     }
 

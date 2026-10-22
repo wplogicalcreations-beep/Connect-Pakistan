@@ -67,11 +67,11 @@
                     <div id="linkedin_url_error" class="text-danger small"></div>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label">Profile Photo</label>
+                    <label class="form-label" for="imageFileName">Profile Photo</label>
                     <div class="input-group">
                         <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('image').click()">Browse...</button>
                         <input type="text" id="imageFileName" class="form-control" placeholder="Select Photo" readonly>
-                        <input type="file" id="image" name="image" class="d-none" accept="image/*" onchange="updateImageFileName()">
+                        <input type="file" id="image" name="image" class="d-none" aria-label="Profile Photo" accept="image/*" onchange="updateImageFileName()">
                     </div>
                     @error('image')
                         <div class="text-danger small">{{ $message }}</div>
@@ -141,7 +141,7 @@
                     <div id="work_domain_id_error" class="text-danger small"></div>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label">Skills <span class="text-danger">*</span></label>
+                    <label class="form-label" for="skillsBtn">Skills <span class="text-danger">*</span></label>
                     <div class="dropdown">
                         <button type="button" class="btn form-select w-100 text-start @error('skills') is-invalid @enderror" id="skillsBtn" data-bs-toggle="dropdown" aria-expanded="false">
                             Select skills
@@ -232,7 +232,10 @@
                     const tag = document.createElement('span');
                     tag.className = 'badge bg-secondary me-1 mb-1';
                     tag.style.cursor = 'pointer';
-                    tag.innerHTML = skill + ' <i class="fa fa-times"></i>';
+                    tag.textContent = skill + ' ';
+                    const removeIcon = document.createElement('i');
+                    removeIcon.className = 'fa fa-times';
+                    tag.appendChild(removeIcon);
                     tag.onclick = function() {
                         additionalSkills.splice(index, 1);
                         updateAdditionalSkillsDisplay();
@@ -328,7 +331,7 @@
                                     if (existingError.length) {
                                         existingError.text(errorMessage);
                                     } else {
-                                        formFloating.append(`<div class="invalid-feedback" style="display: block !important;">${errorMessage}</div>`);
+                                        formFloating.append($('<div class="invalid-feedback" style="display: block !important;"></div>').text(errorMessage));
                                     }
                                 }
                                 // If error element exists, use it
@@ -341,7 +344,7 @@
                                     if (existingError.length) {
                                         existingError.text(errorMessage);
                                     } else {
-                                        input.after(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                        input.after($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                     }
                                 }
                                 

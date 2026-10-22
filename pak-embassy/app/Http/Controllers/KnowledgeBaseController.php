@@ -94,6 +94,7 @@ class KnowledgeBaseController extends Controller
     public function show(string $id)
     {
         $knowledgeBase = $this->knowledgeBaseService->getById($id);
+        abort_if(!$knowledgeBase, 404);
         return view('super-admin.knowledge-base.detail', compact('knowledgeBase'));
     }
 
@@ -103,6 +104,7 @@ class KnowledgeBaseController extends Controller
     public function edit(string $id)
     {
         $knowledgeBase = $this->knowledgeBaseService->getById($id);
+        abort_if(!$knowledgeBase, 404);
         return view('super-admin.knowledge-base.create', compact('knowledgeBase'));
     }
 

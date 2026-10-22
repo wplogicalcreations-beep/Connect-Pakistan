@@ -14,15 +14,15 @@
                 <p class="text-muted">To authorise Sign Up, please enter the verification code shared via email at <strong id="authModalEmail" class="text-dark"></strong>.</p>
 
                 <div class="mb-4">
-                    <label class="form-label fw-bold mb-0">Enter Verification Code <span
+                    <label for="os-auth-passcode-group1-digit1" class="form-label fw-bold mb-0">Enter Verification Code <span
                             class="text-danger h1 pb-4"><sup>.</sup></span></label>
                     <div class="passcode-inputs">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="12">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="13">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="14">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="15">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="16">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="17">
+                        <input id="os-auth-passcode-group1-digit1" aria-label="Enter Verification Code digit 1" type="text" class="passcode-digit" maxlength="1" data-index="12">
+                        <input aria-label="Enter Verification Code digit 2" type="text" class="passcode-digit" maxlength="1" data-index="13">
+                        <input aria-label="Enter Verification Code digit 3" type="text" class="passcode-digit" maxlength="1" data-index="14">
+                        <input aria-label="Enter Verification Code digit 4" type="text" class="passcode-digit" maxlength="1" data-index="15">
+                        <input aria-label="Enter Verification Code digit 5" type="text" class="passcode-digit" maxlength="1" data-index="16">
+                        <input aria-label="Enter Verification Code digit 6" type="text" class="passcode-digit" maxlength="1" data-index="17">
                     </div>
                 </div>
 
@@ -72,47 +72,47 @@
                 <form id="companyIdentityForm-modal" enctype="multipart/form-data">
                     <div class="row g-3">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Organization Name</label>
+                            <label for="name-modal" class="form-label">Organization Name</label>
                             <input type="text" class="form-control" id="name-modal" name="name" placeholder="Enter Organization Name" required>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Website URL</label>
+                            <label for="website_url-modal" class="form-label">Website URL</label>
                             <input type="text" class="form-control" id="website_url-modal" name="website_url" placeholder="Enter Website URL" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">SECP Registeration No.</label>
+                            <label for="secp_registration_number-modal" class="form-label">SECP Registeration No.</label>
                             <input type="text" class="form-control" id="secp_registration_number-modal" name="secp_registration_number" placeholder="Enter SECP Registeration No." required>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">PSEB Registeration No.</label>
+                            <label for="pseb_registration_number-modal" class="form-label">PSEB Registeration No.</label>
                             <input type="text" class="form-control" id="pseb_registration_number-modal" name="pseb_registration_number" placeholder="Enter PSEB Registeration No." required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">PASHA Registeration No.</label>
+                            <label for="pasha_registration_number-modal" class="form-label">PASHA Registeration No.</label>
                             <input type="text" class="form-control" id="pasha_registration_number-modal" name="pasha_registration_number" placeholder="Enter PASHA Registeration No." required>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Name of CEO</label>
+                            <label for="ceo_name-modal" class="form-label">Name of CEO</label>
                             <input type="text" class="form-control" id="ceo_name-modal" name="ceo_name" placeholder="Enter Name of CEO" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Contact of CEO</label>
+                            <label for="ceo_contact-modal" class="form-label">Contact of CEO</label>
                             <input type="text" class="form-control" id="ceo_contact-modal" name="ceo_contact" placeholder="Enter Contact of CEO" required>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Email of CEO</label>
+                            <label for="ceo_email-modal" class="form-label">Email of CEO</label>
                             <input type="email" class="form-control" id="ceo_email-modal" name="ceo_email" placeholder="Enter Email of CEO" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Do you have a registered company in KSA?</label>
+                            <label for="has_ksa_registered_company-modal" class="form-label">Do you have a registered company in KSA?</label>
                             <select class="form-select text-dark" id="has_ksa_registered_company-modal" name="has_ksa_registered_company" required>
                                 <option value="" disabled selected hidden>Select an option</option>
                                 <option value="1">Yes</option>
@@ -120,33 +120,33 @@
                             </select>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Name of Saudi Entity</label>
+                            <label for="saudi_entity_name-modal" class="form-label">Name of Saudi Entity</label>
                             <input type="text" class="form-control" id="saudi_entity_name-modal" name="saudi_entity_name" placeholder="Enter Name of Saudi Entity" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Company Representative Name</label>
+                            <label for="representative_name-modal" class="form-label">Company Representative Name</label>
                             <input type="text" class="form-control" id="representative_name-modal" name="representative_name" placeholder="Enter Company Representative Name" required>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Representative Contact No.</label>
+                            <label for="representative_contact-modal" class="form-label">Representative Contact No.</label>
                             <input type="text" class="form-control" id="representative_contact-modal" name="representative_contact" placeholder="Enter Representative Contact No." required>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Email of Representative</label>
+                            <label for="representative_email-modal" class="form-label">Email of Representative</label>
                             <input type="email" class="form-control" id="representative_email-modal" name="representative_email" placeholder="Enter Email of Representative" required>
                         </div>
                         {{-- <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Comapny Logo</label>
+                            <label for="fileName-Modal" class="form-label">Comapny Logo</label>
                             <div class="input-group custom-file-group">
                                 <button class="btn btn-secondary" type="button" onclick="document.getElementById('formFile-Modal').click()">
                                     Browse...
                                 </button>
-                                <input type="file" id="formFile-Modal" class="file-input d-none" name="company_logo"
+                                <input type="file" id="formFile-Modal" class="file-input d-none" aria-label="Company logo file" name="company_logo"
                                     onchange="updateFileNameModal()">
                                 <input type="text" id="fileName-Modal" class="form-control"
                                     placeholder="Select Logo" readonly>
@@ -175,7 +175,7 @@
                 <form id="companyInformationForm-modal" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">Company Type</label>
+                                <label for="company_type-modal" class="form-label">Company Type</label>
                                 <select class="form-select text-dark" id="company_type-modal" name="company_type" required>
                                     <option value="" disabled selected hidden>Select an option</option>
                                     <option value="product">Product</option>
@@ -184,18 +184,18 @@
                                 </select>
                             </div>
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">No. of Years of Experience</label>
+                                <label for="years_of_experience-modal" class="form-label">No. of Years of Experience</label>
                                 <input type="number" class="form-control" id="years_of_experience-modal" name="years_of_experience" placeholder="Enter No. of Years of Experience" min="0" required>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">No. of Staff</label>
+                                <label for="no_of_staff-modal" class="form-label">No. of Staff</label>
                                 <input type="text" class="form-control" id="no_of_staff-modal" name="no_of_staff" placeholder="Enter No. of Staff" required>
                             </div>
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">Company Certificate (if any)</label>
+                                <label for="has_company_certificate-modal" class="form-label">Company Certificate (if any)</label>
                                 <select class="form-select text-dark" id="has_company_certificate-modal" name="has_company_certificate" required>
                                     <option value="" disabled selected hidden>Select an option</option>
                                     <option value="1">Yes</option>
@@ -206,7 +206,7 @@
 
                         <div class="row">
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">Industry Area of Company in KSA</label>
+                                <label for="industry_area-modal" class="form-label">Industry Area of Company in KSA</label>
                                 <select class="form-select text-dark" id="industry_area-modal" name="industry_area" required>
                                     <option value="" disabled selected hidden>Select an option</option>
                                     @foreach($industryAreas as $industry)
@@ -215,18 +215,18 @@
                                 </select>
                             </div>
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">Reference/Existing Clients</label>
+                                <label for="reference-modal" class="form-label">Reference/Existing Clients</label>
                                 <input type="text" class="form-control" id="reference-modal" name="reference" placeholder="Enter reference clients">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">No. of Projects</label>
+                                <label for="no_of_projects-modal" class="form-label">No. of Projects</label>
                                 <input type="number" class="form-control" id="no_of_projects-modal" name="no_of_projects" placeholder="Enter number of projects" min="0" required>
                             </div>
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">Reference Projects</label>
+                                <label for="reference_project-modal" class="form-label">Reference Projects</label>
                                 <input type="text" class="form-control" id="reference_project-modal" name="reference_project" placeholder="Enter reference projects">
                             </div>
                         </div>
@@ -252,11 +252,11 @@
                     <div id="product-fields-container">
                         <div class="row">
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">Product Name</label>
+                                <label for="product-name-modal" class="form-label">Product Name</label>
                                 <input type="text" class="form-control" id="product-name-modal" name="name[]" placeholder="Enter Product Name" required>
                             </div>
                             <div class="col-md-6 mb-4 position-relative">
-                                <label class="form-label">Product Capabilities</label>
+                                <label for="capabilities-modal" class="form-label">Product Capabilities</label>
                                 <input type="text" class="form-control" id="capabilities-modal" name="capabilities[]" placeholder="Enter Product Capabilities" required>
                             </div>
                         </div>
@@ -286,7 +286,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
                             <div class="dropdown service-domain-dropdown">
-                                <label class="form-label">Service Domain</label>
+                                <label for="dropdownMenuLink-modal" class="form-label">Service Domain</label>
                                 <button type="button" class="dropbtn3 btn form-select w-100 text-start"
                                         id="dropdownMenuLink-modal" data-bs-toggle="dropdown" aria-expanded="false"
                                         data-bs-display="static">
@@ -312,7 +312,7 @@
 
                         <div class="col-md-6 mb-4 position-relative">
                             <div class="dropdown service-domain-dropdown">
-                                <label class="form-label">Service Skills Involved</label>
+                                <label for="dropdownMenuLink2-modal" class="form-label">Service Skills Involved</label>
                                 <button type="button" class="dropbtn3 btn form-select w-100 text-start"
                                         id="dropdownMenuLink2-modal" data-bs-toggle="dropdown" aria-expanded="false"
                                         data-bs-display="static">
@@ -339,11 +339,11 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Any Pre-Implement Methodologies</label>
+                            <label for="ip-implement-modal" class="form-label">Any Pre-Implement Methodologies</label>
                             <input type="text" class="form-control" id="ip-implement-modal" name="ip" placeholder="Enter methodologies" required>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Certifications of Staff in Various Domains</label>
+                            <label for="staff-certificate-modal" class="form-label">Certifications of Staff in Various Domains</label>
                             <input type="text" class="form-control" id="staff-certificate-modal" name="staff_certification" placeholder="Enter certifications" required>
                         </div>
                     </div>

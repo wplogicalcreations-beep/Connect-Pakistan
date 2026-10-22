@@ -12,7 +12,7 @@ class SkillService
     {
         $records = $request->has('per_page') ? $request->per_page : 10;
         $sortBy = $request->has('sort_by') ? $request->sort_by : 'id';
-        $sortOrder = $request->has('sort_order') ? $request->sort_order : 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         $query = Skill::query();
         

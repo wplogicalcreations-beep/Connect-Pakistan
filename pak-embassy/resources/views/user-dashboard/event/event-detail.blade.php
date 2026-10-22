@@ -26,14 +26,14 @@
         </div>
 
         <h4 class="section-title">Event Overview</h4>
-        {!!$event->event_overview!!}
+        {!!clean_html($event->event_overview)!!}
 
         <h4 class="section-title">Agenda</h4>
 
-        {!!$event->event_agenda!!}
+        {!!clean_html($event->event_agenda)!!}
 
         <h4 class="section-title">Event Format</h4>
-        {!!$event->event_format!!}
+        {!!clean_html($event->event_format)!!}
         <h4 class="section-title">Who's Attending?</h4>
         <ul>
             @forelse($event->attendees as $attendee)
@@ -65,7 +65,7 @@
                 </p>
             </div>
             <div class="event-mom-content">
-                {!! $event->event_mom_detail !!}
+                {!! clean_html($event->event_mom_detail) !!}
             </div>
         </div>
         @elseif($isAttendee && $eventEnded && !$hasMoM)
@@ -163,6 +163,6 @@
 </div>
 @endsection
 @section('js-file')
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js" integrity="sha384-nLoOnA/BDh8A/jxqtckg4DumuCGOBYUnNJLZdQz/zfYNp3wcjGSoWTAzgko06G/2" crossorigin="anonymous"></script>
 <script src="{{ asset('js/event.js') }}"></script>
 @endsection

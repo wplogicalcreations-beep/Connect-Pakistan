@@ -26,7 +26,7 @@
                     @endif
                     <div class="card-txt">
                         <h4>{{$event['name']}}</h4>
-                        <p> {!! Str::limit($event->event_overview, 100, '...') !!}</p>
+                        <p> {!! clean_html(Str::limit($event->event_overview, 100, '...')) !!}</p>
                     </div>
                 </div>
             </div>

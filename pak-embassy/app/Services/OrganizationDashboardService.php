@@ -30,7 +30,7 @@ class OrganizationDashboardService extends BaseDashboardService
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'created_at';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         $user = auth()->user();
         $jobPosts = $user->jobPosts()
@@ -51,7 +51,7 @@ class OrganizationDashboardService extends BaseDashboardService
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
         $user = auth()->user();
         $job_applications = $user->receivedApplications()
             ->with(['user', 'jobPost', 'details'])

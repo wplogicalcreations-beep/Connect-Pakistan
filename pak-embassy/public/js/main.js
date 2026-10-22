@@ -103,7 +103,7 @@ $(document).on("click", ".ri-close-circle-line", function () {
 });
 
 $(document).on("click", ".iq-film-block", function () {
-  if (parseInt($(this).find("span").text()) > 0) {
+  if (Number.parseInt($(this).find("span").text()) > 0) {
     $(".iq-sidebar-right-menu").addClass("film-side");
   }
 });

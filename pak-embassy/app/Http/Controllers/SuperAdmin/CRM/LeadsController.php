@@ -36,6 +36,8 @@ class LeadsController extends Controller
             ]);
         }
 
-        return view('super-admin.crm.dashboard.details', compact('leadsUsers'));
+        // The shared CRM view needs the dashboard's data ($actionItems, $monthlyCounts, ...);
+        // it hides the dashboard-only sections itself when the URL is crm/leads.
+        return app(DashboardController::class)->index($request);
     }
 }

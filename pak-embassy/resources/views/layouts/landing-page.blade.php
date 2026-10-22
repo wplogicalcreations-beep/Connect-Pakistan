@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.css" integrity="sha384-6oNXtl81GMcKAnWPPXinWlPskKUQ0NGG1/XeyMfC5RgCJKPc03w0rHVt1jyoJLf0" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" integrity="sha384-MUdXdzn1OB/0zkr4yGLnCqZ/n9ut5N7Ifes9RP2d5xKsTtcPiuiwthWczWuiqFOn" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" integrity="sha384-3wRRg17hVCopINZVYCqnfbgXE7aFPSvawmLWNPSiUPVx+HxY+yxb5Cwp5mT7RXPD" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     
     <!-- new -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha384-rWj9FmWWt3OMqd9vBkWRhFavvVUYalYqGPoMdL1brs/qvvqz88gvLShYa4hKNyqb" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/custom-style.css') }}">
     
     <title>@yield('title', 'Embassy')</title>
@@ -136,8 +136,8 @@
                     margin-bottom: 3rem;">
                     <div data-aos="fade-right" data-aos-duration="1000">
                         <h2>{{ isset($data) ? $data['CallToAction']['Title'] : 'Empowering You to Grow in KSA — One Click Away.' }}</h2>
-                        <p>{!! isset($data) ? $data['CallToAction']['Description'] : 'Create your account today and become part of a trusted, embassy-backed platform connecting
-                            Pakistani talent and businesses across KSA.' !!}</p>
+                        <p>{!! clean_html(isset($data) ? $data['CallToAction']['Description'] : 'Create your account today and become part of a trusted, embassy-backed platform connecting
+                            Pakistani talent and businesses across KSA.') !!}</p>
                     </div>
                     <a href="{{ isset($data) ? $data['CallToAction']['Get Started Now Button']['Url'] : '#' }}"
                         data-bs-toggle="modal"
@@ -160,8 +160,8 @@
                             {{-- <img src="{{ isset($data) ? $data['FooterSection']['Map']['Title Icon'] : 'assets/images/templates/footer-map.png' }}" alt=""
                             class="img-fluid map-icon"> --}}
                         </div>
-                        <p class="footer-text">{!! isset($data) ? $data['FooterSection']['Description'] : 'Empowering the Pakistani Diaspora, Enabling Progress Through Innovation,
-                            Partnership, and Opportunity.' !!}</p>
+                        <p class="footer-text">{!! clean_html(isset($data) ? $data['FooterSection']['Description'] : 'Empowering the Pakistani Diaspora, Enabling Progress Through Innovation,
+                            Partnership, and Opportunity.') !!}</p>
 
                         <div class="footer-social-items">
                             <a href=""> <img src="assets/images/templates/facebook-f.svg" alt=""></a>
@@ -189,9 +189,9 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="news-letter">
                             <h6>{{ isset($data) ? $data['FooterSection']['Newsletter']['Title'] : 'Subscribe Our Newsletter' }}</h6>
-                            <p>{!! isset($data) ? $data['FooterSection']['Newsletter']['Description'] : 'Find Your News, Settle Your Mind — Every Story Curated for Your Peace of Mind.' !!}</p>
+                            <p>{!! clean_html(isset($data) ? $data['FooterSection']['Newsletter']['Description'] : 'Find Your News, Settle Your Mind — Every Story Curated for Your Peace of Mind.') !!}</p>
                             <div class="news-email">
-                                <input type="email" placeholder="Enter Email" class="form-control">
+                                <input type="email" placeholder="Enter Email" aria-label="Enter Email" class="form-control">
                                 <button class="btn email-send-btn "><img src="{{ isset($data) ? $data['FooterSection']['Newsletter']['Title Icon'] : 'assets/images/templates/email-icon.svg' }}"
                                         alt=""></button>
                             </div>
@@ -203,7 +203,7 @@
             <div class="container">
                 <div class="copy-rights">
 
-                    <p>{!! isset($data) ? $data['FooterSection']['Bottom']['Description'] : '© Pakistan-Saudi Arabia Embassy 2025 | All Rights Reserved' !!}</p>
+                    <p>{!! clean_html(isset($data) ? $data['FooterSection']['Bottom']['Description'] : '© Pakistan-Saudi Arabia Embassy 2025 | All Rights Reserved') !!}</p>
                     <ul>
                         <li> <a href="{{ isset($data) ? $data['FooterSection']['Links']['Terms & Conditions']['url'] : '#' }}">{{ isset($data) ? $data['FooterSection']['Links']['Terms & Conditions']['Text'] : 'Terms & Conditions' }}</a></li>
                         <li><a href="{{ isset($data) ? $data['FooterSection']['Links']['Privacy Policy']['url'] : '#' }}">{{ isset($data) ? $data['FooterSection']['Links']['Privacy Policy']['Text'] : 'Privacy Policy' }}</a></li>
@@ -226,10 +226,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js" integrity="sha384-ZGo5k5ISlEzWLoXyt+lnvKt9j03Z7GkxXh14zLqVy098XJhcdKHjL8pQYVMI8WiH" crossorigin="anonymous"></script>
 
     <!-- slick slider -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" integrity="sha384-YGnnOBKslPJVs35GG0TtAZ4uO7BHpHlqJhs0XK3k6cuVb6EBtl+8xcvIIOKV5wB+" crossorigin="anonymous"></script>
     <!-- bootstrap 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

@@ -57,7 +57,7 @@
                     
                     <div class="col-md-12">
                         <div class="img-chose-input">
-                            <label class="picture" for="sectionImage{{ $i }}" tabindex="0">
+                            <label class="picture" for="sectionImage{{ $i }}">
                                 <span class="picture__image" id="sectionImagePreview{{ $i }}">
                                     @php
                                         $hasImage = false;
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         
                         <div class="col-md-12">
                             <div class="img-chose-input">
-                                <label class="picture" for="sectionImage${index}" tabindex="0">
+                                <label class="picture" for="sectionImage${index}">
                                     <span class="picture__image" id="sectionImagePreview${index}">
                                         <img src="/images/majesticons_image-line.svg" alt="Preview">
                                     </span>

@@ -13,14 +13,11 @@ class LogController extends Controller
     {
         $logs = $this->getLogs();
         
-        if ($request->ajax()) {
-            return response()->json([
-                'logs' => $logs,
-                'totalCount' => count($logs),
-            ]);
-        }
-
-        return view('logs.index', compact('logs'));
+        // Consumed via AJAX (meta[name=logs-url]); there is no standalone logs page.
+        return response()->json([
+            'logs' => $logs,
+            'totalCount' => count($logs),
+        ]);
     }
 
     public function getLogs()

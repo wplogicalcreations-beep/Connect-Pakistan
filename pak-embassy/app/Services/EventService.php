@@ -17,7 +17,7 @@ class EventService{
     {
         $records = $request->per_page ?? 9;
         $sortBy = $request->sort_by ?? 'created_at';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         return Event::applyFilter($request)
             ->orderBy($sortBy, $sortOrder)
@@ -31,7 +31,7 @@ class EventService{
 
         $records = $request->per_page ?? 9;
         $sortBy = $request->sort_by ?? 'events.created_at';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         return $userEvents->applyFilter($request)
             ->orderBy($sortBy, $sortOrder)
@@ -76,7 +76,7 @@ class EventService{
     {
         $records = $request->per_page ?? 30;
         $sortBy = $request->sort_by ?? 'end_date';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         // Use the attendedEvents relationship from User model
         $events = $user->attendedEvents()

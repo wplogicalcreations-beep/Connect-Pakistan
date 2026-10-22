@@ -11,7 +11,7 @@
             <p class="card-title">
                 {{ $event?->name ?? "" }}
             </p>
-            <p class="card-text">{!! $event?->event_overview ?? "(Empty)" !!}</p>
+            <p class="card-text">{!! clean_html($event?->event_overview ?? "(Empty)") !!}</p>
             <hr>
             <div class="text-center">
                 <button class="btn card-btn-applyNow">

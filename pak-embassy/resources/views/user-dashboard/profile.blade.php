@@ -186,7 +186,7 @@
 @include('user-dashboard.profile-add-edit-modal')
 @endsection
 @section('js-file')
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js" integrity="sha384-nLoOnA/BDh8A/jxqtckg4DumuCGOBYUnNJLZdQz/zfYNp3wcjGSoWTAzgko06G/2" crossorigin="anonymous"></script>
 <script>
     const editIconUrl = "{{ asset('user-dash-img/uil_edit.svg') }}";
     const deleteIconUrl = "{{ asset('user-dash-img/flowbite_trash-bin-outline.svg')}}";

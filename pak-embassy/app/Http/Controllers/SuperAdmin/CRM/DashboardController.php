@@ -186,7 +186,7 @@ class DashboardController extends Controller
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         // Valid sort columns for users table
         $validSortColumns = ['id', 'name', 'email', 'phone', 'created_at', 'updated_at'];
@@ -230,7 +230,7 @@ class DashboardController extends Controller
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         $query = ActionItem::with(['event', 'assignedUser']);
         [$from, $to] = $this->parseDateRange($request);
@@ -341,7 +341,7 @@ class DashboardController extends Controller
                 // Get attended events using the relationship
                 $records = $request->per_page ?? 30;
                 $sortBy = $request->sort_by ?? 'end_date';
-                $sortOrder = $request->sort_order ?? 'desc';
+                $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
                 
                 $attendedEvents = $skilledIndividual->attendedEvents()
                     ->applyFilter($request)
@@ -383,7 +383,7 @@ class DashboardController extends Controller
                 // Get attended events using the relationship
                 $records = $request->per_page ?? 30;
                 $sortBy = $request->sort_by ?? 'end_date';
-                $sortOrder = $request->sort_order ?? 'desc';
+                $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
                 
                 $attendedEvents = $organization->user->attendedEvents()
                     ->applyFilter($request)

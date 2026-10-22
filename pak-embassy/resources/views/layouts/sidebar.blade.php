@@ -33,12 +33,12 @@
             </a>
             <ul id="Complaints" class="iq-submenu collapse child {{ $umActive ? 'show' : '' }}">
               @can('manage_individual_users')
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ url('skilled-individuals') }}" class="{{ Request::is('skilled-individuals') || Request::routeIs('skilled_individuals.show') ? 'childActive' : '' }}"><span>Skilled Individuals</span></a>
               </li>
               @endcan
               @can('manage_organization_users')
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ url('organizations') }}" class="{{ Request::is('organizations') || Request::routeIs('organizations.show') ? 'childActive' : '' }}"><span>Organizations</span></a>
               </li>
               @endcan
@@ -81,14 +81,14 @@
               </a>
               <ul id="match-making" class="iq-submenu collapse child {{ $mmActive ? 'show' : '' }}">
                   @can('manage_individual_matchmaking')
-                  <li id="child">
+                  <li class="sidebar-child">
                       <a href="{{ route('individual.index') }}" class="{{ Request::is('match-making/individual') || Request::routeIs('individual.view-match-making-individual') ? 'childActive' : '' }}">
                           <span>Individuals</span>
                       </a>
                   </li>
                   @endcan
                   @can('manage_organization_matchmaking')
-                  <li id="child">
+                  <li class="sidebar-child">
                       <a href="{{ route('organization.index') }}" class="{{ Request::is('match-making/organization') || Request::routeIs('organization.view-match-making-organization') ? 'childActive' : '' }}">
                           <span>Organizations</span>
                       </a>
@@ -111,12 +111,12 @@
             </a>
             <ul id="Logs" class="iq-submenu collapse child {{ $cwActive ? 'show' : '' }}">
               @can('view_co_workspace')
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ url('co-working-space') }}" class="{{ Request::is('co-working-space') || Request::is('create-co-working-space') ? 'childActive' : '' }}"><span>List</span></a>
               </li>
               @endcan
               @can('view_co_workspace_request')
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ url('co-working-space/requests') }}" class="{{ Request::is('co-working-space/requests') ? 'childActive' : '' }}"><span>Requests</span></a>
               </li>
               @endcan
@@ -137,12 +137,12 @@
             </a>
             <ul id="commission-slabs" class="iq-submenu collapse child {{ $crmActive ? 'show' : '' }}">
               @can('view_crm_dashboard')
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ url('crm/dashboard') }}" class="{{ Request::is('crm/dashboard') || Request::is('crm/dashboard/*') ? 'childActive' : '' }}"><span>Dashboard</span></a>
               </li>
               @endcan
               {{-- uncomment later --}}
-              {{-- <li id="child">
+              {{-- <li class="sidebar-child">
                 <a href="{{ url('crm/leads') }}" class="{{ Request::is('crm/leads') ? 'childActive' : '' }}"><span>Leads</span></a>
               </li> --}}
             </ul>
@@ -162,21 +162,21 @@
             </a>
             <ul id="game-center" class="iq-submenu collapse child {{ $aclActive ? 'show' : '' }}">
               @can('manage_users')
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ url('users') }}" class="{{ Request::is('users') ? 'childActive' : '' }}"><span>User</span></a>
               </li>
               @endcan
               @can('manage_roles')
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ url('acl') }}" class="{{ Request::is('acl') ? 'childActive' : '' }}"><span>Roles</span></a>
               </li>
               @endcan
               @can('manage_permissions')
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ route('acl.assignPermissionsForm') }}" class="{{ Route::is('acl.assignPermissionsForm') ? 'childActive' : '' }}"><span>Manage Permissions</span></a>
               </li>
               @endcan
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ url('departments') }}" class="{{ Request::is('departments') ? 'childActive' : '' }}"><span>Department</span></a>
               </li>
             </ul>
@@ -196,25 +196,25 @@
             </a>
             <ul id="lov" class="iq-submenu collapse child {{ $lovActive ? 'show' : '' }}">
               <!-- @can('manage_skills')
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ route('skill.index') }}" class="{{ Route::is('skill.index') ? 'childActive' : '' }}"><span>Skills</span></a>
               </li>
               @endcan -->
               @canany(['manage_levels', 'manage_influence_ability', 'manage_industry_area', 'manage_work_domain'])
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ route('lov.category.index', 'individual') }}" 
                    class="{{ Request::routeIs('lov.category.index') && request()->route('category') == 'individual' ? 'childActive' : '' }}">
                   <span>Individual</span>
                 </a>
               </li>
               @endcanany
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ route('lov.category.index', 'business') }}" 
                    class="{{ Request::routeIs('lov.category.index') && request()->route('category') == 'business' ? 'childActive' : '' }}">
                   <span>Business</span>
                 </a>
               </li>
-              <li id="child">
+              <li class="sidebar-child">
                 <a href="{{ route('lov.category.index', 'embassy') }}" 
                    class="{{ Request::routeIs('lov.category.index') && request()->route('category') == 'embassy' ? 'childActive' : '' }}">
                   <span>Embassy</span>
@@ -250,19 +250,19 @@
             <ul id="Reports" class="iq-submenu collapse child {{ $reportsActive ? 'show' : '' }}">
               @php $r = request()->path(); @endphp
               @can('view_user_registration_report')
-              <li id="child"><a href="{{ url('users-reports') }}" class="{{ $r === 'users-reports' ? 'childActive' : '' }}"><span>User Registration</span></a></li>
+              <li class="sidebar-child"><a href="{{ url('users-reports') }}" class="{{ $r === 'users-reports' ? 'childActive' : '' }}"><span>User Registration</span></a></li>
               @endcan
               @can('view_job_posting_report')
-              <li id="child"><a href="{{ url('jobs-reports') }}" class="{{ $r === 'jobs-reports' ? 'childActive' : '' }}"><span>Job Postings Report</span></a></li>
+              <li class="sidebar-child"><a href="{{ url('jobs-reports') }}" class="{{ $r === 'jobs-reports' ? 'childActive' : '' }}"><span>Job Postings Report</span></a></li>
               @endcan
               @can('view_events_report')
-              <li id="child"><a href="{{ url('event-reports') }}" class="{{ $r === 'event-reports' ? 'childActive' : '' }}"><span>Events Report</span></a></li>
+              <li class="sidebar-child"><a href="{{ url('event-reports') }}" class="{{ $r === 'event-reports' ? 'childActive' : '' }}"><span>Events Report</span></a></li>
               @endcan
               @can('view_MATCHMAKING_report')
-              <li id="child"><a href="{{ url('match-making-reports') }}" class="{{ $r === 'match-making-reports' ? 'childActive' : '' }}"><span>Matchmaking Report</span></a></li>
+              <li class="sidebar-child"><a href="{{ url('match-making-reports') }}" class="{{ $r === 'match-making-reports' ? 'childActive' : '' }}"><span>Matchmaking Report</span></a></li>
               @endcan
               @can('view_co_workspace_report')
-              <li id="child"><a href="{{ url('co-working-space-reports') }}" class="{{ $r === 'co-working-space-reports' ? 'childActive' : '' }}"><span>Co-Workspace Report</span></a></li>
+              <li class="sidebar-child"><a href="{{ url('co-working-space-reports') }}" class="{{ $r === 'co-working-space-reports' ? 'childActive' : '' }}"><span>Co-Workspace Report</span></a></li>
               @endcan
             </ul>
           </li>
@@ -281,11 +281,11 @@
             </a>
             <ul id="Settings" class="iq-submenu collapse child {{ $settingsActive ? 'show' : '' }}">
               @can('view_general_settings')
-              <li id="child"><a href="{{ route('settings.general.index') }}" class="{{ request()->is('settings/general') ? 'childActive' : '' }}"><span>General Settings</span></a></li>
+              <li class="sidebar-child"><a href="{{ route('settings.general.index') }}" class="{{ request()->is('settings/general') ? 'childActive' : '' }}"><span>General Settings</span></a></li>
               @endcan
               {{-- uncomment later --}}
-              {{-- <li id="child"><a href="other-pages.html" class="{{ request()->is('other-pages.html') ? 'childActive' : '' }}"><span>Other Pages</span></a></li>
-              <li id="child"><a href="subscription.html" class="{{ request()->is('subscription.html') ? 'childActive' : '' }}"><span>Subscription</span></a></li> --}}
+              {{-- <li class="sidebar-child"><a href="other-pages.html" class="{{ request()->is('other-pages.html') ? 'childActive' : '' }}"><span>Other Pages</span></a></li>
+              <li class="sidebar-child"><a href="subscription.html" class="{{ request()->is('subscription.html') ? 'childActive' : '' }}"><span>Subscription</span></a></li> --}}
             </ul>
           </li>
           @endcan

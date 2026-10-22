@@ -64,7 +64,7 @@
                         <div class="row g-2 justify-content-center">
                             @if($space->space_type == 'Hot Desk')
                             <div class="col-6 col-md-4 col-lg-3 d-flex align-items-start position-relative">
-                                <input type="radio" name="space_type" value="hot_desk" id="coworkspace" class="form-check-input me-2 posi-abs" required>
+                                <input type="radio" name="space_type" value="hot_desk" id="hotdesk" class="form-check-input me-2 posi-abs" required>
                                 <label for="hotdesk" class="selectable-image mb-0">
                                     <img src="{{ asset('user-dash-img/step-image.png')}}" class="img-fluid" alt="Co-WorkSpace">
                                     <div class="caption">Hot Desk</div>
@@ -72,7 +72,7 @@
                             </div>
                             @elseif($space->space_type == 'Dedicated Desk')
                             <div class="col-6 col-md-4 col-lg-3 d-flex align-items-start position-relative">
-                                <input type="radio" name="space_type" value="dedicated_desk" id="privateoffice" class="form-check-input me-2 posi-abs">
+                                <input type="radio" name="space_type" value="dedicated_desk" id="dedicateddesk" class="form-check-input me-2 posi-abs">
                                 <label for="dedicateddesk" class="selectable-image mb-0">
                                     <img src="{{ asset('user-dash-img/step-image.png')}}" class="img-fluid" alt="Private Office">
                                     <div class="caption">Dedicated Desk</div>
@@ -88,14 +88,14 @@
                             </div>
                             @else
                             <div class="col-6 col-md-4 col-lg-3 d-flex align-items-start position-relative">
-                                <input type="radio" name="space_type" value="hot_desk" id="coworkspace" class="form-check-input me-2 posi-abs" required>
+                                <input type="radio" name="space_type" value="hot_desk" id="hotdesk" class="form-check-input me-2 posi-abs" required>
                                 <label for="hotdesk" class="selectable-image mb-0">
                                     <img src="{{ asset('user-dash-img/step-image.png')}}" class="img-fluid" alt="Co-WorkSpace">
                                     <div class="caption">Hot Desk</div>
                                 </label>
                             </div>
                             <div class="col-6 col-md-4 col-lg-3 d-flex align-items-start position-relative">
-                                <input type="radio" name="space_type" value="dedicated_desk" id="privateoffice" class="form-check-input me-2 posi-abs">
+                                <input type="radio" name="space_type" value="dedicated_desk" id="dedicateddesk" class="form-check-input me-2 posi-abs">
                                 <label for="dedicateddesk" class="selectable-image mb-0">
                                     <img src="{{ asset('user-dash-img/step-image.png')}}" class="img-fluid" alt="Private Office">
                                     <div class="caption">Dedicated Desk</div>

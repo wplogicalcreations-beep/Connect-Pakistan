@@ -82,11 +82,11 @@
                     <label for="representative_email">Email of Representative <span class="text-danger">*</span></label>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label">Company Logo</label>
+                    <label class="form-label" for="logoFileName">Company Logo</label>
                     <div class="input-group">
                         <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('company_logo').click()">Browse...</button>
                         <input type="text" id="logoFileName" class="form-control" placeholder="Select Logo" readonly>
-                        <input type="file" id="company_logo" name="company_logo" class="d-none" accept="image/*" onchange="updateLogoFileName()">
+                        <input type="file" id="company_logo" name="company_logo" class="d-none" aria-label="Company Logo" accept="image/*" onchange="updateLogoFileName()">
                     </div>
                     <small class="text-danger company-logo-required">*</small>
                     <small class="text-muted company-logo-optional d-none">(Optional)</small>
@@ -165,7 +165,7 @@
             <h5 class="section-title mt-5 mb-3">4- Service Information</h5>
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label class="form-label">Services Domain <span class="text-danger">*</span></label>
+                    <label class="form-label" for="serviceDomainsBtn">Services Domain <span class="text-danger">*</span></label>
                     <div class="dropdown">
                         <button type="button" class="btn form-select w-100 text-start" id="serviceDomainsBtn" data-bs-toggle="dropdown" aria-expanded="false">
                             Select service domain
@@ -181,7 +181,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label">Services Skills Involved <span class="text-danger">*</span></label>
+                    <label class="form-label" for="skillsBtn">Services Skills Involved <span class="text-danger">*</span></label>
                     <div class="dropdown">
                         <button type="button" class="btn form-select w-100 text-start" id="skillsBtn" data-bs-toggle="dropdown" aria-expanded="false">
                             Select skills
@@ -383,7 +383,7 @@
                                         if (existingAlert.length) {
                                             existingAlert.text(errorMessage);
                                         } else {
-                                            container.prepend(`<div class="alert alert-danger mb-3">${errorMessage}</div>`);
+                                            container.prepend($('<div class="alert alert-danger mb-3"></div>').text(errorMessage));
                                         }
                                     }
                                 }
@@ -397,7 +397,7 @@
                                         if (existingError.length) {
                                             existingError.text(errorMessage);
                                         } else {
-                                            parent.append(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                            parent.append($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                         }
                                     }
                                 }
@@ -411,7 +411,7 @@
                                         if (existingError.length) {
                                             existingError.text(errorMessage);
                                         } else {
-                                            parent.append(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                            parent.append($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                         }
                                     }
                                 }
@@ -424,7 +424,7 @@
                                     if (existingAlert.length) {
                                         existingAlert.text(errorMessage);
                                     } else {
-                                        container.prepend(`<div class="alert alert-danger mb-3">${errorMessage}</div>`);
+                                        container.prepend($('<div class="alert alert-danger mb-3"></div>').text(errorMessage));
                                     }
                                 }
                             }
@@ -437,7 +437,7 @@
                                     if (existingError.length) {
                                         existingError.text(errorMessage);
                                     } else {
-                                        parent.append(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                        parent.append($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                     }
                                 }
                             }
@@ -450,7 +450,7 @@
                                     if (existingError.length) {
                                         existingError.text(errorMessage);
                                     } else {
-                                        parent.append(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                        parent.append($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                     }
                                 }
                             }
@@ -472,10 +472,10 @@
                                         const parent = input.closest('.col-md-6, .col-md-12');
                                         if (parent.length) {
                                             parent.find('.invalid-feedback, .text-danger.small').remove();
-                                            parent.append(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                            parent.append($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                         } else {
                                             input.next('.invalid-feedback, .text-danger.small').remove();
-                                            input.after(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                            input.after($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                         }
                                         if (!firstErrorField) {
                                             firstErrorField = input;
@@ -490,7 +490,7 @@
                                         if (existingError.length) {
                                             existingError.text(errorMessage);
                                         } else {
-                                            formFloating.append(`<div class="invalid-feedback" style="display: block !important;">${errorMessage}</div>`);
+                                            formFloating.append($('<div class="invalid-feedback" style="display: block !important;"></div>').text(errorMessage));
                                         }
                                     }
                                     // For select dropdowns without form-floating
@@ -501,7 +501,7 @@
                                             if (existingError.length) {
                                                 existingError.text(errorMessage);
                                             } else {
-                                                parent.append(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                                parent.append($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                             }
                                         }
                                     }
@@ -511,7 +511,7 @@
                                         if (existingError.length) {
                                             existingError.text(errorMessage);
                                         } else {
-                                            input.after(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                            input.after($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                         }
                                     }
                                     

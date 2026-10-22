@@ -11,7 +11,7 @@
                         <div class="section-header">
                             <h5 class="section-title">1. Company Identity</h5>
                             <div class="section-actions">
-                                <i class="fas fa-edit text-success" onclick="showEditCompanyIdentityModal()"></i>
+                                <i class="fas fa-edit text-success" role="button" tabindex="0" aria-label="Edit company identity" onclick="showEditCompanyIdentityModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"></i>
                             </div>
                         </div>
                         <div class="section-content">
@@ -93,7 +93,7 @@
                             <div class="section-header">
                                 <h5 class="section-title">2. Company Information</h5>
                                 <div class="section-actions">
-                                    <i class="fas fa-edit text-success" onclick="showEditCompanyInformationModal()"></i>
+                                    <i class="fas fa-edit text-success" role="button" tabindex="0" aria-label="Edit company information" onclick="showEditCompanyInformationModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"></i>
                                 </div>
                             </div>
                             <div class="row g-lg-4 row g-3">
@@ -148,7 +148,7 @@
                             <div class="section-header">
                                 <h5 class="section-title">3. Product Information</h5>
                                 <div class="section-actions">
-                                    <i class="fas fa-edit text-success" onclick="showEditProductInformationModal()"></i>
+                                    <i class="fas fa-edit text-success" role="button" tabindex="0" aria-label="Edit product information" onclick="showEditProductInformationModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"></i>
                                 </div>
                             </div>
                             <div class="row g-lg-4 row g-3">
@@ -172,7 +172,7 @@
                             <div class="section-header">
                                 <h5 class="section-title">4. Service Information</h5>
                                 <div class="section-actions">
-                                    <i class="fas fa-edit text-success" onclick="showEditServiceInformationModal()"></i>
+                                    <i class="fas fa-edit text-success" role="button" tabindex="0" aria-label="Edit service information" onclick="showEditServiceInformationModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"></i>
                                 </div>
                             </div>
                             <div class="row g-lg-4 row g-3">

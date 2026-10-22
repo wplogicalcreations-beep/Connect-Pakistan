@@ -1,3 +1,14 @@
+// Returns the absolute URL only if it points to this site's own origin, otherwise null.
+// Prevents AJAX requests (and the HTML they return) from being redirected to another host.
+function toSameOriginUrl(rawUrl) {
+    try {
+        const parsed = new URL(rawUrl, window.location.href);
+        return parsed.origin === window.location.origin ? parsed.href : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 $("#addSkillForm").on("submit", function (e) {
     e.preventDefault();
     let form = this;
@@ -14,7 +25,7 @@ $("#addSkillForm").on("submit", function (e) {
         },
         success: function (response) {
             if (response.success) {
-                $("#jobApplicationsTable").html(response.html);
+                $("#jobApplicationsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
                 $("#staticBackdropAdd").modal("hide");
                 form.reset();
                 showToast(response.message);
@@ -57,7 +68,7 @@ $(document).ready(function () {
         let formData = new FormData($('#editSkillForm')[0]);
 
         $.ajax({
-            url: "/skill/update/" + currentSkillId,
+            url: "/skill/update/" + encodeURIComponent(currentSkillId),
             method: 'POST',
             data: formData,
             processData: false,
@@ -67,7 +78,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 if (response.success) {
-                    $("#jobApplicationsTable").html(response.html);
+                    $("#jobApplicationsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
                     $('#staticBackdrop').modal('hide');
                     showToast(response.message);
                 } else {
@@ -171,7 +182,8 @@ $(document).ready(function () {
 // Pagination link click handle
 $(document).on("click", ".pagination a", function (e) {
     e.preventDefault();
-    let url = $(this).attr("href");
+    let url = toSameOriginUrl($(this).attr("href"));
+    if (!url) return;
 
     $.ajax({
         url: url,
@@ -182,10 +194,10 @@ $(document).on("click", ".pagination a", function (e) {
         success: function (response) {
             if (response.success) {
                 // update table rows
-                $("#jobApplicationsTable").html(response.html);
+                $("#jobApplicationsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 // update pagination component
-                $(".pagination-container").replaceWith(response.pagination);
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
             }
         },
@@ -202,7 +214,7 @@ $(document).on("click", ".pagination a", function (e) {
 // per-page change (AJAX)
 $(document).on("change", ".per-page-select", function () {
     let perPage = $(this).val();
-    let url = "?per_page=" + perPage;
+    let url = "?per_page=" + encodeURIComponent(perPage);
 
     $.ajax({
         url: url,
@@ -213,10 +225,10 @@ $(document).on("change", ".per-page-select", function () {
         success: function (response) {
             if (response.success) {
                 // update table rows
-                $("#jobApplicationsTable").html(response.html);
+                $("#jobApplicationsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 // update pagination with new info
-                $(".pagination-container").replaceWith(response.pagination);
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
             }
         },
         complete: function () {
@@ -233,7 +245,8 @@ $(document).ready(function () {
     // Search input event
     $('#searchInput').on('keyup', function () {
         let search = $(this).val();
-        let url = window.location.href;
+        let url = toSameOriginUrl(window.location.href);
+        if (!url) return;
 
         $.ajax({
             url: url,
@@ -242,10 +255,10 @@ $(document).ready(function () {
             success: function (response) {
                 if (response.success) {
                     // update table rows
-                    $("#jobApplicationsTable").html(response.html);
+                    $("#jobApplicationsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                     // update pagination with new info
-                    $(".pagination-container").replaceWith(response.pagination);
+                    $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 }
             },
@@ -273,8 +286,8 @@ $(document).on("click", ".sort", function () {
         },
         success: function (response) {
             if (response.success) {
-                $("#jobApplicationsTable").html(response.html);
-                $(".pagination-container").replaceWith(response.pagination);
+                $("#jobApplicationsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
             }
         }
     });

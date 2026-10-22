@@ -13,14 +13,14 @@
         <p>{{$event->description}}</p>
 
         <h4 class="section-title">Event Overview</h4>
-        {!!$event->event_overview!!}
+        {!! clean_html($event->event_overview) !!}
 
         <h4 class="section-title">Agenda</h4>
 
-        {!!$event->event_agenda!!}
+        {!! clean_html($event->event_agenda) !!}
 
         <h4 class="section-title">Event Format</h4>
-        {!!$event->event_format!!}
+        {!! clean_html($event->event_format) !!}
         <h4 class="section-title">Who's Attending?</h4>
         <ul>
             @foreach($event->attendees as $attendee)
