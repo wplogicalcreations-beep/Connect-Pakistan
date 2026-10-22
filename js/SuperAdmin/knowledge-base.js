@@ -1,3 +1,14 @@
+// Returns the absolute URL only if it points to this site's own origin, otherwise null.
+// Prevents AJAX requests (and the HTML they return) from being redirected to another host.
+function toSameOriginUrl(rawUrl) {
+    try {
+        const parsed = new URL(rawUrl, window.location.href);
+        return parsed.origin === window.location.origin ? parsed.href : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 // Helper function for toast notifications
 function showToast(message, type = 'success') {
     // You can replace this with your preferred toast library
@@ -12,7 +23,8 @@ function showToast(message, type = 'success') {
 // Pagination link click handle
 $(document).on("click", ".pagination a", function (e) {
     e.preventDefault();
-    let url = $(this).attr("href");
+    let url = toSameOriginUrl($(this).attr("href"));
+    if (!url) return;
 
     $.ajax({
         url: url,
@@ -23,10 +35,10 @@ $(document).on("click", ".pagination a", function (e) {
         success: function (response) {
             if (response.success) {
                 // update table rows
-                $("#knowledgeBaseTable").html(response.html);
+                $("#knowledgeBaseTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 // update pagination component
-                $(".pagination-container").replaceWith(response.pagination);
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
             }
         },

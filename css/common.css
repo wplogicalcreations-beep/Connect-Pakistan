@@ -57,7 +57,6 @@ div.table-responsive > div.dataTables_wrapper > div.row:last-child {
 .table thead th {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
-    border: 0;
     background: rgba(233, 0, 10);
     letter-spacing: var(--character-spacing-0);
     color: #ffffff;
@@ -80,9 +79,7 @@ tr td {
 }
 
 .viewtable .dropdown-menu {
-    right: 0 !important;
     transform: unset !important;
-    left: auto !important;
     inset: 30px 0px auto auto !important;
 }
 
@@ -120,7 +117,6 @@ tr td {
 .alert-danger-custom {
     color: #842029;
     background-color: #f8d7da;
-    border-color: #f5c2c7;
     position: relative;
     padding: 1rem 1rem;
     margin-bottom: 1rem;
@@ -131,7 +127,6 @@ tr td {
 .alert-success-custom {
     color: #0f5132;
     background-color: #d1e7dd;
-    border-color: #badbcc;
     position: relative;
     padding: 1rem 1rem;
     margin-bottom: 1rem;
@@ -305,14 +300,12 @@ ul.myTab {
 }
 
 .myTab .card {
-    background-color: #fff;
     border-radius: 8px !important;
     position: relative;
     margin-bottom: 50px;
     background: #ffffff;
     border: none !important;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12) !important;
-    border-radius: 16px;
 }
 
 .ul.nav-pills.myTab,
@@ -439,10 +432,6 @@ h3.welcome-heading {
     content: " ";
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     inset: 0 0 0 0;
     background: #606366;
     color: #fff !important;
@@ -879,7 +868,6 @@ p {
 .loading-spinner {
     left: 0;
     bottom: 0;
-    left: 0;
     right: 0;
     position: fixed;
     display: flex;

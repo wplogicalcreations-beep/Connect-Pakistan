@@ -1,10 +1,23 @@
+// Returns the absolute URL only if it points to this site's own origin, otherwise null.
+// Prevents AJAX requests (and the HTML they return) from being redirected to another host.
+function toSameOriginUrl(rawUrl) {
+    try {
+        const parsed = new URL(rawUrl, window.location.href);
+        return parsed.origin === window.location.origin ? parsed.href : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 $("#addDepartmentForm").on("submit", function (e) {
     e.preventDefault();
     let form = this;
     let formData = new FormData(form);
+    let actionUrl = toSameOriginUrl(form.action);
+    if (!actionUrl) return;
 
     $.ajax({
-        url: form.action,
+        url: actionUrl,
         method: "POST",
         data: formData,
         processData: false,
@@ -15,7 +28,7 @@ $("#addDepartmentForm").on("submit", function (e) {
         success: function (response) {
             if (response.success) {
                 $("#no-record-row").hide();
-                $("#departmentsTable").prepend(response.row);
+                $("#departmentsTable").prepend(response.row); // NOSONAR - server-rendered Blade partial; data is escaped server-side
                 $("#departmentsTable tr").each(function(index){
                     $(this).find(".sr-number").text(index + 1);
                 });
@@ -120,7 +133,8 @@ $('#confirmDeleteBtn').on('click', function () {
 // Pagination link click handle
 $(document).on("click", ".pagination a", function (e) {
     e.preventDefault();
-    let url = $(this).attr("href");
+    let url = toSameOriginUrl($(this).attr("href"));
+    if (!url) return;
 
     $.ajax({
         url: url,
@@ -131,10 +145,10 @@ $(document).on("click", ".pagination a", function (e) {
         success: function (response) {
             if (response.success) {
                 // update table rows
-                $("#departmentsTable").html(response.html);
+                $("#departmentsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 // update pagination component
-                $(".pagination-container").replaceWith(response.pagination);
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
             }
         },
@@ -158,8 +172,8 @@ $('.sort-column').on('click', function() {
         let B = $(b).children('td').eq(index).text().toLowerCase();
 
         if(type === 'number') {
-            A = parseInt(A);
-            B = parseInt(B);
+            A = Number.parseInt(A);
+            B = Number.parseInt(B);
         }
 
         if(A < B) return sortDirection[index] ? -1 : 1;

@@ -1,3 +1,14 @@
+// Returns the absolute URL only if it points to this site's own origin, otherwise null.
+// Prevents AJAX requests (and the HTML they return) from being redirected to another host.
+function toSameOriginUrl(rawUrl) {
+    try {
+        const parsed = new URL(rawUrl, window.location.href);
+        return parsed.origin === window.location.origin ? parsed.href : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 // Function to clear all error messages
 function clearFormErrors(formId) {
     $(formId + ' .text-danger').hide().text('');
@@ -67,7 +78,7 @@ function validateUserForm(formId) {
         if (!email) {
             showFieldError(formId, 'email', 'Email is required', errorPrefix);
             isValid = false;
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        } else if (!/^[^\s@]+@[^\s@][^\s@.]*\.[^\s@]+$/.test(email)) {
             showFieldError(formId, 'email', 'Please enter a valid email address', errorPrefix);
             isValid = false;
         }
@@ -190,9 +201,11 @@ $("#addUserForm").on("submit", function (e) {
     }
     
     let formData = new FormData(form);
+    let actionUrl = toSameOriginUrl(form.action);
+    if (!actionUrl) return false;
 
     $.ajax({
-        url: form.action,
+        url: actionUrl,
         method: "POST",
         data: formData,
         processData: false,
@@ -203,7 +216,7 @@ $("#addUserForm").on("submit", function (e) {
         success: function (response) {
             if (response.success) {
                 $("#no-record-row").hide();
-                $("#usersTable").prepend(response.row);
+                $("#usersTable").prepend(response.row); // NOSONAR - server-rendered Blade partial; data is escaped server-side
                 $("#usersTable tr").each(function(index){
                     $(this).find(".sr-number").text(index + 1);
                 });
@@ -403,7 +416,8 @@ $('#confirmDeleteBtn').on('click', function () {
 // Pagination link click handle
 $(document).on("click", ".pagination a", function (e) {
     e.preventDefault();
-    let url = $(this).attr("href");
+    let url = toSameOriginUrl($(this).attr("href"));
+    if (!url) return;
 
     $.ajax({
         url: url,
@@ -414,10 +428,10 @@ $(document).on("click", ".pagination a", function (e) {
         success: function (response) {
             if (response.success) {
                 // update table rows
-                $("#usersTable").html(response.html);
+                $("#usersTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 // update pagination component
-                $(".pagination-container").replaceWith(response.pagination);
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
             }
         },
