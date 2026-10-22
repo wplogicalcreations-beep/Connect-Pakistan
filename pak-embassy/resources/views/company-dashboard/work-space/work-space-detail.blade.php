@@ -27,11 +27,11 @@
 
     <!-- Options -->
     <h6 class="fw-bold mt-4 mb-2">Co-WorkSpace Options</h6>
-    {!!$space->space_description!!}
+    {!!clean_html($space->space_description)!!}
 
     <!-- Amenities -->
     <h6 class="fw-bold mt-4 mb-2">Amenities</h6>
-    {!!$space->space_amenities!!}
+    {!!clean_html($space->space_amenities)!!}
     <!-- Location -->
     <h6 class="fw-bold mt-4 mb-2">Location</h6>
     <p><i class="bi bi-geo-alt-fill text-success me-2"></i>{{$space->location}}</p>

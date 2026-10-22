@@ -80,7 +80,7 @@
     <div class="row g-3">
         <div class="col-md-6 form-floating">
             <div class="input-group flex-wrap p-2 pt-0 tags-container">
-                <input name="job_skills" type="text" id="job_skills" class="form-control pt-2" placeholder="Type Skills and press Enter">
+                <input name="job_skills" type="text" aria-label="Skills" id="job_skills" class="form-control pt-2" placeholder="Type Skills and press Enter">
                 
             </div>
             <div id="job_skills_error" class="text-danger small"></div>
@@ -142,7 +142,7 @@
         <!-- Upload Resume -->
         <div class="col-md-6">
             <div class="upload-container" id="resume-container">
-                <label for="resumeUpload" class="upload-box w-100" role="button">
+                <label for="resumeUpload" class="upload-box w-100" style="cursor: pointer;">
                     <div class="overlay-text">Click to Upload Resume</div>
                     <div id="resumePreview" class="preview-box">
                         <i class="bi bi-upload fs-3"></i>
@@ -158,7 +158,7 @@
         <!-- Upload Photo -->
         <div class="col-md-6">
             <div class="upload-container" id="image-container">
-                <label for="photoUpload" class="upload-box w-100" role="button">
+                <label for="photoUpload" class="upload-box w-100" style="cursor: pointer;">
                     <div class="overlay-text">Click to Upload Photo</div>
                     <div id="photoPreview" class="preview-box">
                         <i class="bi bi-image fs-3"></i>
@@ -199,6 +199,16 @@ $(document).ready(function() {
 let countries = [];
 let eduCounter = 0;
 let expCounter = 0;
+
+// Escape untrusted values before inserting them into HTML template strings
+function escapeHtml(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
 
 // Load countries from backend
 async function loadCountries() {
@@ -275,7 +285,7 @@ function addExistingEducationForm(education, id) {
                     <div class="form-floating">
                         <select class="form-select" id="edu-country-${id}">
                             <option value="">Choose...</option>
-                            ${countries.map(country => `<option value="${country.id}" ${education.country_id == country.id ? 'selected' : ''}>${country.name}</option>`).join('')}
+                            ${countries.map(country => `<option value="${escapeHtml(country.id)}" ${education.country_id == country.id ? 'selected' : ''}>${escapeHtml(country.name)}</option>`).join('')}
                         </select>
                         <label for="edu-country-${id}">Country</label>
                         <small class="error text-danger country-error"></small>
@@ -296,14 +306,14 @@ function addExistingEducationForm(education, id) {
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="degree-name-${id}" value="${education.degree_name || ''}" placeholder="Degree Name">
+                        <input type="text" class="form-control" id="degree-name-${id}" value="${escapeHtml(education.degree_name || '')}" placeholder="Degree Name">
                         <label for="degree-name-${id}">Degree Name</label>
                         <small class="error text-danger degree-name-error"></small>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="institute-name-${id}" value="${education.institution || ''}" placeholder="Institute Name">
+                        <input type="text" class="form-control" id="institute-name-${id}" value="${escapeHtml(education.institution || '')}" placeholder="Institute Name">
                         <label for="institute-name-${id}">Institute Name</label>
                         <small class="error text-danger institute-name-error"></small>
                     </div>
@@ -318,14 +328,14 @@ function addExistingEducationForm(education, id) {
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                        <input type="date" class="form-control" id="edu-start-date-${id}" value="${education.start_date ? education.start_date.split('T')[0] : ''}" placeholder="Start Date">
+                        <input type="date" class="form-control" id="edu-start-date-${id}" value="${escapeHtml(education.start_date ? education.start_date.split('T')[0] : '')}" placeholder="Start Date">
                         <label for="edu-start-date-${id}">Start Date</label>
                         <small class="error text-danger start-date-error"></small>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                        <input type="date" class="form-control" id="edu-end-date-${id}" value="${education.end_date ? education.end_date.split('T')[0] : ''}" placeholder="End Date" ${education.currently_studying ? 'disabled' : ''}>
+                        <input type="date" class="form-control" id="edu-end-date-${id}" value="${escapeHtml(education.end_date ? education.end_date.split('T')[0] : '')}" placeholder="End Date" ${education.currently_studying ? 'disabled' : ''}>
                         <label for="edu-end-date-${id}">End Date</label>
                         <small class="error text-danger end-date-error"></small>
                     </div>
@@ -351,14 +361,14 @@ function addExistingExperienceForm(experience, id) {
             <div class="row g-3">
                 <div class="col-md-6">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="company-${id}" value="${experience.company_name || ''}" placeholder="Company">
+                        <input type="text" class="form-control" id="company-${id}" value="${escapeHtml(experience.company_name || '')}" placeholder="Company">
                         <label for="company-${id}">Company</label>
                         <small class="error text-danger company-error"></small>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="job-title-${id}" value="${experience.job_title || ''}" placeholder="Job Title">
+                        <input type="text" class="form-control" id="job-title-${id}" value="${escapeHtml(experience.job_title || '')}" placeholder="Job Title">
                         <label for="job-title-${id}">Job Title</label>
                         <small class="error text-danger job-title-error"></small>
                     </div>
@@ -367,7 +377,7 @@ function addExistingExperienceForm(experience, id) {
                     <div class="form-floating">
                         <select class="form-select" id="exp-country-${id}">
                             <option value="">Choose...</option>
-                            ${countries.map(country => `<option value="${country.id}" ${experience.country_id == country.id ? 'selected' : ''}>${country.name}</option>`).join('')}
+                            ${countries.map(country => `<option value="${escapeHtml(country.id)}" ${experience.country_id == country.id ? 'selected' : ''}>${escapeHtml(country.name)}</option>`).join('')}
                         </select>
                         <label for="exp-country-${id}">Country</label>
                         <small class="error text-danger country-error"></small>
@@ -386,7 +396,7 @@ function addExistingExperienceForm(experience, id) {
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Job Description" id="job-description-${id}" style="height: 100px" required>${experience.description || ''}</textarea>
+                        <textarea class="form-control" placeholder="Job Description" id="job-description-${id}" style="height: 100px" required>${escapeHtml(experience.description || '')}</textarea>
                         <label for="job-description-${id}">Job Description</label>
                         <small class="error text-danger job-description-error"></small>
                     </div>
@@ -401,14 +411,14 @@ function addExistingExperienceForm(experience, id) {
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                        <input type="date" class="form-control" id="exp-start-date-${id}" value="${experience.start_date ? experience.start_date.split('T')[0] : ''}" placeholder="Start Date">
+                        <input type="date" class="form-control" id="exp-start-date-${id}" value="${escapeHtml(experience.start_date ? experience.start_date.split('T')[0] : '')}" placeholder="Start Date">
                         <label for="exp-start-date-${id}">Start Date</label>
                         <small class="error text-danger start-date-error"></small>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
-                        <input type="date" class="form-control" id="exp-end-date-${id}" value="${experience.end_date ? experience.end_date.split('T')[0] : ''}" placeholder="End Date" ${experience.currently_working ? 'disabled' : ''}>
+                        <input type="date" class="form-control" id="exp-end-date-${id}" value="${escapeHtml(experience.end_date ? experience.end_date.split('T')[0] : '')}" placeholder="End Date" ${experience.currently_working ? 'disabled' : ''}>
                         <label for="exp-end-date-${id}">End Date</label>
                         <small class="error text-danger end-date-error"></small>
                     </div>
@@ -720,7 +730,7 @@ function addExistingExperienceForm(experience, id) {
         }
 
 </script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js" integrity="sha384-nLoOnA/BDh8A/jxqtckg4DumuCGOBYUnNJLZdQz/zfYNp3wcjGSoWTAzgko06G/2" crossorigin="anonymous"></script>
 <script src="{{ asset('js/job/job-application.js') }}"></script>
 <script>
 
@@ -738,7 +748,7 @@ function addExistingExperienceForm(experience, id) {
                         <div class="form-floating">
                             <select class="form-select" id="edu-country-${id}">
                                 <option value="">Choose...</option>
-                                ${countries.map(country => `<option value="${country.id}">${country.name}</option>`).join('')}
+                                ${countries.map(country => `<option value="${escapeHtml(country.id)}">${escapeHtml(country.name)}</option>`).join('')}
                             </select>
                             <label for="edu-country-${id}">Country</label>
                             <small class="error text-danger country-error"></small>
@@ -825,7 +835,7 @@ function addExistingExperienceForm(experience, id) {
                         <div class="form-floating">
                             <select class="form-select" id="exp-country-${id}">
                                 <option value="">Choose...</option>
-                                ${countries.map(country => `<option value="${country.id}">${country.name}</option>`).join('')}
+                                ${countries.map(country => `<option value="${escapeHtml(country.id)}">${escapeHtml(country.name)}</option>`).join('')}
                             </select>
                             <label for="exp-country-${id}">Country</label>
                             <small class="error text-danger country-error"></small>

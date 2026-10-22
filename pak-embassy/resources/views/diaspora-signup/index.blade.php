@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diaspora Sign Up - Embassy</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous" rel="stylesheet">
     <link href="{{asset('css/styles.css')}}" rel="stylesheet">
     <link href="{{asset('css/diaspora-signup.css')}}" rel="stylesheet">
     <link rel="icon" href="{{ asset('img/embassy-logo.svg') }}" type="image/x-icon">
@@ -34,7 +34,7 @@
 {{--                            <div class="row">--}}
 {{--                                <div class="col-md-6 mb-4 position-relative">--}}
 {{--                                    <div class="dropdown service-domain-dropdown">--}}
-{{--                                        <label class="form-label">Service Domain</label>--}}
+{{--                                        <label class="form-label" for="dropdownMenuLink">Service Domain</label>--}}
 {{--                                        <button type="button" class="dropbtn3 btn form-select w-100 text-start"--}}
 {{--                                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"--}}
 {{--                                                data-bs-display="static">--}}
@@ -72,8 +72,8 @@
 {{--                                            </div>--}}
 {{--                                            <div class="form-check">--}}
 {{--                                                <input class="form-check-input" type="checkbox" value="education"--}}
-{{--                                                       id="serviceEducation" checked>--}}
-{{--                                                <label class="form-check-label" for="serviceEducation">--}}
+{{--                                                       id="serviceIT3" checked>--}}
+{{--                                                <label class="form-check-label" for="serviceIT3">--}}
 {{--                                                    Information Technology--}}
 {{--                                                </label>--}}
 {{--                                            </div>--}}
@@ -85,7 +85,7 @@
 
 
 {{--                                    <div class="dropdown service-domain-dropdown">--}}
-{{--                                        <label class="form-label">Service Skills Involved</label>--}}
+{{--                                        <label class="form-label" for="dropdownMenuLink2">Service Skills Involved</label>--}}
 
 
 {{--                                        <button type="button" class="dropbtn3 btn form-select w-100 text-start"--}}
@@ -94,7 +94,7 @@
 {{--                                            Select service domain--}}
 {{--                                        </button>--}}
 {{--                                        <div class="dropdown-menu p-3 pb-0 text-nowrap"--}}
-{{--                                             aria-labelledby="dropdownMenuLink">--}}
+{{--                                             aria-labelledby="dropdownMenuLink2">--}}
 {{--                                            <div class="form-check">--}}
 {{--                                                <input class="form-check-input" type="checkbox" value="it"--}}
 {{--                                                       id="serviceIT2">--}}
@@ -125,8 +125,8 @@
 {{--                                            </div>--}}
 {{--                                            <div class="form-check">--}}
 {{--                                                <input class="form-check-input" type="checkbox" value="education"--}}
-{{--                                                       id="serviceEducation2" checked>--}}
-{{--                                                <label class="form-check-label" for="serviceEducation2">--}}
+{{--                                                       id="serviceIT4" checked>--}}
+{{--                                                <label class="form-check-label" for="serviceIT4">--}}
 {{--                                                    CI/CD Tools--}}
 {{--                                                </label>--}}
 {{--                                            </div>--}}
@@ -137,12 +137,12 @@
 
 {{--                            <div class="row">--}}
 {{--                                <div class="col-md-6 mb-4 position-relative">--}}
-{{--                                    <label class="form-label">Any Pre-Implement Methodologies</label>--}}
-{{--                                    <input type="text" class="form-control" placeholder="Enter methodologies">--}}
+{{--                                    <label class="form-label" for="preImplementMethodologies">Any Pre-Implement Methodologies</label>--}}
+{{--                                    <input type="text" id="preImplementMethodologies" class="form-control" placeholder="Enter methodologies">--}}
 {{--                                </div>--}}
 {{--                                <div class="col-md-6 mb-4 position-relative">--}}
-{{--                                    <label class="form-label">Certifications of Staff in Various Domains</label>--}}
-{{--                                    <input type="text" class="form-control" placeholder="Enter certifications">--}}
+{{--                                    <label class="form-label" for="staffCertifications">Certifications of Staff in Various Domains</label>--}}
+{{--                                    <input type="text" id="staffCertifications" class="form-control" placeholder="Enter certifications">--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
 
@@ -175,11 +175,11 @@
 <script>
     const dashboardUrl = "{{ route('user.dashboard') }}";
 </script>
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha384-NXgwF8Kv9SSAr+jemKKcbvQsz+teULH/a5UNJvZc6kP47hZgl62M1vGnw6gHQhb1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js" integrity="sha384-YGSsSTsF0VmunrtJYbdL+koQ2env/AlIT7jQxsE4mFJPX6gs9AlwUNED/QOsm8xs" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js" integrity="sha384-nLoOnA/BDh8A/jxqtckg4DumuCGOBYUnNJLZdQz/zfYNp3wcjGSoWTAzgko06G/2" crossorigin="anonymous"></script>
 <script src="{{asset('js/script.js')}}"></script>
 <script src="{{ asset('js/signup/diaspora-signup.js') }}"></script>
 </body>

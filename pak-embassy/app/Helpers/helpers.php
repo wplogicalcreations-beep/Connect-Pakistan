@@ -11,6 +11,31 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
+if (! function_exists('safe_upload_name')) {
+    /**
+     * Build a storage file name from an upload without trusting the client-supplied name:
+     * strips directory parts (path traversal) and non-alphanumeric characters.
+     */
+    function safe_upload_name(object $file, bool $rename = true): string
+    {
+        $extension = strtolower(preg_replace('/[^A-Za-z0-9]/', '', (string) $file->getClientOriginalExtension()));
+
+        // Never keep a server-executable extension; fall back to the type detected from the content.
+        if (preg_match('/^(php\d*|phtml|phar|pht|phps|cgi|pl|py|sh|asp|aspx|jsp|htaccess|exe|bat|cmd|html?)$/', $extension)) {
+            $guessed = method_exists($file, 'guessExtension') ? $file->guessExtension() : null;
+            $extension = $guessed && $guessed !== $extension ? $guessed : 'bin';
+        }
+
+        if ($rename) {
+            return Str::random(10) . '-' . time() . '.' . $extension;
+        }
+
+        $baseName = Str::slug(pathinfo(basename(str_replace('\\', '/',(string) $file->getClientOriginalName())), PATHINFO_FILENAME));
+
+        return ($baseName !== '' ? $baseName : Str::random(10)) . '.' . $extension;
+    }
+}
+
 if (! function_exists('upload_image')) {
     function upload_image(object $model, object $file, string $path, string $type = null, bool $rename = true, bool $unlink = false, string $oldPath = null)
     {
@@ -20,9 +45,7 @@ if (! function_exists('upload_image')) {
         }
 
         // Generate file name
-        $name = $rename
-            ? Str::random(10) . '-' . time() . '.' . $file->getClientOriginalExtension()
-            : $file->getClientOriginalName();
+        $name = safe_upload_name($file, $rename);
 
         // Store file
         Storage::disk('public')->putFileAs($path, $file, $name);
@@ -62,9 +85,7 @@ if (! function_exists('upload_file')) {
         }
 
         // Generate file name
-        $name = $rename
-            ? Str::random(10) . '-' . time() . '.' . $file->getClientOriginalExtension()
-            : $file->getClientOriginalName();
+        $name = safe_upload_name($file, $rename);
 
         // Store file
         Storage::disk('public')->putFileAs($path, $file, $name);
@@ -197,6 +218,37 @@ if (!function_exists('formatPageName')) {
     {
         // Remove "_page", replace underscores with space, and make uppercase
         return strtoupper(str_replace('_', ' ', str_replace('_page', '', $name)));
+    }
+}
+
+if (!function_exists('clean_html')) {
+    /**
+     * Sanitise rich text (e.g. CKEditor output) for raw output with {!! !!}.
+     * Keeps formatting tags, strips scripts, event handlers and javascript: URLs.
+     */
+    function clean_html($html): string
+    {
+        static $purifier = null;
+
+        if ($html === null || $html === '') {
+            return '';
+        }
+
+        if ($purifier === null) {
+            $cachePath = storage_path('framework/cache/htmlpurifier');
+            if (!is_dir($cachePath)) {
+                mkdir($cachePath, 0755, true);
+            }
+
+            $config = \HTMLPurifier_Config::createDefault();
+            $config->set('Cache.SerializerPath', $cachePath);
+            $config->set('HTML.SafeIframe', true);
+            $config->set('URI.SafeIframeRegexp', '%^(https?:)?//(www\.youtube(?:-nocookie)?\.com/embed/|player\.vimeo\.com/video/)%');
+            $config->set('Attr.AllowedFrameTargets', ['_blank']);
+            $purifier = new \HTMLPurifier($config);
+        }
+
+        return $purifier->purify((string) $html);
     }
 }
 

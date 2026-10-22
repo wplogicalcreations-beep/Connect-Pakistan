@@ -30,7 +30,7 @@
                         <div class="modal-body">
                             <h6 class="fw-bold mb-3">Here is the Minutes of Meeting</h6>
                             <div>
-                                {!! $event->event_mom_detail !!}
+                                {!! clean_html($event->event_mom_detail) !!}
                             </div>
                         </div>
                         <div class="modal-footer">

@@ -12,16 +12,15 @@
         {{-- Email --}}
         <div style="margin-bottom: 15px;">
             <input required type="email" name="email" id="email" 
-                   placeholder="Email"
+                   placeholder="Email" aria-label="Email"
                    value="{{ old('email') }}"
-                   style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; outline: none;" 
-                   autofocus>
+                   style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; outline: none;">
         </div>
 
         {{-- Password --}}
         <div style="margin-bottom: 15px; position: relative;">
             <input required type="password" name="password" id="password" 
-                   placeholder="Password"
+                   placeholder="Password" aria-label="Password"
                    autocomplete="new-password"
                    style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; outline: none;">
         </div>

@@ -88,7 +88,7 @@
 			}
 			$root.data("tableUtilsBound", true);
 
-			var ns = ".tableUtils-" + Math.random().toString(36).slice(2);
+			var ns = ".tableUtils-" + Math.random().toString(36).slice(2); // NOSONAR - not security sensitive (jQuery event namespace only)
 
 			function setLoading(isLoading) {
 				if (!cfg.loadingContainerSelector) return;
@@ -110,11 +110,11 @@
 					data: data || {},
 					success: function (response) {
 						if (response && response.success) {
-							$root.find(cfg.tableContainerSelector).html(response.html);
+							$root.find(cfg.tableContainerSelector).html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 							if (response.pagination) {
 								var $old = $root.find(cfg.paginationContainerSelector).first();
 								if ($old.length) {
-									$old.replaceWith(response.pagination);
+									$old.replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 								}
 							}
 						}

@@ -97,7 +97,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <select class="form-control" id="org-status-dropdown" name="is_verified">
+                    <select class="form-control" id="org-status-dropdown" name="is_verified" aria-label="Organization status">
                         <option value="1">Approved</option>
                         <option value="0">Pending</option>
                     </select>

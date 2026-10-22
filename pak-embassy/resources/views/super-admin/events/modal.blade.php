@@ -98,62 +98,62 @@
                     <div class="row">
                         <div class="col-md-6 mb-2">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="complainer-name" value="Ali Ahmed"
+                                <input type="text" class="form-control" id="complaint-edit-complainer-name" value="Ali Ahmed"
                                        placeholder="name@example.com">
-                                <label for="complainer-name">Complainer Name</label>
+                                <label for="complaint-edit-complainer-name">Complainer Name</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="form-floating">
-                                <input type="number" class="form-control" id="complainer-phone" value="0321-1234567"
+                                <input type="number" class="form-control" id="complaint-edit-complainer-phone" value="0321-1234567"
                                        placeholder="Password">
-                                <label for="complainer-phone">Complainer Phone</label>
+                                <label for="complaint-edit-complainer-phone">Complainer Phone</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="form-floating">
-                                <select class="form-select" id="complaint-type"
+                                <select class="form-select" id="complaint-edit-complaint-type"
                                         aria-label="Floating label select example">
                                     <option value="1">Technical</option>
                                     <option value="2">Type two</option>
                                 </select>
-                                <label for="complaint-type">Complaint type</label>
+                                <label for="complaint-edit-complaint-type">Complaint type</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="form-floating">
-                                <select class="form-select" id="complaint-SubType"
+                                <select class="form-select" id="complaint-edit-complaint-SubType"
                                         aria-label="Floating label select example">
                                     <option value="1">App not working</option>
                                     <option value="2">Sub Type two</option>
                                 </select>
-                                <label for="complaint-SubType">Complaint subtype</label>
+                                <label for="complaint-edit-complaint-SubType">Complaint subtype</label>
                             </div>
                         </div>
                         <div class="col-md-12 mb-2">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="description"
+                                <input type="text" class="form-control" id="complaint-edit-description"
                                        value="Kindly solve the issue." placeholder="name@example.com">
-                                <label for="description">Description</label>
+                                <label for="complaint-edit-description">Description</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="form-floating">
-                                <select class="form-select" id="priority"
+                                <select class="form-select" id="complaint-edit-priority"
                                         aria-label="Floating label select example">
                                     <option value="1">Medium</option>
                                     <option value="2">Priority two</option>
                                 </select>
-                                <label for="priority">Select Priority</label>
+                                <label for="complaint-edit-priority">Select Priority</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="form-floating">
-                                <select class="form-select" id="status" aria-label="Floating label select example">
+                                <select class="form-select" id="complaint-edit-status" aria-label="Floating label select example">
                                     <option value="1">Pending</option>
                                     <option value="2">In-Active</option>
                                 </select>
-                                <label for="status">Select Status</label>
+                                <label for="complaint-edit-status">Select Status</label>
                             </div>
                         </div>
                     </div>

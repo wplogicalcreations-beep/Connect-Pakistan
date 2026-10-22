@@ -20,7 +20,7 @@
                 <form id="companyInfoForm" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Company Type <span class="text-danger">*</span></label>
+                            <label for="company_type" class="form-label">Company Type <span class="text-danger">*</span></label>
                             <select class="form-select text-dark" id="company_type" name="company_type" required>
                                 <option value="" disabled selected hidden>Select an option</option>
                                 <option value="product">Product</option>
@@ -29,7 +29,7 @@
                             </select>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">No. of Years of Experience <span class="text-danger">*</span></label>
+                            <label for="years_of_experience" class="form-label">No. of Years of Experience <span class="text-danger">*</span></label>
                             <input type="number" class="form-control" id="years_of_experience" name="years_of_experience" placeholder="Enter No. of Years of Experience" min="0" required>
                         </div>
 
@@ -37,11 +37,11 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">No. of Staff <span class="text-danger">*</span></label>
+                            <label for="no_of_staff" class="form-label">No. of Staff <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="no_of_staff" name="no_of_staff" placeholder="Enter No. of Staff" required>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Company Certificate (if any) <span class="text-danger">*</span></label>
+                            <label for="has_company_certificate" class="form-label">Company Certificate (if any) <span class="text-danger">*</span></label>
                             <select class="form-select text-dark" id="has_company_certificate" name="has_company_certificate" required>
                                 <option value="" disabled selected hidden>Select an option</option>
                                 <option value="1">Yes</option>
@@ -52,7 +52,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Industry Area of Company in KSA <span class="text-danger">*</span></label>
+                            <label for="industry_area" class="form-label">Industry Area of Company in KSA <span class="text-danger">*</span></label>
                             <select class="form-select text-dark" id="industry_area" name="industry_area" required>
                                 <option value="" disabled selected hidden>Select an option</option>
                                 @foreach($industryAreas as $industry)
@@ -61,7 +61,7 @@
                             </select>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Reference/Existing Clients</label>
+                            <label for="reference" class="form-label">Reference/Existing Clients</label>
                             <input type="text" class="form-control" id="reference" name="reference" placeholder="Enter reference clients">
                         </div>
 
@@ -70,11 +70,11 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">No. of Projects <span class="text-danger">*</span></label>
+                            <label for="no_of_projects" class="form-label">No. of Projects <span class="text-danger">*</span></label>
                             <input type="number" class="form-control" id="no_of_projects" name="no_of_projects" placeholder="Enter number of projects" min="0" required>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Reference Projects</label>
+                            <label for="reference_project" class="form-label">Reference Projects</label>
                             <input type="text" class="form-control" id="reference_project" name="reference_project" placeholder="Enter reference projects">
                         </div>
                     </div>

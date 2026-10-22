@@ -123,7 +123,7 @@
                     @enderror
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label">Company Logo <span class="text-danger company-logo-required">*</span><span class="text-muted company-logo-optional d-none"> (Optional)</span></label>
+                    <label class="form-label" for="logoFileName">Company Logo <span class="text-danger company-logo-required">*</span><span class="text-muted company-logo-optional d-none"> (Optional)</span></label>
                     @if($organization->user && $organization->user->images->where('type', 'company_logo')->first())
                         <div class="mb-2">
                             <img id="existingCompanyLogo" src="{{ asset('storage/' . $organization->user->images->where('type', 'company_logo')->first()->path) }}" alt="Current Logo" style="max-height: 100px; border-radius: 5px;">
@@ -132,7 +132,7 @@
                     <div class="input-group">
                         <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('company_logo').click()">Browse...</button>
                         <input type="text" id="logoFileName" class="form-control @error('company_logo') is-invalid @enderror" placeholder="Select Logo" readonly>
-                        <input type="file" id="company_logo" name="company_logo" class="d-none" accept="image/*" onchange="updateLogoFileName()">
+                        <input type="file" id="company_logo" name="company_logo" class="d-none" aria-label="Company Logo" accept="image/*" onchange="updateLogoFileName()">
                     </div>
                     @error('company_logo')
                         <div class="text-danger small mt-1">{{ $message }}</div>
@@ -268,7 +268,7 @@
             <h5 class="section-title mt-5 mb-3">4- Service Information</h5>
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label class="form-label">Services Domain <span class="text-danger">*</span></label>
+                    <label class="form-label" for="serviceDomainsBtn">Services Domain <span class="text-danger">*</span></label>
                     <div class="dropdown">
                         <button type="button" class="btn form-select w-100 text-start @error('service_domains') is-invalid @enderror" id="serviceDomainsBtn" data-bs-toggle="dropdown" aria-expanded="false">
                             @php
@@ -296,7 +296,7 @@
                     @enderror
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label">Services Skills Involved <span class="text-danger">*</span></label>
+                    <label class="form-label" for="skillsBtn">Services Skills Involved <span class="text-danger">*</span></label>
                     <div class="dropdown">
                         <button type="button" class="btn form-select w-100 text-start @error('skills') is-invalid @enderror" id="skillsBtn" data-bs-toggle="dropdown" aria-expanded="false">
                             @php
@@ -635,10 +635,10 @@
                     const parent = input.closest('.col-md-6, .col-md-12');
                     if (parent.length) {
                         parent.find('.invalid-feedback, .text-danger.small').remove();
-                        parent.append(`<div class="text-danger small mt-1">${message}</div>`);
+                        parent.append($('<div class="text-danger small mt-1"></div>').text(message));
                     } else {
                         input.next('.invalid-feedback, .text-danger.small').remove();
-                        input.after(`<div class="text-danger small mt-1">${message}</div>`);
+                        input.after($('<div class="text-danger small mt-1"></div>').text(message));
                     }
                     return;
                 }
@@ -651,9 +651,9 @@
                     // Add error message after the label (inside form-floating)
                     const label = formFloating.find('label');
                     if (label.length) {
-                        label.after(`<div class="invalid-feedback" style="display: block !important; margin-top: 0.25rem;">${message}</div>`);
+                        label.after($('<div class="invalid-feedback" style="display: block !important; margin-top: 0.25rem;"></div>').text(message));
                     } else {
-                        formFloating.append(`<div class="invalid-feedback" style="display: block !important; margin-top: 0.25rem;">${message}</div>`);
+                        formFloating.append($('<div class="invalid-feedback" style="display: block !important; margin-top: 0.25rem;"></div>').text(message));
                     }
                 }
                 // For select dropdowns (form-floating)
@@ -663,16 +663,16 @@
                         selectFormFloating.find('.invalid-feedback').remove();
                         const label = selectFormFloating.find('label');
                         if (label.length) {
-                            label.after(`<div class="invalid-feedback" style="display: block !important; margin-top: 0.25rem;">${message}</div>`);
+                            label.after($('<div class="invalid-feedback" style="display: block !important; margin-top: 0.25rem;"></div>').text(message));
                         } else {
-                            selectFormFloating.append(`<div class="invalid-feedback" style="display: block !important; margin-top: 0.25rem;">${message}</div>`);
+                            selectFormFloating.append($('<div class="invalid-feedback" style="display: block !important; margin-top: 0.25rem;"></div>').text(message));
                         }
                     } else {
                         // Select without form-floating
                         const parent = input.closest('.col-md-6, .col-md-12');
                         if (parent.length) {
                             parent.find('.text-danger.small').remove();
-                            parent.append(`<div class="text-danger small mt-1">${message}</div>`);
+                            parent.append($('<div class="text-danger small mt-1"></div>').text(message));
                         }
                     }
                 }
@@ -681,7 +681,7 @@
                     // Remove existing error
                     input.next('.invalid-feedback, .text-danger.small').remove();
                     // Add error after input
-                    input.after(`<div class="text-danger small mt-1">${message}</div>`);
+                    input.after($('<div class="text-danger small mt-1"></div>').text(message));
                 }
             } else {
                 console.warn(`Field not found for error display: ${field}`);
@@ -779,7 +779,7 @@
                                         if (existingAlert.length) {
                                             existingAlert.text(errorMessage);
                                         } else {
-                                            container.prepend(`<div class="alert alert-danger mb-3">${errorMessage}</div>`);
+                                            container.prepend($('<div class="alert alert-danger mb-3"></div>').text(errorMessage));
                                         }
                                     }
                                 }
@@ -793,7 +793,7 @@
                                         if (existingError.length) {
                                             existingError.text(errorMessage);
                                         } else {
-                                            parent.append(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                            parent.append($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                         }
                                     }
                                 }
@@ -807,7 +807,7 @@
                                         if (existingError.length) {
                                             existingError.text(errorMessage);
                                         } else {
-                                            parent.append(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                            parent.append($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                         }
                                     }
                                 }
@@ -820,7 +820,7 @@
                                     if (existingAlert.length) {
                                         existingAlert.text(errorMessage);
                                     } else {
-                                        container.prepend(`<div class="alert alert-danger mb-3">${errorMessage}</div>`);
+                                        container.prepend($('<div class="alert alert-danger mb-3"></div>').text(errorMessage));
                                     }
                                 }
                             }
@@ -833,7 +833,7 @@
                                     if (existingError.length) {
                                         existingError.text(errorMessage);
                                     } else {
-                                        parent.append(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                        parent.append($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                     }
                                 }
                             }
@@ -846,7 +846,7 @@
                                     if (existingError.length) {
                                         existingError.text(errorMessage);
                                     } else {
-                                        parent.append(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                        parent.append($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                     }
                                 }
                             }
@@ -869,7 +869,7 @@
                                         if (existingError.length) {
                                             existingError.text(errorMessage);
                                         } else {
-                                            formFloating.append(`<div class="invalid-feedback">${errorMessage}</div>`);
+                                            formFloating.append($('<div class="invalid-feedback"></div>').text(errorMessage));
                                         }
                                     }
                                     // For select dropdowns without form-floating
@@ -880,7 +880,7 @@
                                             if (existingError.length) {
                                                 existingError.text(errorMessage);
                                             } else {
-                                                parent.append(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                                parent.append($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                             }
                                         }
                                     }
@@ -890,7 +890,7 @@
                                         if (existingError.length) {
                                             existingError.text(errorMessage);
                                         } else {
-                                            input.after(`<div class="text-danger small mt-1">${errorMessage}</div>`);
+                                            input.after($('<div class="text-danger small mt-1"></div>').text(errorMessage));
                                         }
                                     }
                                     

@@ -1,7 +1,19 @@
+// Returns the absolute URL only if it points to this site's own origin, otherwise null.
+// Prevents AJAX requests (and the HTML they return) from being redirected to another host.
+function toSameOriginUrl(rawUrl) {
+    try {
+        const parsed = new URL(rawUrl, window.location.href);
+        return parsed.origin === window.location.origin ? parsed.href : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 // Pagination link click handle
 $(document).on("click", ".pagination a", function (e) {
     e.preventDefault();
-    let url = $(this).attr("href");
+    let url = toSameOriginUrl($(this).attr("href"));
+    if (!url) return;
 
     $.ajax({
         url: url,
@@ -12,10 +24,10 @@ $(document).on("click", ".pagination a", function (e) {
         success: function (response) {
             if (response.success) {
                 // update table rows
-                $("#spacesRequestTable").html(response.html);
+                $("#spacesRequestTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 // update pagination component
-                $(".pagination-container").replaceWith(response.pagination);
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
             }
         },
@@ -126,7 +138,7 @@ function openEnquiryModal(url) {
         url: url,
         type: 'GET',
         success: function(response) {
-            $('#enquiryModalContent').html(response.html);
+            $('#enquiryModalContent').html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
             $('#enquiryModal').modal('show');
         },
         error: function() {

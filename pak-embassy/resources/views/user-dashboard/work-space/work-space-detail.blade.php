@@ -21,10 +21,10 @@
 
             <!-- Options -->
             <h6 class="fw-bold mt-4 mb-2">Co-WorkSpace Options</h6>
-            <p>{!!$space->space_description!!}</p>
+            <p>{!!clean_html($space->space_description)!!}</p>
             <!-- Amenities -->
             <h6 class="fw-bold mt-4 mb-2">Amenities</h6>
-            {!!$space->space_amenities!!}
+            {!!clean_html($space->space_amenities)!!}
         </div>
         <div class="col-md-6">
             @if($space->images && $space->images->first())

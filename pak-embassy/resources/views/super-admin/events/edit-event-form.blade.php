@@ -20,7 +20,7 @@
                                 <div class="form-floating floating-custom">
                                     <input type="text" class="form-control @error('name') is-invalid @enderror" id="event-name" name="name" placeholder=""
                                         value="{{ old('name', $event->name) }}">
-                                    <label for="pageName">Event Name <span class="text-danger">*</span></label>
+                                    <label for="event-name">Event Name <span class="text-danger">*</span></label>
                                     @error('name')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -41,7 +41,7 @@
                                 <div class="form-floating floating-custom">
                                     <input type="text" id="to" name="end_date" class="form-control @error('end_date') is-invalid @enderror" 
                                         value="{{ old('end_date', \Carbon\Carbon::parse($event->end_date)->format('d-m-Y')) }}" readonly/>
-                                    <label for="from">End Date <span class="text-danger">*</span></label>
+                                    <label for="to">End Date <span class="text-danger">*</span></label>
                                     <img src="./images/Calendar.svg" alt="">
                                     @error('end_date')
                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -52,7 +52,7 @@
                                 <div class="form-floating floating-custom" id="openTime1">
                                     <input type="text" class="form-control @error('start_time') is-invalid @enderror" name="start_time" id="time1" 
                                         value="{{ old('start_time', \Carbon\Carbon::parse($event->start_time)->format('g:i A')) }}" readonly>
-                                    <label for="from">Start Time <span class="text-danger">*</span></label>
+                                    <label for="time1">Start Time <span class="text-danger">*</span></label>
                                     <img src="./images/Clock.svg" alt="">
                                     @error('start_time')
                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -63,7 +63,7 @@
                                 <div class="form-floating floating-custom" id="openTime2">
                                     <input type="text" class="form-control @error('end_time') is-invalid @enderror" name="end_time" id="time2" 
                                         value="{{ old('end_time', \Carbon\Carbon::parse($event->end_time)->format('g:i A')) }}" readonly>
-                                    <label for="from">End Time <span class="text-danger">*</span></label>
+                                    <label for="time2">End Time <span class="text-danger">*</span></label>
                                     <img src="./images/Clock.svg" alt="">
                                     @error('end_time')
                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -80,7 +80,7 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                    <label for="d-flex">Event Domain <span class="text-danger">*</span></label>
+                                    <label for="event-domain">Event Domain <span class="text-danger">*</span></label>
                                     @error('domain_id')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -93,7 +93,7 @@
                                         <option value="onsite" {{ old('event_mode', $event->event_mode) == 'onsite' ? 'selected' : '' }}>Onsite</option>
                                         <option value="virtual" {{ old('event_mode', $event->event_mode) == 'virtual' ? 'selected' : '' }}>Virtual</option>
                                     </select>
-                                    <label for="d-flex">Event Mode <span class="text-danger">*</span></label>
+                                    <label for="event-mode">Event Mode <span class="text-danger">*</span></label>
                                     @error('event_mode')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -105,7 +105,7 @@
                                         <input type="text" class="form-control @error('location') is-invalid @enderror" id="event-location" name="location" placeholder="" 
                                             value="{{ old('location', $event->location) }}">
                                         <img src="/images/location_on.svg" alt="">
-                                        <label for="location">Location</label>
+                                        <label for="event-location">Location</label>
                                         @error('location')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -117,7 +117,7 @@
                                     <div class="form-floating floating-custom">
                                         <input type="text" class="form-control @error('city') is-invalid @enderror" id="event-city" name="city" placeholder="" 
                                             value="{{ old('city', $event->city) }}">
-                                        <label for="city">City</label>
+                                        <label for="event-city">City</label>
                                         @error('city')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -172,7 +172,7 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                    <label for="d-flex">Status <span class="text-danger">*</span></label>
+                                    <label for="event-status">Status <span class="text-danger">*</span></label>
                                     @error('status_id')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -184,7 +184,7 @@
                                     <div class="common-design">
                                         <textarea class="form-control ckeditor @error('event_overview') is-invalid @enderror" 
                                                 id="event-overview" name="event_overview" rows="5" placeholder="">{{ old('event_overview', $event->event_overview) }}</textarea>
-                                        <label for="text-area1">Event Overview <span class="text-danger">*</span></label>
+                                        <label for="event-overview">Event Overview <span class="text-danger">*</span></label>
                                         @error('event_overview')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -196,7 +196,7 @@
                                     <div class="common-design">
                                         <textarea class="form-control ckeditor @error('event_agenda') is-invalid @enderror" 
                                                 id="event-agenda" name="event_agenda" rows="5" placeholder="">{{ old('event_agenda', $event->event_agenda) }}</textarea>
-                                        <label for="text-area2">Agenda <span class="text-danger">*</span></label>
+                                        <label for="event-agenda">Agenda <span class="text-danger">*</span></label>
                                         @error('event_agenda')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -208,7 +208,7 @@
                                     <div class="common-design">
                                         <textarea class="form-control ckeditor @error('event_format') is-invalid @enderror" 
                                                 id="event-format" name="event_format" rows="5" placeholder="">{{ old('event_format', $event->event_format) }}</textarea>
-                                        <label for="text-area3">Event Format <span class="text-danger">*</span></label>
+                                        <label for="event-format">Event Format <span class="text-danger">*</span></label>
                                         @error('event_format')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -219,7 +219,7 @@
                             
                             <!-- Individual Field -->
                             <div class="mb-4">
-                                <label class="form-label">
+                                <label class="form-label" for="individual-select">
                                     Individual <span class="text-danger">*</span>
                                 </label>
                                 <div class="tags-input-container" id="individual-container" style="border: 1px solid #ced4da; border-radius: 0.375rem; padding: 8px; min-height: 50px; background-color: #f8f9fa; display: flex; flex-wrap: wrap; align-items: center; gap: 8px;">
@@ -252,7 +252,7 @@
 
                             <!-- Organization Field -->
                             <div class="mb-4">
-                                <label class="form-label">
+                                <label class="form-label" for="organization-select">
                                     Organization <span class="text-danger">*</span>
                                 </label>
                                 <div class="tags-input-container" id="organization-container" style="border: 1px solid #ced4da; border-radius: 0.375rem; padding: 8px; min-height: 50px; background-color: #f8f9fa; display: flex; flex-wrap: wrap; align-items: center; gap: 8px;">
@@ -285,7 +285,7 @@
 
                             <!-- Embassy Field -->
                             <div class="mb-4">
-                                <label class="form-label">
+                                <label class="form-label" for="embassy-select">
                                     Embassy <span class="text-danger">*</span>
                                 </label>
                                 <div class="tags-input-container" id="embassy-container" style="border: 1px solid #ced4da; border-radius: 0.375rem; padding: 8px; min-height: 50px; background-color: #f8f9fa; display: flex; flex-wrap: wrap; align-items: center; gap: 8px;">
@@ -350,7 +350,7 @@
                             @endif
                             <h1 class="mt-5">4- Upload Event Picture</h1>
                             <div class="img-chose-input">
-                                <label class="picture" for="picture__input" tabindex="0">
+                                <label class="picture" for="picture__input" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('picture__input').click();}">
                                     <span class="picture__image">
                                         @if($event->images && $event->images->isNotEmpty())
                                             @foreach($event->images as $image)
@@ -494,11 +494,18 @@
                     const tag = document.createElement('span');
                     tag.className = 'badge bg-secondary d-inline-flex align-items-center';
                     tag.style.cssText = 'padding: 6px 12px; font-size: 0.875rem;';
-                    tag.innerHTML = `
-                        ${selectedName}
-                        <span class="remove-tag ms-2" style="cursor: pointer; font-weight: bold;">&times;</span>
-                        <input type="hidden" name="${fieldName}" value="${selectedValue}">
-                    `;
+                    // Build tag via DOM APIs so the name is never parsed as HTML
+                    tag.appendChild(document.createTextNode(' ' + selectedName + ' '));
+                    const removeBtn = document.createElement('span');
+                    removeBtn.className = 'remove-tag ms-2';
+                    removeBtn.style.cssText = 'cursor: pointer; font-weight: bold;';
+                    removeBtn.textContent = '×';
+                    tag.appendChild(removeBtn);
+                    const hiddenInput = document.createElement('input');
+                    hiddenInput.type = 'hidden';
+                    hiddenInput.name = fieldName;
+                    hiddenInput.value = selectedValue;
+                    tag.appendChild(hiddenInput);
 
                     // Remove functionality
                     tag.querySelector('.remove-tag').addEventListener('click', function() {

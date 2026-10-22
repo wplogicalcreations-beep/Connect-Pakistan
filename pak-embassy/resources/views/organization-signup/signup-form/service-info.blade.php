@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
                             <div class="dropdown service-domain-dropdown">
-                                <label class="form-label">Service Domain <span class="text-danger">*</span></label>
+                                <label for="dropdownMenuLink" class="form-label">Service Domain <span class="text-danger">*</span></label>
 
 
                                 <button type="button" class="dropbtn3 btn form-select w-100 text-start"
@@ -51,7 +51,7 @@
 
 
                             <div class="dropdown service-domain-dropdown">
-                                <label class="form-label">Service Skills Involved <span class="text-danger">*</span></label>
+                                <label for="dropdownMenuLink2" class="form-label">Service Skills Involved <span class="text-danger">*</span></label>
 
 
                                 <button type="button" class="dropbtn3 btn form-select w-100 text-start"
@@ -60,14 +60,14 @@
                                     Select skills
                                 </button>
                                 <div class="dropdown-menu p-3 pb-0 text-nowrap"
-                                     aria-labelledby="dropdownMenuLink">
+                                     aria-labelledby="dropdownMenuLink2">
                                     @foreach($skills as $skill)
                                         <div class="form-check">
                                             <input class="form-check-input" 
                                                 type="checkbox" 
                                                 name="skills[]" 
                                                 value="{{ $skill->id }}" 
-                                                id="serviceDomain{{ $skill->id }}">
+                                                id="skill{{ $skill->id }}">
                                             <label class="form-check-label" for="skill{{ $skill->id }}">
                                                 {{ $skill->name }}
                                             </label>
@@ -80,11 +80,11 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Any Pre-Implement Methodologies <span class="text-danger">*</span></label>
+                            <label for="ip" class="form-label">Any Pre-Implement Methodologies <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="ip" name="ip" placeholder="Enter methodologies" required>
                         </div>
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Certifications of Staff in Various Domains <span class="text-danger">*</span></label>
+                            <label for="staff_certification" class="form-label">Certifications of Staff in Various Domains <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="staff_certification" name="staff_certification" placeholder="Enter certifications" required>
                         </div>
                     </div>

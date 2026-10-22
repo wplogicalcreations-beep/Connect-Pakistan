@@ -24,12 +24,8 @@ class ViewController extends Controller
 
     public function saveRole(Request $request)
     {
-        return view('super-admin.Acl.roles.create');
-    }
-
-    public function createMatchMakingEvent(Request $request)
-    {
-        return view('super-admin.match-making.create-match-making-event');
+        // Legacy URL; roles and permissions are managed on the ACL page.
+        return redirect()->route('acl.assignPermissionsForm');
     }
 
     public function coWorkingSpace(Request $request)
@@ -69,7 +65,8 @@ class ViewController extends Controller
 
     public function diasporaSignup(Request $request)
     {
-        return view('diaspora-signup.index');
+        // Legacy URL: the form needs lookup data that only the registration controller provides.
+        return redirect()->route('register.individual.signup');
     }
 
 // User dashboard

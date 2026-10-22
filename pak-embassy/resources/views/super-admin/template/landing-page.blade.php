@@ -21,7 +21,7 @@
                                         style="height: 600px">
 
                                     <div class="template-defult {{ optional($setting)->template_id === $template->id ? '' : 'd-none' }}">
-                                        <input class="form-check-input" type="checkbox" checked disabled>
+                                        <input class="form-check-input" type="checkbox" checked disabled aria-label="Active template">
                                     </div>
 
                                     <div class="middle">

@@ -128,10 +128,10 @@
                                 <div class="col-md-8">
                                     <div class="date-flex">
                                         <div class="date-main">
-                                            <input type="text" class="rounded-0 border-end" id="from" autocomplete="off" placeholder="From">
+                                            <input type="text" class="rounded-0 border-end" id="from" autocomplete="off" placeholder="From" aria-label="From date">
                                         </div>
                                         <div class="date-main">
-                                            <input type="text" class="rounded-0" id="to" autocomplete="off" placeholder="To">
+                                            <input type="text" class="rounded-0" id="to" autocomplete="off" placeholder="To" aria-label="To date">
                                         </div>
                                     </div>
                                 </div>

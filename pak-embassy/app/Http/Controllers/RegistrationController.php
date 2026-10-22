@@ -89,7 +89,9 @@ class RegistrationController extends Controller
         }
     }
 
-    public function individualDetails($user)
+    // Loads the user's profile relations so they are included in the step responses.
+    // Internal helper only; its former public route (individual-signup/step4) exposed any user's details.
+    protected function individualDetails($user)
     {
         try{
             $user = $this->registrationService->details($user);
@@ -100,5 +102,4 @@ class RegistrationController extends Controller
         }
 
     }
-
 }

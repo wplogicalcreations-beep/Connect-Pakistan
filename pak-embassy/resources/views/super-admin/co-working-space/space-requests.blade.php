@@ -22,7 +22,7 @@
                     <button type="button" id="exportExcel" class="btn btn-outline-secondary border-2 button-style">Excel</button>
                     <button type="button" id="exportPDF" class="btn btn-outline-secondary border-2 button-style">PDF</button>
                     <button type="button" id="exportPrint" class="btn btn-outline-secondary border-2 button-style">Print</button>
-                    <button type="button" id="exportExcel" class="btn btn-common-bg">Export CSV</button>
+                    <button type="button" id="exportCSV" class="btn btn-common-bg">Export CSV</button>
                 </div>
 
                 <div class="col-md-12">

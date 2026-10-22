@@ -20,7 +20,7 @@
 
         <!-- Job Category -->
         <div class="col-12 col-sm-6 col-md-3 col-lg-3">
-            <select class="form-control bg-category-icon" id="job_domain_id" name="domain_name">
+            <select aria-label="Job Category" class="form-control bg-category-icon" id="job_domain_id" name="domain_name">
                 <option value="" disabled {{ old('domain_name', request('domain_name')) ? '' : 'selected' }}>
                     Choose Job Category
                 </option>
@@ -37,7 +37,7 @@
 
         <!-- Job Type -->
         <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-            <select class="form-control bg-type-single" id="job-type" name="job_type">
+            <select aria-label="Job Type" class="form-control bg-type-single" id="job-type" name="job_type">
                 <option value="" disabled {{ old('job_type', request('job_type')) ? '' : 'selected' }}>
                     Choose Job Type
                 </option>
@@ -54,7 +54,7 @@
 
         <!-- Job Location -->
         <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-            <input type="text" class="form-control bg-location-icon" name="location" value="{{ request('location', old('location')) }}" placeholder="Job Location">
+            <input type="text" aria-label="Job Location" class="form-control bg-location-icon" name="location" value="{{ request('location', old('location')) }}" placeholder="Job Location">
         </div>
         <div class="col-12 col-sm-6 col-md-3 col-lg-1">
             <a href="{{ url('/company/create/job') }}"

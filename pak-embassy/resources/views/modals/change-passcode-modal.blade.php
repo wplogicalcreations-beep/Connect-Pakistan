@@ -11,40 +11,40 @@
                 
                 <!-- Old Passcode -->
                 <div class="mb-4">
-                    <label class="form-label fw-semibold mb-3" style="color: #333;">Enter Old Passcode</label>
+                    <label for="cp-passcode-group1-digit1" class="form-label fw-semibold mb-3" style="color: #333;">Enter Old Passcode</label>
                     <div class="passcode-input-group d-flex justify-content-start gap-2" data-group="old">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="0">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="1">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="2">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="3">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="4">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="5">
+                        <input id="cp-passcode-group1-digit1" aria-label="Enter Old Passcode digit 1" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="0">
+                        <input aria-label="Enter Old Passcode digit 2" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="1">
+                        <input aria-label="Enter Old Passcode digit 3" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="2">
+                        <input aria-label="Enter Old Passcode digit 4" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="3">
+                        <input aria-label="Enter Old Passcode digit 5" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="4">
+                        <input aria-label="Enter Old Passcode digit 6" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="5">
                     </div>
                 </div>
 
                 <!-- New Passcode -->
                 <div class="mb-4">
-                    <label class="form-label fw-semibold mb-3" style="color: #333;">Enter New Passcode</label>
+                    <label for="cp-passcode-group2-digit1" class="form-label fw-semibold mb-3" style="color: #333;">Enter New Passcode</label>
                     <div class="passcode-input-group d-flex justify-content-start gap-2" data-group="new">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="0">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="1">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="2">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="3">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="4">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="5">
+                        <input id="cp-passcode-group2-digit1" aria-label="Enter New Passcode digit 1" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="0">
+                        <input aria-label="Enter New Passcode digit 2" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="1">
+                        <input aria-label="Enter New Passcode digit 3" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="2">
+                        <input aria-label="Enter New Passcode digit 4" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="3">
+                        <input aria-label="Enter New Passcode digit 5" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="4">
+                        <input aria-label="Enter New Passcode digit 6" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="5">
                     </div>
                 </div>
 
                 <!-- Re-Enter Passcode -->
                 <div class="mb-4">
-                    <label class="form-label fw-semibold mb-3" style="color: #333;">Re-Enter Passcode</label>
+                    <label for="cp-passcode-group3-digit1" class="form-label fw-semibold mb-3" style="color: #333;">Re-Enter Passcode</label>
                     <div class="passcode-input-group d-flex justify-content-start gap-2" data-group="confirm">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="0">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="1">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="2">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="3">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="4">
-                        <input type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="5">
+                        <input id="cp-passcode-group3-digit1" aria-label="Re-Enter Passcode digit 1" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="0">
+                        <input aria-label="Re-Enter Passcode digit 2" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="1">
+                        <input aria-label="Re-Enter Passcode digit 3" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="2">
+                        <input aria-label="Re-Enter Passcode digit 4" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="3">
+                        <input aria-label="Re-Enter Passcode digit 5" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="4">
+                        <input aria-label="Re-Enter Passcode digit 6" type="text" class="passcode-digit" maxlength="1" placeholder="0" inputmode="numeric" pattern="[0-9]*" data-index="5">
                     </div>
                 </div>
             </div>

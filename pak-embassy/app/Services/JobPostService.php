@@ -17,7 +17,7 @@ class JobPostService
     {
         $records = $request->per_page ?? 9;
         $sortBy = $request->sort_by ?? 'created_at';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         return JobPost::applyFilter($request)
             ->orderBy($sortBy, $sortOrder)
@@ -29,7 +29,7 @@ class JobPostService
     {
         $records = $request->per_page ?? 9;
         $sortBy = $request->sort_by ?? 'created_at';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
         return JobPost::applyFilter($request)
         ->where('status_id',Status::getStatusIdBySlug('active'))

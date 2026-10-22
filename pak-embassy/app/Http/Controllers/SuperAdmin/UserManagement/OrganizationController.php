@@ -221,7 +221,7 @@ class OrganizationController extends Controller
             // Get attended events using the relationship
             $records = $request->per_page ?? 30;
             $sortBy = $request->sort_by ?? 'end_date';
-            $sortOrder = $request->sort_order ?? 'desc';
+            $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
             
             $attendedEvents = $organization->user->attendedEvents()
                 ->applyFilter($request)

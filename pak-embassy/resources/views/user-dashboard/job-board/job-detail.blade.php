@@ -9,18 +9,18 @@
     <!-- Left Column -->
     <div class="col-lg-7">
         <h2>{{$job->title}} <span class="badge bg-success">{{ ucfirst($job->work_mode) }}</span></h2>
-        {!! $job->description !!}
+        {!! clean_html($job->description) !!}
          <div>
             <h4 class="section-title">Key Responsibilities</h4>
-            {!! $job->responsibilities !!}
+            {!! clean_html($job->responsibilities) !!}
         </div>
         <div>
             <h4 class="section-title">Requirements</h4>
-            {!! $job->requirements !!}
+            {!! clean_html($job->requirements) !!}
         </div>
         <div>
             <h4 class="section-title">What We Offer</h4>
-            {!! $job->benefits !!}
+            {!! clean_html($job->benefits) !!}
         </div>
         <div class="col-md-12 my-4">
             @if(hasAppliedForJob(auth()->user(), $job))

@@ -15,8 +15,8 @@
                      @csrf
                     <div class="row">
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Level</label>
-                            <select name="level_id" class="form-select text-dark">
+                            <label for="ds-modal-level_id" class="form-label">Level</label>
+                            <select id="ds-modal-level_id" name="level_id" class="form-select text-dark">
                                 <option class="text-mute" disabled selected value="">Select Level</option>
                                 @foreach($levels as $level)
                                 <option class="text-dark" value="{{ $level->id }}">{{ $level->name }}</option>
@@ -26,8 +26,8 @@
                         </div>
 
                         <div class="col-md-6 mb-4 position-relative">
-                            <label class="form-label">Influence Ability</label>
-                            <select name="influence_ability_id" class="form-select text-dark">
+                            <label for="ds-modal-influence_ability_id" class="form-label">Influence Ability</label>
+                            <select id="ds-modal-influence_ability_id" name="influence_ability_id" class="form-select text-dark">
                                 <option class="text-mute" disabled selected value="">Select Influence Ability</option>
                                 @foreach($influence_abilities as $influence_ability)
                                 <option class="text-dark" value="{{ $influence_ability->id }}">{{ $influence_ability->name }}</option>

@@ -144,7 +144,7 @@ function validateField(fieldId) {
             if (!fieldValue.trim()) {
                 isValid = false;
                 errorMessage = 'Email is required';
-            } else if (!/^\S+@\S+\.\S+$/.test(fieldValue.trim())) {
+            } else if (!/^\S[^\s@]*@\S[^\s.]*\.\S+$/.test(fieldValue.trim())) {
                 isValid = false;
                 errorMessage = 'Please enter a valid email address';
             }

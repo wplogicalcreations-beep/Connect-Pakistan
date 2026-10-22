@@ -12,7 +12,6 @@ class Certificate extends Model
     protected $table = 'certificates';
     
     protected $fillable = [
-        'user_id',
         'title',
         'institution',
         'grade',

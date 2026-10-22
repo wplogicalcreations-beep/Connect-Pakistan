@@ -14,7 +14,7 @@
         <img src="images/fintech-1.png" alt="" class="img-fluid w-100">
         <div class="card-txt card-body d-flex flex-column flex-grow-1">
             <h4>{{$event['name']}}</h4>
-            <p class="flex-grow-1 overflow-auto"> {!! Str::limit($event->event_overview, 100, '...') !!}</p>
+            <p class="flex-grow-1 overflow-auto"> {!! clean_html(Str::limit($event->event_overview, 100, '...')) !!}</p>
         </div>
         <hr>
         <div class="text-center mt-auto">

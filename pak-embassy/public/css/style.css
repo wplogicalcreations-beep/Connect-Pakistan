@@ -173,7 +173,7 @@ li.slick-active {
 .benefit-top > span,
 .event-top > span,
 .pak-ksa-content > div span {
-  font-family: "Plus Jakarta Sans";
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
@@ -281,7 +281,7 @@ li.slick-active {
   font-size: 20px;
 }
 .card-single h5 {
-  font-family: "Urbanist";
+  font-family: "Urbanist", sans-serif;
   font-weight: 600;
   font-size: 24px;
   color: #0c5b2c;
@@ -300,7 +300,7 @@ li.slick-active {
 }
 .journey-begins h4 {
   margin-top: 1rem;
-  font-family: "Urbanist";
+  font-family: "Urbanist", sans-serif;
   font-weight: 600;
   font-size: 44px;
 }
@@ -319,12 +319,12 @@ li.slick-active {
   background-color: #38f07e;
   border-radius: 50%;
   padding: 1rem;
-  font-family: "Plus Jakarta Sans";
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   font-size: 28px;
 }
 .single-point-text h5 {
-  font-family: "Plus Jakarta Sans";
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   font-size: 22px;
 }
@@ -387,7 +387,7 @@ li.slick-active {
   justify-content: space-between;
 }
 .event-sec .card-txt h4 {
-  font-family: "Urbanist";
+  font-family: "Urbanist", sans-serif;
   font-weight: 700;
   font-size: 24px;
   color: #0c5b2c;
@@ -421,7 +421,7 @@ li.slick-active {
   padding: 0 8rem;
 }
 .empowering-wrapper h2 {
-  font-family: "Urbanist";
+  font-family: "Urbanist", sans-serif;
   font-weight: 600;
   font-size: 48px;
 }
@@ -441,7 +441,7 @@ footer {
   margin-bottom: 1rem;
 }
 .footer-text {
-  font-family: "Urbanist";
+  font-family: "Urbanist", sans-serif;
   font-weight: 400;
   font-size: 16px;
   padding-right: 110px;
@@ -454,7 +454,7 @@ footer {
   padding: 0 6rem;
 }
 .useful-links h6 {
-  font-family: "Urbanist";
+  font-family: "Urbanist", sans-serif;
   font-weight: 700;
   font-size: 22px;
   margin-bottom: 30px;
@@ -478,7 +478,7 @@ footer {
   padding: 0 4rem;
 }
 .news-letter h6 {
-  font-family: "Urbanist";
+  font-family: "Urbanist", sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 30px;
@@ -500,7 +500,7 @@ footer {
 }
 .news-email input::placeholder {
   color: #fff;
-  font-family: "Urbanist";
+  font-family: "Urbanist", sans-serif;
 }
 .email-send-btn {
   background-color: #38f07e;

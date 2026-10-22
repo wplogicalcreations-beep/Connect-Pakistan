@@ -8,7 +8,7 @@
             <div class="modal-body pb-3 pt-0">
 
                 <!-- Skilled Individual -->
-                <div class="card-design1"
+                <div class="card-design1" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"
                      style="padding:20px;border:1px solid #ddd;border-radius:10px;margin-bottom:15px;cursor:pointer;"
                      onclick="window.location.href='{{ route('register.individual.signup') }}'">
                     <h3>I am a Skilled Individual</h3>
@@ -16,7 +16,7 @@
                 </div>
 
                 <!-- Organization -->
-                <div class="card-design2"
+                <div class="card-design2" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"
                      style="padding:20px;border:1px solid #ddd;border-radius:10px;margin-bottom:15px;cursor:pointer;"
                      onclick="window.location.href='{{ url('organization-signup') }}'">
                     <h3>I am an Organization</h3>

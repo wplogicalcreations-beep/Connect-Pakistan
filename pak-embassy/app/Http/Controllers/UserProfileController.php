@@ -17,7 +17,7 @@ class UserProfileController extends Controller
         // Check if it's multiple educations (from main modal) or single education (from edit modal)
         if ($request->has('educations') && is_array($request->input('educations'))) {
             // Multiple educations from main modal
-            $request->validate([
+            $data = $request->validate([
                 'educations' => 'required|array|min:1',
                 'educations.*.degree_type' => 'required|string|max:255',
                 'educations.*.institution' => 'required|string|max:255',
@@ -29,7 +29,7 @@ class UserProfileController extends Controller
                 'educations.*.description' => 'nullable|string'
             ]);
 
-            $educations = $request->input('educations');
+            $educations = $data['educations'];
             $createdEducations = [];
 
             foreach ($educations as $educationData) {
@@ -48,7 +48,7 @@ class UserProfileController extends Controller
             ]);
         } else {
             // Single education from edit modal
-            $request->validate([
+            $data = $request->validate([
                 'degree_type' => 'required|string|max:255',
                 'institution' => 'required|string|max:255',
                 'degree_name' => 'required|string|max:255',
@@ -59,7 +59,7 @@ class UserProfileController extends Controller
                 'description' => 'nullable|string'
             ]);
 
-            $education = Auth::user()->educations()->create($request->all());
+            $education = Auth::user()->educations()->create($data);
 
             return response()->json([
                 'success' => true,
@@ -73,7 +73,7 @@ class UserProfileController extends Controller
     {
         $education = Auth::user()->educations()->findOrFail($id);
 
-        $request->validate([
+        $data = $request->validate([
             'degree_type' => 'required|string|max:255',
             'institution' => 'required|string|max:255',
             'degree_name' => 'required|string|max:255',
@@ -84,7 +84,7 @@ class UserProfileController extends Controller
             'description' => 'nullable|string'
         ]);
 
-        $education->update($request->all());
+        $education->update($data);
 
         return response()->json([
             'success' => true,
@@ -117,7 +117,7 @@ class UserProfileController extends Controller
     // Experience methods
     public function storeExperience(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'experiences' => 'required|array|min:1',
             'experiences.*.job_title' => 'required|string|max:255',
             'experiences.*.company_name' => 'required|string|max:255',
@@ -129,7 +129,7 @@ class UserProfileController extends Controller
             'experiences.*.description' => 'nullable|string'
         ]);
 
-        $experiences = $request->input('experiences');
+        $experiences = $data['experiences'];
         $createdExperiences = [];
 
         foreach ($experiences as $experienceData) {
@@ -152,7 +152,7 @@ class UserProfileController extends Controller
     {
         $experience = Auth::user()->experiences()->findOrFail($id);
 
-        $request->validate([
+        $data = $request->validate([
             'job_title' => 'required|string|max:255',
             'company_name' => 'required|string|max:255',
             'country_id' => 'required|exists:countries,id',
@@ -163,7 +163,7 @@ class UserProfileController extends Controller
             'description' => 'nullable|string'
         ]);
 
-        $experience->update($request->all());
+        $experience->update($data);
 
         return response()->json([
             'success' => true,
@@ -199,7 +199,7 @@ class UserProfileController extends Controller
         // Check if it's multiple certificates (from main modal) or single certificate (from edit modal)
         if ($request->has('certificates') && is_array($request->input('certificates'))) {
             // Multiple certificates from main modal
-            $request->validate([
+            $data = $request->validate([
                 'certificates' => 'required|array|min:1',
                 'certificates.*.title' => 'required|string|max:255',
                 'certificates.*.institution' => 'nullable|string|max:255',
@@ -208,7 +208,7 @@ class UserProfileController extends Controller
                 'certificates.*.end_date' => 'nullable|date|after:certificates.*.start_date'
             ]);
 
-            $certificates = $request->input('certificates');
+            $certificates = $data['certificates'];
             $createdCertificates = [];
 
             foreach ($certificates as $certificateData) {
@@ -224,7 +224,7 @@ class UserProfileController extends Controller
             ]);
         } else {
             // Single certificate from edit modal
-            $request->validate([
+            $data = $request->validate([
                 'title' => 'required|string|max:255',
                 'institution' => 'nullable|string|max:255',
                 'grade' => 'nullable|string|max:255',
@@ -232,7 +232,7 @@ class UserProfileController extends Controller
                 'end_date' => 'nullable|date|after:start_date'
             ]);
 
-            $certificate = Auth::user()->certificates()->create($request->all());
+            $certificate = Auth::user()->certificates()->create($data);
 
             return response()->json([
                 'success' => true,
@@ -246,7 +246,7 @@ class UserProfileController extends Controller
     {
         $certificate = Auth::user()->certificates()->findOrFail($id);
 
-        $request->validate([
+        $data = $request->validate([
             'title' => 'required|string|max:255',
             'institution' => 'nullable|string|max:255',
             'grade' => 'nullable|string|max:255',
@@ -254,7 +254,7 @@ class UserProfileController extends Controller
             'end_date' => 'nullable|date|after:start_date'
         ]);
 
-        $certificate->update($request->all());
+        $certificate->update($data);
 
         return response()->json([
             'success' => true,

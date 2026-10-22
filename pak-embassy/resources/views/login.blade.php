@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous" rel="stylesheet">
     <link href="{{asset('css/styles.css')}}" rel="stylesheet">
     <link rel="icon" href="{{ asset('img/embassy-logo.svg') }}" type="image/x-icon">
     <style>
@@ -59,47 +59,47 @@
                                 {{-- <form id="passcodeFormSingle" class="passcodeForm">
                                     @csrf
                                     <div class="mb-4">
-                                        <label for="email" class="form-label fw-bold p-0">
+                                        <label for="emailLegacy" class="form-label fw-bold p-0">
                                             Email Address
                                             <span class="text-danger h1 pb-4"><sup>.</sup></span>
                                         </label>
                                         <input
                                             type="email"
-                                            id="email"
+                                            id="emailLegacy"
                                             name="email"
                                             class="form-control"
                                             placeholder="Enter Email"
                                             required
                                             autocomplete="username"
                                         />
-                                        <div id="emailError" class="text-danger small d-none my-2">
+                                        <div id="emailErrorLegacy" class="text-danger small d-none my-2">
                                             <i class="fa-solid fa-circle-exclamation text-danger me-2"></i>
                                             Please enter a valid email address.
                                         </div>
                                     </div>
 
                                     <div class="mb-4">
-                                        <label class="form-label fw-bold p-0">Enter Passcode <span
+                                        <label for="login-passcode-group1-digit1" class="form-label fw-bold p-0">Enter Passcode <span
                                                 class="text-danger h1 pb-4"><sup>.</sup></span></label>
                                         <div class="passcode-inputs">
-                                            <input type="text" class="passcode-digit" maxlength="1" data-index="0">
-                                            <input type="text" class="passcode-digit" maxlength="1" data-index="1">
-                                            <input type="text" class="passcode-digit" maxlength="1" data-index="2">
-                                            <input type="text" class="passcode-digit" maxlength="1" data-index="3">
-                                            <input type="text" class="passcode-digit" maxlength="1" data-index="4">
-                                            <input type="text" class="passcode-digit" maxlength="1" data-index="5">
+                                            <input id="login-passcode-group1-digit1" aria-label="Enter Passcode digit 1" type="text" class="passcode-digit" maxlength="1" data-index="0">
+                                            <input aria-label="Enter Passcode digit 2" type="text" class="passcode-digit" maxlength="1" data-index="1">
+                                            <input aria-label="Enter Passcode digit 3" type="text" class="passcode-digit" maxlength="1" data-index="2">
+                                            <input aria-label="Enter Passcode digit 4" type="text" class="passcode-digit" maxlength="1" data-index="3">
+                                            <input aria-label="Enter Passcode digit 5" type="text" class="passcode-digit" maxlength="1" data-index="4">
+                                            <input aria-label="Enter Passcode digit 6" type="text" class="passcode-digit" maxlength="1" data-index="5">
                                         </div>
                                     </div>
 
 
-                                    <div id="passcodeError" class="text-danger small d-none  my-2">
+                                    <div id="passcodeErrorLegacy" class="text-danger small d-none  my-2">
                                         <i class="fa-solid fa-circle-exclamation text-danger me-2"></i> Entered Passcode
                                         is not correct.
                                     </div>
                                     <div class="mb-4 d-flex justify-content-between">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="termsCheck">
-                                            <label class="form-check-label" for="termsCheck">
+                                            <input class="form-check-input" type="checkbox" id="termsCheckLegacy">
+                                            <label class="form-check-label" for="termsCheckLegacy">
                                                 Remember Me
                                             </label>
                                         </div>
@@ -137,14 +137,14 @@
                                     <div class="step-container d-none" id="stepPasscode">
                                     <form id="passcodeForm">
                                         <div class="mb-4 text-center">
-                                        <label class="form-label fw-bold" style="position: unset">Enter Passcode <span class="text-danger">*</span></label>
+                                        <label for="login-passcode-group2-digit1" class="form-label fw-bold" style="position: unset">Enter Passcode <span class="text-danger">*</span></label>
                                         <div class="passcode-inputs justify-content-center">
-                                            <input type="text" class="passcode-digit" maxlength="1">
-                                            <input type="text" class="passcode-digit" maxlength="1">
-                                            <input type="text" class="passcode-digit" maxlength="1">
-                                            <input type="text" class="passcode-digit" maxlength="1">
-                                            <input type="text" class="passcode-digit" maxlength="1">
-                                            <input type="text" class="passcode-digit" maxlength="1">
+                                            <input id="login-passcode-group2-digit1" aria-label="Enter Passcode digit 1" type="text" class="passcode-digit" maxlength="1">
+                                            <input aria-label="Enter Passcode digit 2" type="text" class="passcode-digit" maxlength="1">
+                                            <input aria-label="Enter Passcode digit 3" type="text" class="passcode-digit" maxlength="1">
+                                            <input aria-label="Enter Passcode digit 4" type="text" class="passcode-digit" maxlength="1">
+                                            <input aria-label="Enter Passcode digit 5" type="text" class="passcode-digit" maxlength="1">
+                                            <input aria-label="Enter Passcode digit 6" type="text" class="passcode-digit" maxlength="1">
                                         </div>
                                         </div>
                                         <div id="passcodeError" class="text-danger small d-none">Incorrect passcode</div>
@@ -198,15 +198,15 @@
                     below.</p>
 
                 <div class="mb-4">
-                    <label class="form-label fw-bold mb-0">Enter Verification Code <span
+                    <label for="login-passcode-group3-digit1" class="form-label fw-bold mb-0">Enter Verification Code <span
                             class="text-danger h1 pb-4"><sup>.</sup></span></label>
                     <div class="passcode-inputs">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="12">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="13">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="14">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="15">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="16">
-                        <input type="text" class="passcode-digit" maxlength="1" data-index="17">
+                        <input id="login-passcode-group3-digit1" aria-label="Enter Verification Code digit 1" type="text" class="passcode-digit" maxlength="1" data-index="12">
+                        <input aria-label="Enter Verification Code digit 2" type="text" class="passcode-digit" maxlength="1" data-index="13">
+                        <input aria-label="Enter Verification Code digit 3" type="text" class="passcode-digit" maxlength="1" data-index="14">
+                        <input aria-label="Enter Verification Code digit 4" type="text" class="passcode-digit" maxlength="1" data-index="15">
+                        <input aria-label="Enter Verification Code digit 5" type="text" class="passcode-digit" maxlength="1" data-index="16">
+                        <input aria-label="Enter Verification Code digit 6" type="text" class="passcode-digit" maxlength="1" data-index="17">
                     </div>
                 </div>
 
@@ -313,8 +313,8 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 <script src="{{asset('js/script.js')}}"></script>
 <script>
     const signInUrl = "{{ route('organization.signIn') }}"

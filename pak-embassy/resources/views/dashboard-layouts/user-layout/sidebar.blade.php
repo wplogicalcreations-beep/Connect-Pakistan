@@ -30,13 +30,13 @@
 
                         <ul id="Complaints"
                             class="iq-submenu collapse child {{ request()->is($jobRoutes) ? 'show' : '' }}">
-                            <li id="child">
+                            <li id="child-1">
                                 <a href="{{ url('/user/discover-job') }}"
                                     class="childActive {{ request()->is('user/discover-job') || request()->is('user/detail-job*') || request()->is('user/job-apply*') ? 'active' : '' }}">
                                     <span>Discover Jobs</span>
                                 </a>
                             </li>
-                            <li id="child">
+                            <li id="child-2">
                                 <a href="{{ url('/user/applied-job') }}"
                                     class="childActive {{ request()->is('user/applied-job') ? 'active' : '' }}">
                                     <span>Applied Jobs</span>
@@ -60,13 +60,13 @@
 
                         <ul id="Logs"
                             class="iq-submenu collapse child {{ request()->is($eventRoutes) ? 'show' : '' }}">
-                            <li id="child">
+                            <li id="child-3">
                                 <a href="{{ url('/user/public-event') }}"
                                     class="childActive {{ request()->is('user/public-event') || request()->is('user/event-detail*') ? 'active' : '' }}">
                                     <span>Public Events</span>
                                 </a>
                             </li>
-                            <li id="child">
+                            <li id="child-4">
                                 <a href="{{ url('/user/your-event') }}"
                                     class="childActive {{ request()->is('user/your-event') ? 'active' : '' }}">
                                     <span>Your Events</span>

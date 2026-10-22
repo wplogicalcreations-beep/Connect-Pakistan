@@ -104,7 +104,7 @@ function nextStep(step) {
                     updateProgressIndicator(step);
                     addAnimationClasses();
                 }
-            });
+            }).catch((error) => console.error(error));
         } else if (step == 3) {
             submitCompanyInfo().then((success) => {
                 if (success) {
@@ -114,7 +114,7 @@ function nextStep(step) {
                     updateProgressIndicator(step);
                     addAnimationClasses();
                 }
-            });
+            }).catch((error) => console.error(error));
         } else if (step == 4) {
             // Clean up empty product rows before submitting
             cleanupEmptyProductRows();
@@ -126,7 +126,7 @@ function nextStep(step) {
                     updateProgressIndicator(step);
                     addAnimationClasses();
                 }
-            });
+            }).catch((error) => console.error(error));
         } else if (step == 5) {
             submitServiceInfo().then((success) => {
                 if (success) {
@@ -136,7 +136,7 @@ function nextStep(step) {
                     updateProgressIndicator(step);
                     addAnimationClasses();
                 }
-            });
+            }).catch((error) => console.error(error));
         } else {
             hideCurrentStep();
             showStep(step);
@@ -220,6 +220,11 @@ function prevStepIndividual(step) {
     addAnimationClasses();
 }
 
+
+// Allows other scripts (e.g. signup/diaspora-signup.js) to update the shared step state
+function setCurrentStep(step) {
+    currentStep = step;
+}
 
 function hideCurrentStep() {
     const currentStepElement = document.getElementById(`step${currentStep}`);
@@ -433,7 +438,7 @@ function validateField(field) {
 
     // Email validation
     if (field.type === 'email' && value) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailRegex = /^[^\s@]+@[^\s@][^\s@.]*\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
             field.classList.add('is-invalid');
             showFieldError(field, 'Please enter a valid email address');
@@ -596,7 +601,7 @@ function showFieldError(field, message) {
     });
     
     // Force a reflow to ensure the element is visible
-    errorDiv.offsetHeight;
+    void errorDiv.offsetHeight;
     
     // Check button state after showing error
     checkStep1ButtonState();
@@ -768,7 +773,7 @@ function showPreview() {
                 currentStep = 6;
                 addAnimationClasses();
             }
-        });
+        }).catch((error) => console.error(error));
     }
 }
 
@@ -1374,7 +1379,7 @@ document.addEventListener("input", function(e) {
         let passcode = "";
         let confirmPasscode = "";
         document.querySelectorAll('.passcode-digit[data-index]').forEach(input => {
-            let i = parseInt(input.dataset.index);
+            let i = Number.parseInt(input.dataset.index);
             if (i < 6) {
                 passcode += input.value;
             } else {
@@ -1747,7 +1752,7 @@ function previewServiceInformationModal(data) {
         const ids = items.map(i => i.id);
         // Check the checkboxes within the modal
         $(`#editServiceInformationModal input[name="${inputName}"]`).each(function() {
-            $(this).prop('checked', ids.includes(parseInt($(this).val())));
+            $(this).prop('checked', ids.includes(Number.parseInt($(this).val())));
         });
         
         // Get labels from checked checkboxes - find label within the same form-check container
@@ -1836,7 +1841,7 @@ function checkEmail() {
         return;
     }
     
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!/^[^\s@]+@[^\s@][^\s@.]*\.[^\s@]+$/.test(email)) {
         const $emailError = $('#emailError');
         $emailError
             .removeClass('d-none')
@@ -1874,7 +1879,7 @@ function checkEmail() {
                 if ($emailError.length) {
                     $emailError
                         .removeClass('d-none')
-                        .html(response.error)
+                        .text(response.error)
                         .css({
                             'display': 'block !important',
                             'visibility': 'visible !important',

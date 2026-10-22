@@ -4,3 +4,7 @@
 
  
  
+# Server error logs must never be committed
+php_errorlog
+*.log
+error_log

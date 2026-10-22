@@ -33,13 +33,13 @@
                         </a>
                         <ul id="Complaints"
                             class="iq-submenu collapse child {{ request()->is($jobRoutes) ? 'show' : '' }}">
-                            <li id="child">
+                            <li id="child-1">
                                 <a href="{{ url('/company/discover-job') }}"
                                     class="childActive {{ request()->is('company/discover-job') || request()->is('company/detail-job*') || request()->is('company/job-apply*') ? 'active' : '' }}">
                                     <span>Your Jobs</span>
                                 </a>
                             </li>
-                            <li id="child">
+                            <li id="child-2">
                                 <a href="{{ url('/company/applied-job') }}"
                                     class="childActive {{ request()->is('company/applied-job') ? 'active' : '' }}">
                                     <span>Jobs Application</span>
@@ -63,13 +63,13 @@
                         </a>
                         <ul id="Logs"
                             class="iq-submenu collapse child {{ request()->is($eventRoutes) ? 'show' : '' }}">
-                            <li id="child">
+                            <li id="child-3">
                                 <a href="{{ url('/company/public-event') }}"
                                     class="childActive {{ request()->is('company/public-event') || request()->is('company/event-detail*') ? 'active' : '' }}">
                                     <span>Public Events</span>
                                 </a>
                             </li>
-                            <li id="child">
+                            <li id="child-4">
                                 <a href="{{ url('/company/your-event') }}"
                                     class="childActive {{ request()->is('company/your-event') ? 'active' : '' }}">
                                     <span>Your Events</span>

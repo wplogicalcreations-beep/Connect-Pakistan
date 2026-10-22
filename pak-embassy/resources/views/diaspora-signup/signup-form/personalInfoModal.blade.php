@@ -15,43 +15,43 @@
              @csrf
           <div class="row g-3">
             <div class="col-md-6 mb-3">
-              <label class="form-label">Full Name <span class="text-danger">*</span></label>
-              <input type="text" name="name" class="form-control" placeholder="Enter full name" required>
+              <label for="ds-modal-name" class="form-label">Full Name <span class="text-danger">*</span></label>
+              <input id="ds-modal-name" type="text" name="name" class="form-control" placeholder="Enter full name" required>
               <div id="name_error" class="text-danger small"></div>
             </div>
 
             <div class="col-md-6 mb-3">
-              <label class="form-label">Passport No. <span class="text-danger">*</span></label>
-              <input type="text" name="passport_no" class="form-control" placeholder="Enter passport number" required>
+              <label for="ds-modal-passport_no" class="form-label">Passport No. <span class="text-danger">*</span></label>
+              <input id="ds-modal-passport_no" type="text" name="passport_no" class="form-control" placeholder="Enter passport number" required>
               <div id="passport_no_error" class="text-danger small"></div>
             </div>
 
             <div class="col-md-6 mb-3">
-              <label class="form-label">Iqama ID <span class="text-danger">*</span></label>
-              <input type="text" name="iqama_id" class="form-control" placeholder="Enter Iqama ID" required>
+              <label for="ds-modal-iqama_id" class="form-label">Iqama ID <span class="text-danger">*</span></label>
+              <input id="ds-modal-iqama_id" type="text" name="iqama_id" class="form-control" placeholder="Enter Iqama ID" required>
               <div id="iqama_id_error" class="text-danger small"></div>
             </div>
 
             <div class="col-md-6 mb-3">
-              <label class="form-label">Mobile No. <span class="text-danger">*</span></label>
-              <input type="tel" name="phone" class="form-control" placeholder="Enter mobile number" required>
+              <label for="ds-modal-phone" class="form-label">Mobile No. <span class="text-danger">*</span></label>
+              <input id="ds-modal-phone" type="tel" name="phone" class="form-control" placeholder="Enter mobile number" required>
               <div id="phone_error" class="text-danger small"></div>
             </div>
 
             <div class="col-md-6 mb-3">
-              <label class="form-label">Email ID <span class="text-danger">*</span></label>
-              <input type="email" name="email" class="form-control" placeholder="Enter email" required>
+              <label for="ds-modal-email" class="form-label">Email ID <span class="text-danger">*</span></label>
+              <input id="ds-modal-email" type="email" name="email" class="form-control" placeholder="Enter email" required>
               <div id="email_error" class="text-danger small"></div>
             </div>
 
             <div class="col-md-6 mb-3">
-              <label class="form-label">LinkedIn Profile <span class="text-danger">*</span></label>
-              <input type="text" name="linkedin_url" class="form-control" placeholder="Enter LinkedIn URL" required>
+              <label for="ds-modal-linkedin_url" class="form-label">LinkedIn Profile <span class="text-danger">*</span></label>
+              <input id="ds-modal-linkedin_url" type="text" name="linkedin_url" class="form-control" placeholder="Enter LinkedIn URL" required>
               <div id="linkedin_url_error" class="text-danger small"></div>
             </div>
 
             <!-- <div class="col-md-6 mb-3">
-              <label class="form-label">Profile Photo</label>
+              <label for="formFile" class="form-label">Profile Photo</label>
               <div class="input-group">
                 <input type="file" id="formFile" name="image" class="form-control">
               </div>

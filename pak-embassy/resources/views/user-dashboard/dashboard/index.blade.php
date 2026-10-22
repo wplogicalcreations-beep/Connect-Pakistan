@@ -63,11 +63,11 @@
 {{--                    <button type="button" class="button-style btn btn-outline-secondary">Last Year</button>--}}
 {{--                    <div class="date-flex">--}}
 {{--                        <div class="date-main">--}}
-{{--                            <input type="text" class="rounded-0 border-end " id="from" autocomplete="off"--}}
+{{--                            <input type="text" class="rounded-0 border-end " id="from" aria-label="From" autocomplete="off"--}}
 {{--                                   placeholder="From">--}}
 {{--                        </div>--}}
 {{--                        <div class="date-main">--}}
-{{--                            <input type="text" class="rounded-0" id="to" autocomplete="off" placeholder="To">--}}
+{{--                            <input type="text" class="rounded-0" id="to" aria-label="To" autocomplete="off" placeholder="To">--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
 
@@ -305,7 +305,6 @@
 
 
 
-{{--</script>--}}
 {{--</body>--}}
 
 {{--</html>--}}

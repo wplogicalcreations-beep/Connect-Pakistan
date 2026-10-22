@@ -81,7 +81,7 @@ li.active a.text-decoration-none {
 li.liMain.active .activeParent {
     background-color: transparent;
 }
-li.liMain.active #child a {
+li.liMain.active .sidebar-child a {
     background-color: var(--primary-color);
 }
 
@@ -97,7 +97,6 @@ li.liMain.active a.childActive {
     height: 100%;
     background: var(--primary-color);
     /* zoom: 88%; */
-    transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -218,7 +217,6 @@ li.mainDash a {
     -ms-flex-align: center;
     align-items: center;
     overflow: hidden;
-    color: var(--sidebar-color-text);
     /* border-bottom: 1px solid #d8d8d8; */
 }
 
@@ -240,7 +238,6 @@ li.mainDash a {
 
 .iq-sidebar-menu .iq-menu li a span {
     white-space: nowrap;
-    padding: 0;
     display: inline-block;
     float: left;
     padding: 0px 8px 0px 20px;
@@ -532,7 +529,6 @@ li.active ul.child {
     -moz-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
     box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1); */
     transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -544,7 +540,6 @@ li.active ul.child {
     float: left;
     background-color: var(--secondary-color);
     border-radius: 32px 0px 0px 0px;
-    transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -596,7 +591,7 @@ nav.navbar.navbar-expand-lg {
 
 .breadcrumb-item + .breadcrumb-item::before {
     content: "\ea5f";
-    font-family: "remixicon";
+    font-family: "remixicon", sans-serif;
     font-size: 14px;
     vertical-align: sub;
     color: var(--sidebar-color-text);
@@ -641,12 +636,10 @@ nav.navbar.navbar-expand-lg {
     left: 18px;
     font-size: 12px;
     border-radius: 90px;
-    line-height: normal;
     height: 18px;
     width: 18px;
     line-height: 18px;
     text-align: center;
-    display: inline-block;
 }
 
 .navbar-list li a:hover {
@@ -882,7 +875,6 @@ nav.navbar.navbar-expand-lg {
 .content {
     padding: 5rem 1rem 0rem 17rem;
     transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -1083,7 +1075,6 @@ svg.svg-inline--fa.fa-xmark.close-sidebar {
     font-size: 12px;
 }
 .table-tab .nav-pills .nav-link {
-    border-radius: var(--bs-nav-pills-border-radius);
     background-color: #9eadb0;
     border-radius: 0px;
     color: var(--secondary-color);
@@ -1106,7 +1097,6 @@ svg.svg-inline--fa.fa-xmark.close-sidebar {
 }
 .content.collapse-content .iq-top-navbar .iq-navbar-custom .navbar-breadcrumb {
     border-radius: 0px;
-    transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;

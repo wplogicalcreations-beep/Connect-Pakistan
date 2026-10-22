@@ -38,33 +38,34 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Artisan;
 
-Route::get('/clear-all-cache', function () {
-    // Clear application cache
-    Artisan::call('cache:clear');
-    
-    // Clear route cache (fixes "Route not defined" errors)
-    Artisan::call('route:clear');
-    
-    // Clear config cache
-    Artisan::call('config:clear');
-    
-    // Clear compiled view files
-    Artisan::call('view:clear');
-    
-    return response()->json([
-        'status' => 'success',
-        'message' => 'All caches (application, route, config, and view) have been successfully cleared!'
-    ]);
+// Admin-only utility and legacy pages: these previously had no auth check.
+Route::middleware(['embassy_auth'])->group(function () {
+    Route::get('/clear-all-cache', function () {
+        // Clear application cache
+        Artisan::call('cache:clear');
+
+        // Clear route cache (fixes "Route not defined" errors)
+        Artisan::call('route:clear');
+
+        // Clear config cache
+        Artisan::call('config:clear');
+
+        // Clear compiled view files
+        Artisan::call('view:clear');
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'All caches (application, route, config, and view) have been successfully cleared!'
+        ]);
+    });
+
+    Route::get('super-admin/dashboard', [DashboardController::class, 'data']);
+    Route::get('events', [ViewController::class, 'events']);
+    Route::get('departments', [ViewController::class, 'departments']);
+    Route::get('add-role', [ViewController::class, 'saveRole']);
+    Route::get('co-working-space', [ViewController::class, 'coWorkingSpace']);
+    Route::get('create-co-working-space', [ViewController::class, 'createCoWorkingSpace']);
 });
-
-
-Route::get('super-admin/dashboard', [DashboardController::class, 'data']);
-Route::get('events', [ViewController::class, 'events']);
-Route::get('departments', [ViewController::class, 'departments']);
-Route::get('add-role', [ViewController::class, 'saveRole']);
-Route::get('create-match-making-event', [ViewController::class, 'createMatchMakingEvent']);
-Route::get('co-working-space', [ViewController::class, 'coWorkingSpace']);
-Route::get('create-co-working-space', [ViewController::class, 'createCoWorkingSpace']);
 Route::get('login', [ViewController::class, 'login'])->name('login');
 Route::get('organization-signup', [ViewController::class, 'organizationSignUp']);
 Route::get('diaspora-signup', action: [ViewController::class, 'diasporaSignup']);
@@ -140,8 +141,6 @@ Route::controller(RegistrationController::class)->prefix('')->group(function () 
         Route::post('/step5', 'finalizeRegistration')
             // ->middleware('ensure.registration.step:4')
             ->name('register.individual.finalize');
-        Route::get('/step4', 'individualDetails')
-            ->name('register.individual.details');
     });
 });
 
@@ -200,6 +199,7 @@ Route::middleware(['org_customer_role:customer'])->group(function () {
 
     Route::get('/user/your-event', action: [DiasporaDashboardController::class, 'userEvents'])->name('user.events');
     Route::get('/user/event-detail/{event}', [DiasporaDashboardController::class, 'eventDetail'])->name('event.details');
+    Route::get('/user/public-event', action: [DiasporaDashboardController::class, 'eventsListing'])->name('events.list');
 });
 
 Route::middleware(['org_customer_role:organization_admin'])->group(function () {
@@ -207,7 +207,6 @@ Route::middleware(['org_customer_role:organization_admin'])->group(function () {
     Route::get('/company/knowledge-area', action: [ViewController::class, 'companyknknowledgeArea']);
     Route::get('/company/discover-job', [OrganizationDashboardController::class, 'companydiscoverJob'])->name('company.jobs.list');
     Route::get('/company/detail-job/{job}', action: [OrganizationDashboardController::class, 'companydetailJob'])->name('company.detail.job');
-    Route::get('/company/job-apply', action: [OrganizationDashboardController::class, 'companyjobApply']);
     Route::get('/company/applied-job',[OrganizationDashboardController::class, 'recieved_applications'])->name('company.recieved.applications');
     Route::get('/company/public-event', [OrganizationDashboardController::class, 'companypublicEvent']);
     Route::get('/company/event-detail/{event}', action: [OrganizationDashboardController::class, 'companyeventDetail'])->name('company.event.details');
@@ -229,10 +228,11 @@ Route::middleware(['org_customer_role:organization_admin'])->group(function () {
 
 });
 
-Route::get('/user/event-detail/{event}', [DiasporaDashboardController::class, 'eventDetail'])->name('event.details');
-Route::get('/user/public-event', action: [DiasporaDashboardController::class, 'eventsListing'])->name('events.list');
-Route::post('/user/event/enroll', [EventController::class, 'enrollEvent'])->name('user.enroll');
- Route::post('/user/co-work-space/booking', [BookingRequestController::class, 'bookingRequest'])->name('user.co-work-space.booking');
+// Shared by individual and organization users; previously reachable without login.
+Route::middleware(['auth'])->group(function () {
+    Route::post('/user/event/enroll', [EventController::class, 'enrollEvent'])->name('user.enroll');
+    Route::post('/user/co-work-space/booking', [BookingRequestController::class, 'bookingRequest'])->name('user.co-work-space.booking');
+});
 
 Route::get('embassy/login', [SuperAdminDashboardController::class, 'loginForm'])->name('dashboard.loginForm');
 Route::post('dashboard/signin', [SuperAdminDashboardController::class, 'signin'])->name('dashboard.signin');

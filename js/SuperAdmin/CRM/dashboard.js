@@ -1,3 +1,14 @@
+// Returns the absolute URL only if it points to this site's own origin, otherwise null.
+// Prevents AJAX requests (and the HTML they return) from being redirected to another host.
+function toSameOriginUrl(rawUrl) {
+    try {
+        const parsed = new URL(rawUrl, window.location.href);
+        return parsed.origin === window.location.origin ? parsed.href : null;
+    } catch (e) {
+        return null;
+    }
+}
+
  var options = {
       chart: {
         type: 'line',
@@ -95,7 +106,8 @@ function updateMonthlyChart(monthlyCounts) {
       $('#from, #to').on('change keyup', function () {
           let from = $('#from').val();
           let to = $('#to').val();
-          let url = window.location.href;
+          let url = toSameOriginUrl(window.location.href);
+          if (!url) return;
 
           $.ajax({
               url: url,
@@ -104,10 +116,10 @@ function updateMonthlyChart(monthlyCounts) {
               success: function (response) {
                   if (response.success) {
                       // update table rows
-                      $("#leadsTable").html(response.html);
+                      $("#leadsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                       // update pagination with new info
-                      $(".pagination-container").replaceWith(response.pagination);
+                      $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
                   }
               },
               error: function (xhr) {
@@ -119,7 +131,8 @@ function updateMonthlyChart(monthlyCounts) {
       // Handle year selector change for monthly counts
       $('#yearSelector').on('change', function () {
           let year = $(this).val();
-          let url = window.location.href;
+          let url = toSameOriginUrl(window.location.href);
+          if (!url) return;
           
           // Get current URL parameters
           let urlObj = new URL(url);
@@ -135,7 +148,10 @@ function updateMonthlyChart(monthlyCounts) {
                       updateMonthlyChart(response.monthlyCounts);
                   } else {
                       // If it's a full page response, reload the page
-                      window.location.href = urlObj.toString();
+                      const redirectUrl = toSameOriginUrl(urlObj.toString());
+                      if (redirectUrl) {
+                          window.location.href = redirectUrl;
+                      }
                   }
               },
               error: function (xhr) {
@@ -152,7 +168,8 @@ function updateMonthlyChart(monthlyCounts) {
         let currentOrder = $(this).data("order") || "desc";
         let newOrder = currentOrder === "desc" ? "asc" : "desc";
         let perPage = $("select[name='per_page']").val() || 10;
-        let url = window.location.href;
+        let url = toSameOriginUrl(window.location.href);
+        if (!url) return;
         
         // Get current filters
         const from = $('#from').val();
@@ -182,11 +199,11 @@ function updateMonthlyChart(monthlyCounts) {
             success: function (response) {
                 
                 if (response.success) {
-                    $("#leadsTable").html(response.html);
+                    $("#leadsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
                     
                     // Update pagination if provided
                     if (response.pagination) {
-                        $(".pagination-container").replaceWith(response.pagination);
+                        $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
                     }
                 }
 
@@ -204,7 +221,8 @@ function updateMonthlyChart(monthlyCounts) {
     // Pagination link click handle
     $(document).on("click", ".pagination a", function (e) {
         e.preventDefault();
-        let url = $(this).attr("href");
+        let url = toSameOriginUrl($(this).attr("href"));
+        if (!url) return;
         
         // Get current filters to determine if we're on action items
         const from = $('#from').val();
@@ -235,10 +253,10 @@ function updateMonthlyChart(monthlyCounts) {
             success: function (response) {
                 if (response.success) {
                     // update table rows
-                    $("#leadsTable").html(response.html);
+                    $("#leadsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                     // update pagination component
-                    $(".pagination-container").replaceWith(response.pagination);
+                    $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 }
             },
@@ -282,7 +300,9 @@ function exportTable(format) {
             if (response.success && response.html) {
                 // Parse the HTML response to extract all table rows
                 // The response.html contains just the <tr> elements, so wrap in table for proper parsing
-                const $tempTable = $('<table>').html(response.html);
+                // Parse into an inert document so markup/handlers in the response are never executed
+                const parsedDoc = new DOMParser().parseFromString('<table>' + response.html + '</table>', 'text/html');
+                const $tempTable = $(parsedDoc.querySelector('table'));
                 let tableRows = [];
                 
                 // Add headers

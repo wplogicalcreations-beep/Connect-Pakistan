@@ -31,7 +31,7 @@ class DiasporaDashboardService extends BaseDashboardService
     {
         $records = $request->per_page ?? 10;
         $sortBy = $request->sort_by ?? 'id';
-        $sortOrder = $request->sort_order ?? 'desc';
+        $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
         $user = auth()->user();
         $job_applications = $user->jobApplications()
             ->applyFilter($request)

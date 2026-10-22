@@ -48,7 +48,7 @@
                 <option value="{{ $domain->id }}" {{ old('domain_id') == $domain->id ? 'selected' : '' }}>{{ $domain->name }}</option>
                 @endforeach
             </select>
-            <label for="job-domain_id">Job Category</label>
+            <label for="job_domain_id">Job Category</label>
             <div id="domain_id_error" class="text-danger small">@error('domain_id') {{ $message }} @enderror</div>
         </div>
 
@@ -83,7 +83,7 @@
 
         <div class="col-md-6 form-floating">
             <input type="text" class="form-control" id="embed_map_job" name="embed_map" placeholder="Job Location" value="{{ old('embed_map') }}">
-            <label for="embed_map">Embedd Map URL</label>
+            <label for="embed_map_job">Embedd Map URL</label>
             <div id="embed_map_error" class="text-danger small">@error('embed_map') {{ $message }} @enderror</div>
         </div>
 
@@ -159,7 +159,7 @@
                 <option disabled {{ old('currency') ? '' : 'selected' }}>Choose Currency</option>
                 <option value="SAR" {{ old('currency')=='SAR' ? 'selected' : '' }}>SAR</option>                
             </select>
-            <label for="job-type">Currency</label>
+            <label for="currency">Currency</label>
             <div id="currency_error" class="text-danger small">@error('currency') {{ $message }} @enderror</div>
         </div>
     </div>

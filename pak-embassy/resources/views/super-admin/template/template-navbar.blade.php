@@ -29,10 +29,10 @@
                         data-href="{{ $data ? $data['NavbarSection']['Home']['url'] : '#' }}"
                         data-url="content[{{ $lang }}][NavbarSection][Home][url]">{{ $data ? $data['NavbarSection']['Home']['Text'] : 'Home' }}</a>
                 </li>
-                <input type="text" hidden id="home_btn_text"
+                <input type="text" hidden id="home_btn_text" aria-label="Home link text"
                     name="content[{{ $lang }}][NavbarSection][Home][Text]"
                     value="{{ $data ? $data['NavbarSection']['Home']['Text'] : 'Home' }}" />
-                <input type="text" hidden id="home_btn_url"
+                <input type="text" hidden id="home_btn_url" aria-label="Home link URL"
                     name="content[{{ $lang }}][NavbarSection][Home][url]"
                     value="{{ $data ? $data['NavbarSection']['Home']['url'] : '#' }}" />
                 </li>
@@ -42,10 +42,10 @@
                         data-href="{{ $data ? $data['NavbarSection']['Portal']['url'] : '#' }}"
                         data-url="content[{{ $lang }}][NavbarSection][Portal][url]">{{ $data ? $data['NavbarSection']['Portal']['Text'] : 'Portal' }}</a>
                 </li>
-                <input type="text" hidden id="portal_btn_text"
+                <input type="text" hidden id="portal_btn_text" aria-label="Portal link text"
                     name="content[{{ $lang }}][NavbarSection][Portal][Text]"
                     value="{{ $data ? $data['NavbarSection']['Portal']['Text'] : 'Portal' }}" />
-                <input type="text" hidden id="portal_btn_url"
+                <input type="text" hidden id="portal_btn_url" aria-label="Portal link URL"
                     name="content[{{ $lang }}][NavbarSection][Portal][url]"
                     value="{{ $data ? $data['NavbarSection']['Portal']['url'] : '#' }}" />
                 </li>
@@ -55,10 +55,10 @@
                         data-href="{{ $data ? $data['NavbarSection']['Knowledge Base']['url'] : '#' }}"
                         data-url="content[{{ $lang }}][NavbarSection][Knowledge Base][url]">{{ $data ? $data['NavbarSection']['Knowledge Base']['Text'] : 'Knowledge Base' }}</a>
                 </li>
-                <input type="text" hidden id="knowledge_base_btn_text"
+                <input type="text" hidden id="knowledge_base_btn_text" aria-label="Knowledge Base link text"
                     name="content[{{ $lang }}][NavbarSection][Knowledge Base][Text]"
                     value="{{ $data ? $data['NavbarSection']['Knowledge Base']['Text'] : 'Knowledge Base' }}" />
-                <input type="text" hidden id="knowledge_base_btn_url"
+                <input type="text" hidden id="knowledge_base_btn_url" aria-label="Knowledge Base link URL"
                     name="content[{{ $lang }}][NavbarSection][Knowledge Base][url]"
                     value="{{ $data ? $data['NavbarSection']['Knowledge Base']['url'] : '#' }}" />
                 </li>
@@ -68,10 +68,10 @@
                         data-href="{{ $data ? $data['NavbarSection']['Job Notice Board']['url'] : '#' }}"
                         data-url="content[{{ $lang }}][NavbarSection][Job Notice Board][url]">{{ $data ? $data['NavbarSection']['Job Notice Board']['Text'] : 'Job Notice Board' }}</a>
                 </li>
-                <input type="text" hidden id="job_notice_board_btn_text"
+                <input type="text" hidden id="job_notice_board_btn_text" aria-label="Job Notice Board link text"
                     name="content[{{ $lang }}][NavbarSection][Job Notice Board][Text]"
                     value="{{ $data ? $data['NavbarSection']['Job Notice Board']['Text'] : 'Job Notice Board' }}" />
-                <input type="text" hidden id="job_notice_board_btn_url"
+                <input type="text" hidden id="job_notice_board_btn_url" aria-label="Job Notice Board link URL"
                     name="content[{{ $lang }}][NavbarSection][Job Notice Board][url]"
                     value="{{ $data ? $data['NavbarSection']['Job Notice Board']['url'] : '#' }}" />
                 </li>
@@ -81,10 +81,10 @@
                         data-href="{{ $data ? $data['NavbarSection']['Events']['url'] : '#' }}"
                         data-url="content[{{ $lang }}][NavbarSection][Events][url]">{{ $data ? $data['NavbarSection']['Events']['Text'] : 'Events' }}</a>
                 </li>
-                <input type="text" hidden id="events_btn_text"
+                <input type="text" hidden id="events_btn_text" aria-label="Events link text"
                     name="content[{{ $lang }}][NavbarSection][Events][Text]"
                     value="{{ $data ? $data['NavbarSection']['Events']['Text'] : 'Events' }}" />
-                <input type="text" hidden id="events_btn_url"
+                <input type="text" hidden id="events_btn_url" aria-label="Events link URL"
                     name="content[{{ $lang }}][NavbarSection][Events][url]"
                     value="{{ $data ? $data['NavbarSection']['Events']['url'] : '#' }}" />
                 </li>
@@ -94,10 +94,10 @@
                         data-href="{{ $data ? $data['NavbarSection']['Contact US']['url'] : '#' }}"
                         data-url="content[{{ $lang }}][NavbarSection][Contact US][url]">{{ $data ? $data['NavbarSection']['Contact US']['Text'] : 'Contact US' }}</a>
                 </li>
-                <input type="text" hidden id="contact_us_btn_text"
+                <input type="text" hidden id="contact_us_btn_text" aria-label="Contact link text"
                     name="content[{{ $lang }}][NavbarSection][Contact US][Text]"
                     value="{{ $data ? $data['NavbarSection']['Contact US']['Text'] : 'Contact US' }}" />
-                <input type="text" hidden id="contact_us_btn_url"
+                <input type="text" hidden id="contact_us_btn_url" aria-label="Contact link URL"
                     name="content[{{ $lang }}][NavbarSection][Contact US][url]"
                     value="{{ $data ? $data['NavbarSection']['Contact US']['url'] : '#' }}" />
                 </li>
@@ -108,10 +108,10 @@
                 data-url="content[{{ $lang }}][NavbarSection][Sign In Button][url]">{{ $data ? $data['NavbarSection']['Sign In Button']['Text'] : 'Sign In Button' }}
                 <img src="{{ asset('assets/images/templates/right-arrow.svg') }}" alt="right-arrow"
                     class="img-fluid "></a></li>
-            <input type="text" hidden id="sign_in_button_us_btn_text"
+            <input type="text" hidden id="sign_in_button_us_btn_text" aria-label="Sign In Button link text"
                 name="content[{{ $lang }}][NavbarSection][Sign In Button][Text]"
                 value="{{ $data ? $data['NavbarSection']['Sign In Button']['Text'] : 'Sign In Button' }}" />
-            <input type="text" hidden id="sign_in_button_us_btn_url"
+            <input type="text" hidden id="sign_in_button_us_btn_url" aria-label="Sign In Button link URL"
                 name="content[{{ $lang }}][NavbarSection][Sign In Button][url]"
                 value="{{ $data ? $data['NavbarSection']['Sign In Button']['url'] : '#' }}" />
         </div>

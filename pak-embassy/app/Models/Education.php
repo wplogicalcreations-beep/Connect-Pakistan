@@ -10,8 +10,6 @@ class Education extends Model
     use SoftDeletes;
     protected $table = 'educations'; // 👈 force it to use the right table
     protected $fillable = [
-        'educationable_id',
-        'educationable_type',
         'degree_type',
         'institution',
         'degree_name',

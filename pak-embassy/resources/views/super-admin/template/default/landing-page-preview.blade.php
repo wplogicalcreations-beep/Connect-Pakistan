@@ -8,10 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.css" integrity="sha384-6oNXtl81GMcKAnWPPXinWlPskKUQ0NGG1/XeyMfC5RgCJKPc03w0rHVt1jyoJLf0" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        integrity="sha384-MUdXdzn1OB/0zkr4yGLnCqZ/n9ut5N7Ifes9RP2d5xKsTtcPiuiwthWczWuiqFOn" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+        integrity="sha384-3wRRg17hVCopINZVYCqnfbgXE7aFPSvawmLWNPSiUPVx+HxY+yxb5Cwp5mT7RXPD" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <title>Home Page</title>
 </head>
@@ -124,9 +126,9 @@
                             <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
                                 <div class="frame-left-content">
                                     <h2>{{ isset($data) ? $data['HeroSection1']['Title'] : 'Strengthening Ties, Enabling Success' }}</h2>
-                                    <p>{!! isset($data) ? $data['HeroSection1']['Description'] : 'Strengthen bilateral trade and economic cooperation through strategic networking,
+                                    <p>{!! clean_html(isset($data) ? $data['HeroSection1']['Description'] : 'Strengthen bilateral trade and economic cooperation through strategic networking,
                                         business
-                                        meetups, and embassy-supported collaborations' !!}</p>
+                                        meetups, and embassy-supported collaborations') !!}</p>
                                     <div>
                                         <a href="#" class="btn register-btn" data-bs-toggle="modal"
                                             data-bs-target="#joinAs">{{ isset($data) ? $data['HeroSection1']['Register Now Button']['Text'] : 'Register Now' }}</span></a>
@@ -164,9 +166,9 @@
                             <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
                                 <div class="frame-left-content">
                                     <h2>{{ isset($data) ? $data['HeroSection2']['Title'] : 'Strengthening Ties, Enabling Success' }}</h2>
-                                    <p>{!! isset($data) ? $data['HeroSection2']['Description'] : 'Strengthen bilateral trade and economic cooperation through strategic networking,
+                                    <p>{!! clean_html(isset($data) ? $data['HeroSection2']['Description'] : 'Strengthen bilateral trade and economic cooperation through strategic networking,
                                         business
-                                        meetups, and embassy-supported collaborations' !!}</p>
+                                        meetups, and embassy-supported collaborations') !!}</p>
                                     <div>
                                         <a href="#" class="btn register-btn" data-bs-toggle="modal"
                                             data-bs-target="#joinAs">{{ isset($data) ? $data['HeroSection1']['Register Now Button']['Text'] : 'Register Now' }}</span></a>
@@ -200,9 +202,9 @@
                             <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
                                 <div class="frame-left-content">
                                     <h2>{{ isset($data) ? $data['HeroSection3']['Title'] : 'Strengthening Ties, Enabling Success' }}</h2>
-                                    <p>{!! isset($data) ? $data['HeroSection3']['Description'] : 'Strengthen bilateral trade and economic cooperation through strategic networking,
+                                    <p>{!! clean_html(isset($data) ? $data['HeroSection3']['Description'] : 'Strengthen bilateral trade and economic cooperation through strategic networking,
                                         business
-                                        meetups, and embassy-supported collaborations' !!}</p>
+                                        meetups, and embassy-supported collaborations') !!}</p>
                                     <div>
                                         <a href="#" class="btn register-btn" data-bs-toggle="modal"
                                             data-bs-target="#joinAs">{{ isset($data) ? $data['HeroSection1']['Register Now Button']['Text'] : 'Register Now' }}</span></a>
@@ -243,22 +245,22 @@
                                 <span class="ms-2">{{ isset($data) ? $data['AmbassadorMessageSection']['Title'] : 'Ambassador Vision' }}</span>
                             </div>
                             <h3>
-                                {!! isset($data)
+                                {!! clean_html(isset($data)
                                 ? $data['AmbassadorMessageSection']['Subtitle']
-                                : '<span>H.E. Ahmad Farooq</span> Ambassador of Pakistan to Kingdom of Saudi Arabia' !!}
+                                : '<span>H.E. Ahmad Farooq</span> Ambassador of Pakistan to Kingdom of Saudi Arabia') !!}
                             </h3>
                             <div class="ambasodor-text">
                                 <img src="assets/images/templates/carbon_quotes.svg" alt=""
                                     class="img-fluid">
                                 <p>
-                                    {!! isset($data)
+                                    {!! clean_html(isset($data)
                                     ? $data['AmbassadorMessageSection']['Description']
                                     : 'To enhance the integration and success of Pakistani talent and businesses in the
                                     Kingdom of Saudi Arabia by fostering strategic partnerships, facilitating knowledge
                                     exchange, encouraging entrepreneurship, enabling workforce development, supporting
                                     innovation, strengthening trade relations, promoting cultural synergy, and advancing
                                     bilateral economic collaboration that drives sustainable growth, mutual prosperity,
-                                    and long-term regional impact.' !!}
+                                    and long-term regional impact.') !!}
                                     <img src="assets/images/templates/carbon_quotes.svg" alt="" class="img-fluid">
                                 </p>
                             </div>
@@ -279,12 +281,12 @@
                                 <span class="ms-2">{{ isset($data) ? $data['WhyNeedUsSection']['Title'] : 'Why NEED Us' }}</span>
                             </div>
                             <h3>
-                                {!! isset($data)
+                                {!! clean_html(isset($data)
                                 ? $data['AmbassadorMessageSection']['Subtitle']
-                                : 'Empowering Pakistanis in KSA through <span>Trusted Embassy Connections.</span>' !!}
+                                : 'Empowering Pakistanis in KSA through <span>Trusted Embassy Connections.</span>') !!}
                             </h3>
-                            <p class="pak-ksa-text">{!! isset($data) ? $data['WhyNeedUsSection']['Description'] : 'An official platform by the Embassy of Pakistan to connect, verify,
-                                and support Pakistani professionals and businesses in Saudi Arabia.' !!}</p>
+                            <p class="pak-ksa-text">{!! clean_html(isset($data) ? $data['WhyNeedUsSection']['Description'] : 'An official platform by the Embassy of Pakistan to connect, verify,
+                                and support Pakistani professionals and businesses in Saudi Arabia.') !!}</p>
                             <div class="card-main">
                                 <div class="card-single">
                                     <div class="icon-area">
@@ -341,9 +343,9 @@
                     <img src="{{ isset($data) ? $data['BenefitsSection']['Title Icon'] : 'assets/images/templates/ambsdr-icons-Group.svg' }}" alt="" class="img-fluid">
                     <span class="ms-2">{{ isset($data) ? $data['BenefitsSection']['Title'] : 'Benefits' }}</span>
                     <h3>
-                        {!! isset($data)
+                        {!! clean_html(isset($data)
                         ? $data['BenefitsSection']['Subtitle']
-                        : 'Benefits for <span>Professionals, Businesses, & the Nation.</span>' !!}
+                        : 'Benefits for <span>Professionals, Businesses, & the Nation.</span>') !!}
                     </h3>
                 </div>
                 <div class="card-main-benefits">
@@ -354,13 +356,13 @@
                                 <div>
                                     <div>
                                         <h5>{{ isset($data) ? $data['BenefitsSection']['Cards']['For All User']['Title'] : 'For All User' }}</h5>
-                                        {!! isset($data)
+                                        {!! clean_html(isset($data)
                                         ? $data['BenefitsSection']['Cards']['For All User']['description']
                                         : '<ul>
                                             <li>Easy access anytime</li>
                                             <li>Improved overall user experience</li>
                                             <li>Equal value for everyone</li>
-                                        </ul>' !!}
+                                        </ul>') !!}
                                     </div>
                                     <img src="assets/images/templates/card-inactive.svg" alt=""
                                         class="img-fluid">
@@ -373,13 +375,13 @@
                                 <div>
                                     <div>
                                         <h5>{{ isset($data) ? $data['BenefitsSection']['Cards']['For Diaspora']['Title'] : 'For Diaspora' }} </h5>
-                                        {!! isset($data)
+                                        {!! clean_html(isset($data)
                                         ? $data['BenefitsSection']['Cards']['For Diaspora']['description']
                                         : '<ul>
                                             <li>Connect globally with diaspora</li>
                                             <li>Share culture and experiences</li>
                                             <li>Empower communities through unity</li>
-                                        </ul>' !!}
+                                        </ul>') !!}
                                     </div>
                                     <img src="assets/images/templates/card-active.svg" alt=""
                                         class="img-fluid">
@@ -392,13 +394,13 @@
                                 <div>
                                     <div>
                                         <h5>{{ isset($data) ? $data['BenefitsSection']['Cards']['For Non-Diaspora']['Title'] : 'For Non-Diaspora' }}</h5>
-                                        {!! isset($data)
+                                        {!! clean_html(isset($data)
                                         ? $data['BenefitsSection']['Cards']['For Non-Diaspora']['description']
                                         : '<ul>
                                             <li>Learn about diverse cultures</li>
                                             <li>Connect with global communities</li>
                                             <li>Support inclusion and unity</li>
-                                        </ul>' !!}
+                                        </ul>') !!}
                                     </div>
                                     <img src="assets/images/templates/card-inactive.svg" alt=""
                                         class="img-fluid">
@@ -411,13 +413,13 @@
                                 <div>
                                     <div>
                                         <h5>{{ isset($data) ? $data['BenefitsSection']['Cards']['For Embassy']['Title'] : 'For Embassy' }} </h5>
-                                        {!! isset($data)
+                                        {!! clean_html(isset($data)
                                         ? $data['BenefitsSection']['Cards']['For Embassy']['description']
                                         : '<ul>
                                             <li>Explore global cultures</li>
                                             <li>Build strong connections</li>
                                             <li>Foster lasting unity</li>
-                                        </ul>' !!}
+                                        </ul>') !!}
                                     </div>
                                     <img src="assets/images/templates/card-inactive.svg" alt=""
                                         class="img-fluid">
@@ -448,7 +450,7 @@
                                     </div>
                                     <div class="single-point-text">
                                         <h5>{{ isset($data) ? $data['HowItWorksSection']['Steps']['Step 1']['Title'] : 'Create your account with us.' }}</h5>
-                                        <p>{!! isset($data) ? $data['HowItWorksSection']['Steps']['Step 1']['Description'] : 'Sign up using your email and basic information to get started.' !!}</p>
+                                        <p>{!! clean_html(isset($data) ? $data['HowItWorksSection']['Steps']['Step 1']['Description'] : 'Sign up using your email and basic information to get started.') !!}</p>
                                     </div>
                                 </div>
                                 <div class="single-point">
@@ -457,7 +459,7 @@
                                     </div>
                                     <div class="single-point-text">
                                         <h5>{{ isset($data) ? $data['HowItWorksSection']['Steps']['Step 2']['Title'] : 'Submit you documents & get verified by embassy.' }}</h5>
-                                        <p>{!! isset($data) ? $data['HowItWorksSection']['Steps']['Step 2']['Description'] : 'Upload required documents securely and wait for quick embassy verification.' !!}
+                                        <p>{!! clean_html(isset($data) ? $data['HowItWorksSection']['Steps']['Step 2']['Description'] : 'Upload required documents securely and wait for quick embassy verification.') !!}
                                         </p>
                                     </div>
                                 </div>
@@ -467,7 +469,7 @@
                                     </div>
                                     <div class="single-point-text">
                                         <h5>{{ isset($data) ? $data['HowItWorksSection']['Steps']['Step 3']['Title'] : 'Explore different benefit with us.' }}</h5>
-                                        <p>{!! isset($data) ? $data['HowItWorksSection']['Steps']['Step 3']['Description'] : 'Access exclusive services, community support, and cultural programs.' !!}</p>
+                                        <p>{!! clean_html(isset($data) ? $data['HowItWorksSection']['Steps']['Step 3']['Description'] : 'Access exclusive services, community support, and cultural programs.') !!}</p>
                                     </div>
                                 </div>
                             </div>
@@ -511,10 +513,10 @@
                     <img src="{{ isset($data) ? $data['EventsSection']['Title Icon'] : 'assets/images/templates/ambsdr-icons-Group.svg' }}" alt="" class="img-fluid">
                     <span class="ms-2">{{ isset($data) ? $data['EventsSection']['Title'] : 'Upcoming events' }}</span>
                     <h3>
-                        {!! isset($data)
+                        {!! clean_html(isset($data)
                         ? $data['EventsSection']['Subtitle']
                         : 'Events That Connect.<span>Inspire.
-                            Elevate.</span>' !!}
+                            Elevate.</span>') !!}
                     </h3>
                 </div>
                 <div class="row g-3">
@@ -525,7 +527,7 @@
                             <div class="card-txt">
                                 <div>
                                     <h4>{{ $event->name }}</h4>
-                                    <p>{!! $event->event_overview !!}</p>
+                                    <p>{!! clean_html($event->event_overview) !!}</p>
                                 </div>
                                 <img src="assets/images/templates/card-inactive.svg" alt=""
                                     class="img-fluid">
@@ -556,8 +558,8 @@
                     margin-bottom: 3rem;">
                     <div data-aos="fade-right" data-aos-duration="1000">
                         <h2>{{ isset($data) ? $data['CallToAction']['Title'] : 'Empowering You to Grow in KSA — One Click Away.' }}</h2>
-                        <p>{!! isset($data) ? $data['CallToAction']['Description'] : 'Create your account today and become part of a trusted, embassy-backed platform connecting
-                            Pakistani talent and businesses across KSA.' !!}</p>
+                        <p>{!! clean_html(isset($data) ? $data['CallToAction']['Description'] : 'Create your account today and become part of a trusted, embassy-backed platform connecting
+                            Pakistani talent and businesses across KSA.') !!}</p>
                     </div>
                     <a href="{{ isset($data) ? $data['CallToAction']['Get Started Now Button']['Url'] : '#' }}"
                         data-bs-toggle="modal"
@@ -580,8 +582,8 @@
                             {{-- <img src="{{ isset($data) ? $data['FooterSection']['Map']['Title Icon'] : 'assets/images/templates/footer-map.png' }}" alt=""
                             class="img-fluid map-icon"> --}}
                         </div>
-                        <p class="footer-text">{!! isset($data) ? $data['FooterSection']['Description'] : 'Empowering the Pakistani Diaspora, Enabling Progress Through Innovation,
-                            Partnership, and Opportunity.' !!}</p>
+                        <p class="footer-text">{!! clean_html(isset($data) ? $data['FooterSection']['Description'] : 'Empowering the Pakistani Diaspora, Enabling Progress Through Innovation,
+                            Partnership, and Opportunity.') !!}</p>
 
                         <div class="footer-social-items">
                             <a href=""> <img src="assets/images/templates/facebook-f.svg" alt=""></a>
@@ -609,9 +611,9 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="news-letter">
                             <h6>{{ isset($data) ? $data['FooterSection']['Newsletter']['Title'] : 'Subscribe Our Newsletter' }}</h6>
-                            <p>{!! isset($data) ? $data['FooterSection']['Newsletter']['Description'] : 'Find Your News, Settle Your Mind — Every Story Curated for Your Peace of Mind.' !!}</p>
+                            <p>{!! clean_html(isset($data) ? $data['FooterSection']['Newsletter']['Description'] : 'Find Your News, Settle Your Mind — Every Story Curated for Your Peace of Mind.') !!}</p>
                             <div class="news-email">
-                                <input type="email" placeholder="Enter Email" class="form-control">
+                                <input type="email" placeholder="Enter Email" aria-label="Enter Email" class="form-control">
                                 <button class="btn email-send-btn "><img src="{{ isset($data) ? $data['FooterSection']['Newsletter']['Title Icon'] : 'assets/images/templates/email-icon.svg' }}"
                                         alt=""></button>
                             </div>
@@ -623,7 +625,7 @@
             <div class="container">
                 <div class="copy-rights">
 
-                    <p>{!! isset($data) ? $data['FooterSection']['Bottom']['Description'] : '© Pakistan-Saudi Arabia Embassy 2025 | All Rights Reserved' !!}</p>
+                    <p>{!! clean_html(isset($data) ? $data['FooterSection']['Bottom']['Description'] : '© Pakistan-Saudi Arabia Embassy 2025 | All Rights Reserved') !!}</p>
                     <ul>
                         <li> <a href="{{ isset($data) ? $data['FooterSection']['Links']['Terms & Conditions']['url'] : '#' }}">{{ isset($data) ? $data['FooterSection']['Links']['Terms & Conditions']['Text'] : 'Terms & Conditions' }}</a></li>
                         <li><a href="{{ isset($data) ? $data['FooterSection']['Links']['Privacy Policy']['url'] : '#' }}">{{ isset($data) ? $data['FooterSection']['Links']['Privacy Policy']['Text'] : 'Privacy Policy' }}</a></li>
@@ -646,10 +648,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js" integrity="sha384-ZGo5k5ISlEzWLoXyt+lnvKt9j03Z7GkxXh14zLqVy098XJhcdKHjL8pQYVMI8WiH" crossorigin="anonymous"></script>
 
     <!-- slick slider -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+        integrity="sha384-YGnnOBKslPJVs35GG0TtAZ4uO7BHpHlqJhs0XK3k6cuVb6EBtl+8xcvIIOKV5wB+" crossorigin="anonymous"></script>
     <!-- bootstrap 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

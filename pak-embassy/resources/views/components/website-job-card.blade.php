@@ -26,7 +26,7 @@
                     <p>{{ $job?->vacancies ?? 0 }} Vacancy</p>
                 </div>
                 </div>
-                <p class="card-text">{!! $job?->description ?? "" !!}</p>
+                <p class="card-text">{!! clean_html($job?->description ?? "") !!}</p>
                 <hr>
                 <div class="text-center">
                     <button class="btn card-btn-applyNow">

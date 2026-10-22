@@ -1,7 +1,19 @@
+// Returns the absolute URL only if it points to this site's own origin, otherwise null.
+// Prevents AJAX requests (and the HTML they return) from being redirected to another host.
+function toSameOriginUrl(rawUrl) {
+    try {
+        const parsed = new URL(rawUrl, window.location.href);
+        return parsed.origin === window.location.origin ? parsed.href : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 // Pagination link click handle
 $(document).on("click", ".pagination a", function (e) {
     e.preventDefault();
-    let url = $(this).attr("href");
+    let url = toSameOriginUrl($(this).attr("href"));
+    if (!url) return;
 
     $.ajax({
         url: url,
@@ -12,10 +24,10 @@ $(document).on("click", ".pagination a", function (e) {
         success: function (response) {
             if (response.success) {
                 // update table rows
-                $("#"+table_id).html(response.html);
+                $("#"+table_id).html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 // update pagination component
-                $(".pagination-container").replaceWith(response.pagination);
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
             }
         },
@@ -33,7 +45,7 @@ $(document).on("click", ".pagination a", function (e) {
 $(document).on("change", ".per-page-select", function () {
     let baseUrl = window.location.pathname; // e.g. /user/applied-job
     let perPage = $(this).val();
-    let url = baseUrl + "?per_page=" + perPage;
+    let url = baseUrl + "?per_page=" + encodeURIComponent(perPage);
 
     $.ajax({
         url: url,
@@ -44,10 +56,10 @@ $(document).on("change", ".per-page-select", function () {
         success: function (response) {
             if (response.success) {
                 // update table rows
-                $("#"+table_id).html(response.html);
+                $("#"+table_id).html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 // update pagination with new info
-                $(".pagination-container").replaceWith(response.pagination);
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
             }
         },
         complete: function () {
@@ -64,7 +76,8 @@ $(document).ready(function () {
     // Search input event
     $('#searchInput').on('keyup', function () {
         let search = $(this).val();
-        let url = window.location.href;
+        let url = toSameOriginUrl(window.location.href);
+        if (!url) return;
         let searchKey = typeof search_by !== 'undefined' ? search_by : 'name';
 
         $.ajax({
@@ -74,10 +87,10 @@ $(document).ready(function () {
             success: function (response) {
                 if (response.success) {
                     // update table rows
-                    $("#"+table_id).html(response.html);
+                    $("#"+table_id).html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                     // update pagination with new info
-                    $(".pagination-container").replaceWith(response.pagination);
+                    $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 }
             },
@@ -105,8 +118,8 @@ $(document).on("click", ".sort", function () {
         },
         success: function (response) {
             if (response.success) {
-                $("#"+table_id).html(response.html);
-                $(".pagination-container").replaceWith(response.pagination);
+                $("#"+table_id).html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
             }
         }
     });

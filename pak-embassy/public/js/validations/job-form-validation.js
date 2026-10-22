@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 isValid = false;
                         errorMessage = 'Location may not be greater than 255 characters';
             } else {
-                        let urlPattern = /^(https?:\/\/)?([\w\-]+(\.[\w\-]+)+)([\/\w\-.~:?#[\]@!$&'()*+,;=]*)?$/;
+                        let urlPattern = /^(https?:\/\/)?[\w\-]+\.[\w\-][\/\w\-.~:?#[\]@!$&'()*+,;=]*$/;
                         if (!urlPattern.test(field.value.trim())) {
                             isValid = false;
                             errorMessage = 'Please enter a valid URL';
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!fieldValue.trim()) {
                     isValid = false;
                     errorMessage = "Number of vacancies is required";
-                } else if (isNaN(fieldValue) || parseInt(fieldValue) < 1) {
+                } else if (Number.isNaN(Number(fieldValue)) || Number.parseInt(fieldValue) < 1) {
                     isValid = false;
                     errorMessage = "Number of vacancies must be at least 1";
                 }
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!fieldValue.trim()) {
                     isValid = false;
                     errorMessage = "Minimum experience is required";
-                } else if (isNaN(fieldValue) || parseInt(fieldValue) < 0 || parseInt(fieldValue) > 50) {
+                } else if (Number.isNaN(Number(fieldValue)) || Number.parseInt(fieldValue) < 0 || Number.parseInt(fieldValue) > 50) {
                     isValid = false;
                     errorMessage = "Minimum experience must be between 0 and 50 years";
                 }
@@ -247,12 +247,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!fieldValue.trim()) {
                     isValid = false;
                     errorMessage = "Maximum experience is required";
-                } else if (isNaN(fieldValue) || parseInt(fieldValue) < 0 || parseInt(fieldValue) > 50) {
+                } else if (Number.isNaN(Number(fieldValue)) || Number.parseInt(fieldValue) < 0 || Number.parseInt(fieldValue) > 50) {
                     isValid = false;
                     errorMessage = "Maximum experience must be between 0 and 50 years";
                 } else {
                     const minExp = document.getElementById('min_experience').value;
-                    if (minExp && parseInt(fieldValue) < parseInt(minExp)) {
+                    if (minExp && Number.parseInt(fieldValue) < Number.parseInt(minExp)) {
                         isValid = false;
                         errorMessage = "Maximum experience must be greater than or equal to minimum experience";
                     }
@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!fieldValue.trim()) {
                     isValid = false;
                     errorMessage = "Minimum salary is required";
-                } else if (isNaN(fieldValue) || parseFloat(fieldValue) < 1 || parseFloat(fieldValue) > 10000000) {
+                } else if (Number.isNaN(Number(fieldValue)) || Number.parseFloat(fieldValue) < 1 || Number.parseFloat(fieldValue) > 10000000) {
                     isValid = false;
                     errorMessage = "Minimum salary must be between 1 and 10,000,000";
                 }
@@ -273,12 +273,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!fieldValue.trim()) {
                     isValid = false;
                     errorMessage = "Maximum salary is required";
-                } else if (isNaN(fieldValue) || parseFloat(fieldValue) < 1 || parseFloat(fieldValue) > 10000000) {
+                } else if (Number.isNaN(Number(fieldValue)) || Number.parseFloat(fieldValue) < 1 || Number.parseFloat(fieldValue) > 10000000) {
                     isValid = false;
                     errorMessage = "Maximum salary must be between 1 and 10,000,000";
                 } else {
                     const minSalary = document.getElementById('min_salary').value;
-                    if (minSalary && parseFloat(fieldValue) < parseFloat(minSalary)) {
+                    if (minSalary && Number.parseFloat(fieldValue) < Number.parseFloat(minSalary)) {
                         isValid = false;
                         errorMessage = "Maximum salary must be greater than or equal to minimum salary";
                     }
@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!field.value.trim()) {
                     isValid = false;
                     errorMessage = 'Expiry date is required';
-                } else if (isNaN(Date.parse(field.value))) {
+                } else if (Number.isNaN(Date.parse(field.value))) {
                     isValid = false;
                     errorMessage = 'Expiry date must be a valid date';
                 } else {

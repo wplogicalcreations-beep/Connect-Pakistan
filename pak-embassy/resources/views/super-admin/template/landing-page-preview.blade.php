@@ -455,7 +455,7 @@
                             <div class="card-txt">
                                 <div>
                                     <h4>{{ $event->name }}</h4>
-                                    <p>{!! $event->event_overview !!}</p>
+                                    <p>{!! clean_html($event->event_overview) !!}</p>
                                 </div>
                                 <img src="assets/images/templates/card-inactive.svg" alt=""
                                     class="img-fluid">
@@ -524,7 +524,7 @@
                         <h6>Subscribe Our Newsletter</h6>
                         <p>Find Your News, Settle Your Mind — Every Story Curated for Your Peace of Mind.</p>
                         <div class="news-email">
-                            <input type="email" placeholder="Enter Email" class="form-control">
+                            <input type="email" placeholder="Enter Email" aria-label="Enter Email" class="form-control">
                             <button class="btn email-send-btn "><img src="assets/images/templates/email-icon.svg"
                                     alt=""></button>
                         </div>

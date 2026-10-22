@@ -5,7 +5,7 @@
 
 <thead class="table-light">
     <tr>
-        <th>Sr:</th>
+        <th scope="col">Sr:</th>
         
         @foreach($columns as $index => $column)
             @php
@@ -21,7 +21,7 @@
                 $queryParams['sort_order'] = $sortOrder;
                 $sortUrl = request()->url() . '?' . http_build_query($queryParams);
             @endphp
-            <th>
+            <th scope="col">
                 @if($isSortable)
                     <a href="{{ $sortUrl }}" class="text-decoration-none text-black">
                         {{ $label }}
@@ -33,7 +33,7 @@
             </th>
         @endforeach
         
-        <th>
+        <th scope="col">
             <div>
                 Action
             </div>

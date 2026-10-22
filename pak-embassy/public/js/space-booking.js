@@ -53,11 +53,11 @@ function displayValidationErrors(errors) {
 
 function showStep(step) {
     stepContents.forEach(content => {
-        content.classList.toggle('active', parseInt(content.dataset.step) === step);
+        content.classList.toggle('active', Number.parseInt(content.dataset.step) === step);
     });
 
     steps.forEach(s => {
-        const sNum = parseInt(s.dataset.step);
+        const sNum = Number.parseInt(s.dataset.step);
         s.classList.remove('active', 'completed');
         if (sNum < step) s.classList.add('completed');
         if (sNum === step) s.classList.add('active');

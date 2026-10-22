@@ -21,12 +21,12 @@
 
         <!-- Location -->
         <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-            <input type="text" class="form-control bg-location-icon" placeholder="Location">
+            <input type="text" aria-label="Location" class="form-control bg-location-icon" placeholder="Location">
         </div>
 
         <!-- Date -->
         <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-            <input type="text" class="form-control bg-date-single" id="date" placeholder="Date">
+            <input type="text" aria-label="Date" class="form-control bg-date-single" id="date" placeholder="Date">
         </div>
 
         <!-- Search Button -->

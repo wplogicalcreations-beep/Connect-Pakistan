@@ -28,7 +28,7 @@ function validateField(name, formId = null) {
             break;
         case "email":
             if (!value) errorEl.textContent = "Email is required";
-            else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) errorEl.textContent = "Enter a valid email address";
+            else if (!/^[^\s@]+@[^\s@][^\s@.]*\.[^\s@]+$/.test(value)) errorEl.textContent = "Enter a valid email address";
             break;
         case "linkedin_url":
             if (!value) errorEl.textContent = "LinkedIn Profile is required";
@@ -338,7 +338,7 @@ function nextStep(step, user_id = null) {
             goToNextStep(step, response.user_id);
             hideCurrentStep();
             showStep(step + 1);
-            currentStep = step + 1;
+            setCurrentStep(step + 1);
             updateProgressIndicator(step + 1);
             addAnimationClasses();
         },

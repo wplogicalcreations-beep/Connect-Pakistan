@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{asset('css/user-dashboard-css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/user-dashboard-css/jQuery-Ui.css')}}">
     <link rel="stylesheet" href="{{asset('css/user-dashboard-css/user-dashboard.css')}}">
-     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css'>
+     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css' integrity='sha384-TXDx4BvGGuJDYIKlcgXfDntJ100A809RRLB4W72MhjXJzakfj3ptxy4zER5qsxZH' crossorigin='anonymous'>
     @yield('css-file')
     <title> User Dashboard</title>
 </head>

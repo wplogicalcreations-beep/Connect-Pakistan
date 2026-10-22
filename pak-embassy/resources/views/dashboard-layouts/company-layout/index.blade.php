@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{asset('css/user-dashboard-css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/user-dashboard-css/jQuery-Ui.css')}}">
     <link rel="stylesheet" href="{{asset('css/user-dashboard-css/user-dashboard.css')}}">
-     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css'>
+     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css' integrity='sha384-TXDx4BvGGuJDYIKlcgXfDntJ100A809RRLB4W72MhjXJzakfj3ptxy4zER5qsxZH' crossorigin='anonymous'>
     @yield('css-file')
     <title> Company Dashboard</title>
 </head>
@@ -47,7 +47,7 @@
         $(".loading-spinner").delay(700).fadeOut("slow");
     })
 </script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js" integrity="sha384-nLoOnA/BDh8A/jxqtckg4DumuCGOBYUnNJLZdQz/zfYNp3wcjGSoWTAzgko06G/2" crossorigin="anonymous"></script>
 
 @if(session('success'))
 <script>

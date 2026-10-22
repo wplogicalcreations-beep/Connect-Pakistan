@@ -61,7 +61,7 @@
 
                             <div class="col-md-12">
                                 <label for="message" class="form-label">Message</label>
-                                <textarea name="message" cols="30" rows="4" class="form-control p-3 @error('message') is-invalid @enderror">{{ old('message') }}</textarea>
+                                <textarea id="message" name="message" cols="30" rows="4" class="form-control p-3 @error('message') is-invalid @enderror">{{ old('message') }}</textarea>
                                 @error('message')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror

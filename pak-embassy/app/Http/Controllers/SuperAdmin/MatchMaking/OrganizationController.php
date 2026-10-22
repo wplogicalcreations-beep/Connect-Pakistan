@@ -34,7 +34,7 @@ class OrganizationController extends Controller
         try {
             $records = $request->per_page ?? 10;
             $sortBy = $request->sort_by ?? 'id';
-            $sortOrder = $request->sort_order ?? 'desc';
+            $sortOrder = strtolower((string) $request->sort_order) === 'asc' ? 'asc' : 'desc';
 
             $organizations = Organization::where('is_verified', 1)
                                 ->applyFilter($request)

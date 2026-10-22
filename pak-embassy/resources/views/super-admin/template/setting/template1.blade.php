@@ -115,15 +115,12 @@
         </main>
     </form>
     <!-- ✅ jQuery (MUST be first) -->
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> --}}
 
     <!-- ✅ Bootstrap 5 -->
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script> --}}
 
-    {{-- <!-- ✅ Slick Carousel JS (MUST be after jQuery) -->
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> --}}
 
     <!-- ✅ AOS Animation -->
     {{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> --}}

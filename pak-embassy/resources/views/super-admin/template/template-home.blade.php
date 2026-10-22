@@ -95,18 +95,18 @@
                                     contenteditable="true">
                                     {{ $data ? $data['HeroSection1']['Title'] : 'Strengthening Ties, Enabling Success' }}
                                 </h2>
-                                <input type="text" hidden id="HeroSection1_title"
+                                <input aria-label="Hero Section 1 Title" type="text" hidden id="HeroSection1_title"
                                     name="content[{{ $lang }}][HeroSection1][Title]"
                                     value="{{ $data ? $data['HeroSection1']['Title'] : 'Strengthening Ties, Enabling Success' }}" />
                                 <div class="description-input"
                                     id="content[{{ $lang }}][HeroSection1][Description]"
                                     data-text="content[{{ $lang }}][HeroSection1][Description]">
-                                    {!! $data
+                                    {!! clean_html($data
                                         ? $data['HeroSection1']['Description']
                                         : "Strengthen bilateral trade and economic cooperation through strategic networking,
                                                                                                                                                                                 business
-                                                                                                                                                                                meetups, and embassy-supported collaborations" !!}</div>
-                                <input type="text" hidden id="HeroSection1_description"
+                                                                                                                                                                                meetups, and embassy-supported collaborations") !!}</div>
+                                <input aria-label="Hero Section 1 Description" type="text" hidden id="HeroSection1_description"
                                     name="content[{{ $lang }}][HeroSection1][Description]"
                                     value="{{ $data
                                         ? $data['HeroSection1']['Description']
@@ -115,19 +115,18 @@
                                                                                                                                                                                 meetups, and embassy-supported collaborations" }}" />
                                 <div>
                                     <a type="button" class="btn register-btn button-input"
-                                        id=""
                                         data-text="content[{{ $lang }}][HeroSection1][Register Now Button][Text]"
                                         data-href="{{ $data ? $data['HeroSection1']['Register Now Button']['Url'] : '#' }}"
                                         data-url="content[{{ $lang }}][HeroSection1][Register Now Button][Url]">
                                         {{ $data ? $data['HeroSection1']['Register Now Button']['Text'] : 'Register Now' }}</a>
-                                    <input type="text" hidden id="hero_register_now_btn_text"
+                                    <input aria-label="Hero Section 1 Register Now Button Text" type="text" hidden id="hero_register_now_btn_text"
                                         name="content[{{ $lang }}][HeroSection1][Register Now Button][Text]"
                                         value="{{ $data ? $data['HeroSection1']['Register Now Button']['Text'] : 'Register Now' }}" />
-                                    <input type="text" hidden id="hero_register_now_btn_url"
+                                    <input aria-label="Hero Section 1 Register Now Button Url" type="text" hidden id="hero_register_now_btn_url"
                                         name="content[{{ $lang }}][HeroSection1][Register Now Button][Url]"
                                         value="{{ $data ? $data['HeroSection1']['Register Now Button']['Url'] : '#' }}" />
 
-                                    <a type="button" class="btn learn-more button-input" id=""
+                                    <a type="button" class="btn learn-more button-input"
                                         data-text="content[{{ $lang }}][HeroSection1][Learn More Button][Text]"
                                         data-href="{{ $data ? $data['HeroSection1']['Learn More Button']['Url'] : '#' }}"
                                         data-url="content[{{ $lang }}][HeroSection1][Learn More Button][Url]">
@@ -135,10 +134,10 @@
                                         <img src="{{ asset('assets/images/templates/right-arrow.svg') }}"
                                             alt="right-arrow" class="img-fluid ">
                                     </a>
-                                    <input type="text" hidden id="hero_learn_more_btn_text"
+                                    <input aria-label="Hero Section 1 Learn More Button Text" type="text" hidden id="hero_learn_more_btn_text"
                                         name="content[{{ $lang }}][HeroSection1][Learn More Button][Text]"
                                         value="{{ $data ? $data['HeroSection1']['Learn More Button']['Text'] : 'Learn More' }}" />
-                                    <input type="text" hidden id="hero_learn_more_url"
+                                    <input aria-label="Hero Section 1 Learn More Button Url" type="text" hidden id="hero_learn_more_url"
                                         name="content[{{ $lang }}][HeroSection1][Learn More Button][Url]"
                                         value="{{ $data ? $data['HeroSection1']['Learn More Button']['Url'] : '#' }}" />
                                 </div>
@@ -189,19 +188,19 @@
                                 contenteditable="true">
                                 {{ $data ? $data['HeroSection2']['Title'] : 'Strengthening Ties, Enabling Success' }}
                             </h2>
-                            <input type="text" hidden id="HeroSection2_title"
+                            <input aria-label="Hero Section 2 Title" type="text" hidden id="HeroSection2_title"
                                 name="content[{{ $lang }}][HeroSection2][Title]"
                                 value="{{ $data ? $data['HeroSection2']['Title'] : 'Strengthening Ties, Enabling Success' }}" />
 
                             <div class="description-input"
                                 id="content[{{ $lang }}][HeroSection2][Description]"
                                 data-text="content[{{ $lang }}][HeroSection2][Description]">
-                                {!! $data
+                                {!! clean_html($data
                                     ? $data['HeroSection2']['Description']
                                     : "Strengthen bilateral trade and economic cooperation through strategic networking,
                                                                                                                                                                     business
-                                                                                                                                                                    meetups, and embassy-supported collaborations" !!}</div>
-                            <input type="text" hidden id="HeroSection2_description"
+                                                                                                                                                                    meetups, and embassy-supported collaborations") !!}</div>
+                            <input aria-label="Hero Section 2 Description" type="text" hidden id="HeroSection2_description"
                                 name="content[{{ $lang }}][HeroSection2][Description]"
                                 value="{{ $data
                                     ? $data['HeroSection2']['Description']
@@ -209,18 +208,18 @@
                                                                                                                                                                     business
                                                                                                                                                                     meetups, and embassy-supported collaborations" }}" />
                             <div>
-                                <a type="button" class="btn register-btn button-input" id=""
+                                <a type="button" class="btn register-btn button-input"
                                     data-text="content[{{ $lang }}][HeroSection2][Register Now Button][Text]"
                                     data-href="{{ $data ? $data['HeroSection2']['Register Now Button']['Url'] : '#' }}"
                                     data-url="content[{{ $lang }}][HeroSection2][Register Now Button][Url]">
                                     {{ $data ? $data['HeroSection2']['Register Now Button']['Text'] : 'Register Now' }}</a>
-                                <input type="text" hidden id="hero2_register_now_btn_text"
+                                <input aria-label="Hero Section 2 Register Now Button Text" type="text" hidden id="hero2_register_now_btn_text"
                                     name="content[{{ $lang }}][HeroSection2][Register Now Button][Text]"
                                     value="{{ $data ? $data['HeroSection2']['Register Now Button']['Text'] : 'Register Now' }}" />
-                                <input type="text" hidden id="hero2_register_now_btn_url"
+                                <input aria-label="Hero Section 2 Register Now Button Url" type="text" hidden id="hero2_register_now_btn_url"
                                     name="content[{{ $lang }}][HeroSection2][Register Now Button][Url]"
                                     value="{{ $data ? $data['HeroSection2']['Register Now Button']['Url'] : '#' }}" />
-                                <a type="button" class="btn learn-more button-input" id=""
+                                <a type="button" class="btn learn-more button-input"
                                     data-text="content[{{ $lang }}][HeroSection2][Learn More Button][Text]"
                                     data-href="{{ $data ? $data['HeroSection2']['Learn More Button']['Url'] : '#' }}"
                                     data-url="content[{{ $lang }}][HeroSection2][Learn More Button][Url]">
@@ -228,10 +227,10 @@
                                     <img src="{{ asset('assets/images/templates/right-arrow.svg') }}"
                                         alt="right-arrow" class="img-fluid ">
                                 </a>
-                                <input type="text" hidden id="hero_learn_more_btn_text"
+                                <input aria-label="Hero Section 2 Learn More Button Text" type="text" hidden id="hero2_learn_more_btn_text"
                                     name="content[{{ $lang }}][HeroSection2][Learn More Button][Text]"
                                     value="{{ $data ? $data['HeroSection2']['Learn More Button']['Text'] : 'Learn More' }}" />
-                                <input type="text" hidden id="hero_learn_more_url"
+                                <input aria-label="Hero Section 2 Learn More Button Url" type="text" hidden id="hero2_learn_more_url"
                                     name="content[{{ $lang }}][HeroSection2][Learn More Button][Url]"
                                     value="{{ $data ? $data['HeroSection2']['Learn More Button']['Url'] : '#' }}" />
                             </div>
@@ -279,19 +278,19 @@
                             contenteditable="true">
                             {{ $data ? $data['HeroSection3']['Title'] : 'Strengthening Ties, Enabling Success' }}
                         </h2>
-                        <input type="text" hidden id="HeroSection3_title"
+                        <input aria-label="Hero Section 3 Title" type="text" hidden id="HeroSection3_title"
                             name="content[{{ $lang }}][HeroSection3][Title]"
                             value="{{ $data ? $data['HeroSection3']['Title'] : 'Strengthening Ties, Enabling Success' }}" />
 
                         <div class="description-input"
                             id="content[{{ $lang }}][HeroSection3][Description]"
                             data-text="content[{{ $lang }}][HeroSection3][Description]">
-                            {!! $data
+                            {!! clean_html($data
                                 ? $data['HeroSection3']['Description']
                                 : "Strengthen bilateral trade and economic cooperation through strategic networking,
                                                                                                                                                             business
-                                                                                                                                                            meetups, and embassy-supported collaborations" !!}</div>
-                        <input type="text" hidden id="HeroSection3_description"
+                                                                                                                                                            meetups, and embassy-supported collaborations") !!}</div>
+                        <input aria-label="Hero Section 3 Description" type="text" hidden id="HeroSection3_description"
                             name="content[{{ $lang }}][HeroSection3][Description]"
                             value="{{ $data
                                 ? $data['HeroSection3']['Description']
@@ -299,18 +298,18 @@
                                                                                                                                                             business
                                                                                                                                                             meetups, and embassy-supported collaborations" }}" />
                         <div>
-                            <a type="button" class="btn register-btn button-input" id=""
+                            <a type="button" class="btn register-btn button-input"
                                 data-text="content[{{ $lang }}][HeroSection3][Register Now Button][Text]"
                                 data-href="{{ $data ? $data['HeroSection3']['Register Now Button']['Url'] : '#' }}"
                                 data-url="content[{{ $lang }}][HeroSection3][Register Now Button][Url]">
                                 {{ $data ? $data['HeroSection3']['Register Now Button']['Text'] : 'Register Now' }}</a>
-                            <input type="text" hidden id="hero3_register_now_btn_text"
+                            <input aria-label="Hero Section 3 Register Now Button Text" type="text" hidden id="hero3_register_now_btn_text"
                                 name="content[{{ $lang }}][HeroSection3][Register Now Button][Text]"
                                 value="{{ $data ? $data['HeroSection3']['Register Now Button']['Text'] : 'Register Now' }}" />
-                            <input type="text" hidden id="hero3_register_now_btn_url"
+                            <input aria-label="Hero Section 3 Register Now Button Url" type="text" hidden id="hero3_register_now_btn_url"
                                 name="content[{{ $lang }}][HeroSection3][Register Now Button][Url]"
                                 value="{{ $data ? $data['HeroSection3']['Register Now Button']['Url'] : '#' }}" />
-                            <a type="button" class="btn learn-more button-input" id=""
+                            <a type="button" class="btn learn-more button-input"
                                 data-text="content[{{ $lang }}][HeroSection3][Learn More Button][Text]"
                                 data-href="{{ $data ? $data['HeroSection3']['Learn More Button']['Url'] : '#' }}"
                                 data-url="content[{{ $lang }}][HeroSection3][Learn More Button][Url]">
@@ -318,10 +317,10 @@
                                 <img src="{{ asset('assets/images/templates/right-arrow.svg') }}"
                                     alt="right-arrow" class="img-fluid ">
                             </a>
-                            <input type="text" hidden id="hero_learn_more_btn_text"
+                            <input aria-label="Hero Section 3 Learn More Button Text" type="text" hidden id="hero3_learn_more_btn_text"
                                 name="content[{{ $lang }}][HeroSection3][Learn More Button][Text]"
                                 value="{{ $data ? $data['HeroSection3']['Learn More Button']['Text'] : 'Learn More' }}" />
-                            <input type="text" hidden id="hero_learn_more_url"
+                            <input aria-label="Hero Section 3 Learn More Button Url" type="text" hidden id="hero3_learn_more_url"
                                 name="content[{{ $lang }}][HeroSection3][Learn More Button][Url]"
                                 value="{{ $data ? $data['HeroSection3']['Learn More Button']['Url'] : '#' }}" />
                         </div>
@@ -387,6 +386,7 @@
                 <div class="ambasodor-vision-right-content">
                     <div>
                         <label for="attachmentIcon8" class="pointer">
+                            <span class="visually-hidden">Upload Ambassador Message Section Title Icon</span>
                             <div id="preimageIcon8" style="display:block">
                                 <img id='output_icon8'
                                     src="{{ $data ? asset($data['AmbassadorMessageSection']['Title Icon']) : asset('assets/images/templates/ambsdr-icons-Group.svg') }}"
@@ -395,33 +395,33 @@
                             <input type="file" accept="image/*" id="attachmentIcon8"
                                 name="content[{{ $lang }}][AmbassadorMessageSection][Title Icon]"
                                 value="" hidden>
-                            <input type="text"
+                            <input aria-label="Ambassador Message Section old Icon" type="text"
                                 name="content[{{ $lang }}][AmbassadorMessageSection][old_Icon]"
                                 value="assets/images/templates/ambsdr-icons-Group.svg" hidden>
                         </label>
                         <span class="ms-2 title-input"
                             id="content[{{ $lang }}][AmbassadorMessageSection][Title]"
                             contenteditable="true">{{ $data ? $data['AmbassadorMessageSection']['Title'] : 'Ambassador Vision' }}</span>
-                        <input type="text" id="AmbassadorMessageSection_title"
+                        <input aria-label="Ambassador Message Section Title" type="text" id="AmbassadorMessageSection_title"
                             value="{{ $data ? $data['AmbassadorMessageSection']['Title'] : 'Ambassador Vision' }}"
                             name="content[{{ $lang }}][AmbassadorMessageSection][Title]" hidden>
                     </div>
 
                     <h3 class="title-input"
                         id="content[{{ $lang }}][AmbassadorMessageSection][Subtitle]"
-                        contenteditable="true">{!! $data
+                        contenteditable="true">{!! clean_html($data
                             ? $data['AmbassadorMessageSection']['Subtitle']
-                            : '<span>H.E. Ahmad Farooq</span> Ambassador of Pakistan to Kingdom of Saudi Arabia' !!}</h3>
-                    <input type="text" id="AmbassadorMessageSection_subtitle"
-                        value="{!! $data
+                            : '<span>H.E. Ahmad Farooq</span> Ambassador of Pakistan to Kingdom of Saudi Arabia') !!}</h3>
+                    <input aria-label="Ambassador Message Section Subtitle" type="text" id="AmbassadorMessageSection_subtitle"
+                        value="{{ $data
                             ? $data['AmbassadorMessageSection']['Subtitle']
-                            : '<span>H.E. Ahmad Farooq</span> Ambassador of Pakistan to Kingdom of Saudi Arabia' !!}"
+                            : '<span>H.E. Ahmad Farooq</span> Ambassador of Pakistan to Kingdom of Saudi Arabia' }}"
                         name="content[{{ $lang }}][AmbassadorMessageSection][Subtitle]" hidden>
                     <div class="ambasodor-text">
                         <img src="{{asset('assets/images/templates/carbon_quotes.svg')}}" alt="" class="img-fluid">
                         <div class="description-input"
                             id="content[{{$lang}}][AmbassadorMessageSection][Description]"
-                            data-text="content[{{$lang}}][AmbassadorMessageSection][Description]">{!! $data ? $data['AmbassadorMessageSection']['Description'] : '<p>
+                            data-text="content[{{$lang}}][AmbassadorMessageSection][Description]">{!! clean_html($data ? $data['AmbassadorMessageSection']['Description'] : '<p>
                             To enhance the integration and success of Pakistani talent and businesses in the
                             Kingdom of Saudi Arabia by fostering strategic partnerships, facilitating knowledge
                             exchange, encouraging entrepreneurship, enabling workforce development, supporting
@@ -429,8 +429,8 @@
                             bilateral economic collaboration that drives sustainable growth, mutual prosperity,
                             and long-term regional impact.
                             <img src="assets/images/templates/carbon_quotes.svg" alt="" class="img-fluid">
-                            </p>' !!}</div>
-                            <input type="text" hidden
+                            </p>') !!}</div>
+                            <input type="text" hidden aria-label="Ambassador Message Section Description"
                                     id="AmbassadorMessageSection_description"
                                     name="content[{{$lang}}][AmbassadorMessageSection][Description]"
                                     value="{{ $data ? $data['AmbassadorMessageSection']['Description'] : '<p>
@@ -456,6 +456,7 @@
                 <div class="pak-ksa-content">
                     <div>
                         <label for="attachmentIcon9" class="pointer">
+                            <span class="visually-hidden">Upload Why Need Us Section Title Icon</span>
                             <div id="preimageIcon9" style="display:block">
                                 <img class="img-fluid" id='output_icon9'
                                     src="{{ $data ? asset($data['WhyNeedUsSection']['Title Icon']) : asset('assets/images/templates/ambsdr-icons-Group.svg') }}"
@@ -464,35 +465,35 @@
                             <input type="file" accept="image/*" id="attachmentIcon9"
                                 name="content[{{ $lang }}][WhyNeedUsSection][Title Icon]"
                                 value="" hidden>
-                            <input type="text"
+                            <input aria-label="Why Need Us Section old Icon" type="text"
                                 name="content[{{ $lang }}][WhyNeedUsSection][old_Icon]"
                                 value="assets/images/templates/ambsdr-icons-Group.svg" hidden>
                         </label>
                         <span class="ms-2 title-input"
                             id="content[{{ $lang }}][WhyNeedUsSection][Title]"
                             contenteditable="true">{{ $data ? $data['WhyNeedUsSection']['Title'] : 'Why NEED Us' }}</span>
-                        <input type="text" id="WhyNeedUsSection_title"
+                        <input aria-label="Why Need Us Section Title" type="text" id="WhyNeedUsSection_title"
                             value="{{ $data ? $data['WhyNeedUsSection']['Title'] : 'Why NEED Us' }}"
                             name="content[{{ $lang }}][WhyNeedUsSection][Title]" hidden>
                     </div>
                     <h3 class="title-input"
                         id="content[{{ $lang }}][WhyNeedUsSection][Subtitle]"
-                        contenteditable="true">{!! $data
+                        contenteditable="true">{!! clean_html($data
                             ? $data['WhyNeedUsSection']['Subtitle']
-                            : 'Empowering Pakistanis in KSA through <span>Trusted Embassy Connections.' !!}</h3>
-                    <input type="text" id="WhyNeedUsSection_subtitle" value="{!! $data
+                            : 'Empowering Pakistanis in KSA through <span>Trusted Embassy Connections.') !!}</h3>
+                    <input aria-label="Why Need Us Section Subtitle" type="text" id="WhyNeedUsSection_subtitle" value="{{ $data
                         ? $data['WhyNeedUsSection']['Subtitle']
-                        : 'Empowering Pakistanis in KSA through <span>Trusted Embassy Connections.' !!}"
+                        : 'Empowering Pakistanis in KSA through <span>Trusted Embassy Connections.' }}"
                         name="content[{{ $lang }}][WhyNeedUsSection][Subtitle]" hidden>
 
                     <div class="description-input"
                         id="content[{{ $lang }}][WhyNeedUsSection][Description]"
                         data-text="content[{{ $lang }}][WhyNeedUsSection][Description]">
-                        {!! $data
+                        {!! clean_html($data
                             ? $data['WhyNeedUsSection']['Description']
                             : '<p class="pak-ksa-text">An official platform by the Embassy of Pakistan to connect, verify,
-                                                                                                                                                                                    and support Pakistani professionals and businesses in Saudi Arabia.</p>' !!}</div>
-                    <input type="text" hidden id="WhyNeedUsSection_description"
+                                                                                                                                                                                    and support Pakistani professionals and businesses in Saudi Arabia.</p>') !!}</div>
+                    <input aria-label="Why Need Us Section Description" type="text" hidden id="WhyNeedUsSection_description"
                         name="content[{{ $lang }}][WhyNeedUsSection][Description]"
                         value="{{ $data
                             ? $data['WhyNeedUsSection']['Description']
@@ -502,6 +503,7 @@
                         <div class="card-single">
                             <div class="icon-area">
                                 <label for="attachmentIcon10" class="pointer">
+                                    <span class="visually-hidden">Upload Why Need Us Section Business Growth Icon</span>
                                     <div id="preimageIcon10" style="display:block">
                                         <img id='output_icon10'
                                             src="{{ $data ? asset($data['WhyNeedUsSection']['Business Growth']['Icon']) : asset('assets/images/templates/business-growth.svg') }}"
@@ -510,16 +512,16 @@
                                     <input type="file" accept="image/*" id="attachmentIcon10"
                                         name="content[{{ $lang }}][WhyNeedUsSection][Business Growth][Icon]"
                                         value="" hidden>
-                                    <input type="text"
+                                    <input aria-label="Why Need Us Section Business Growth old Icon" type="text"
                                         name="content[{{ $lang }}][WhyNeedUsSection][Business Growth][old_Icon]"
                                         value="assets/images/templates/business-growth.svg" hidden>
                                 </label>
 
                                 <p class="title-input"
                                     id="content[{{ $lang }}][WhyNeedUsSection][Business Growth][Title]"
-                                    contenteditable="true">{!! $data ? $data['WhyNeedUsSection']['Business Growth']['Title'] : 'Business Growth' !!}</p>
-                                <input type="text" id="WhyNeedUsSection_business_title"
-                                    value="{!! $data ? $data['WhyNeedUsSection']['Business Growth']['Title'] : 'Business Growth' !!}"
+                                    contenteditable="true">{{ $data ? $data['WhyNeedUsSection']['Business Growth']['Title'] : 'Business Growth' }}</p>
+                                <input aria-label="Why Need Us Section Business Growth Title" type="text" id="WhyNeedUsSection_business_title"
+                                    value="{{ $data ? $data['WhyNeedUsSection']['Business Growth']['Title'] : 'Business Growth' }}"
                                     name="content[{{ $lang }}][WhyNeedUsSection][Business Growth][Title]"
                                     hidden>
                             </div>
@@ -529,7 +531,7 @@
                                 <span class="title-input"
                                     id="content[{{ $lang }}][WhyNeedUsSection][Business Growth][Description][One]"
                                     contenteditable="true">{{ $data ? $data['WhyNeedUsSection']['Business Growth']['Description']['One'] : 'Expand market reach' }}</span>
-                                <input type="text" id="WhyNeedUsSection_business_description_one_title"
+                                <input aria-label="Why Need Us Section Business Growth Description One" type="text" id="WhyNeedUsSection_business_description_one_title"
                                     value="{{ $data ? $data['WhyNeedUsSection']['Business Growth']['Description']['One'] : 'Expand market reach' }}"
                                     name="content[{{ $lang }}][WhyNeedUsSection][Business Growth][Description][One]"
                                     hidden>
@@ -540,7 +542,7 @@
                                 <span class="title-input"
                                     id="content[{{ $lang }}][WhyNeedUsSection][Business Growth][Description][Two]"
                                     contenteditable="true">{{ $data ? $data['WhyNeedUsSection']['Business Growth']['Description']['Two'] : 'Innovate through feedback' }}</span>
-                                <input type="text" id="WhyNeedUsSection_business_description_Two_title"
+                                <input aria-label="Why Need Us Section Business Growth Description Two" type="text" id="WhyNeedUsSection_business_description_Two_title"
                                     value="{{ $data ? $data['WhyNeedUsSection']['Business Growth']['Description']['Two'] : 'Innovate through feedback' }}"
                                     name="content[{{ $lang }}][WhyNeedUsSection][Business Growth][Description][Two]"
                                     hidden>
@@ -549,6 +551,7 @@
                         <div class="card-single">
                             <div class="icon-area">
                                 <label for="attachmentIcon11" class="pointer">
+                                    <span class="visually-hidden">Upload Why Need Us Section Talent Discovery Icon</span>
                                     <div id="preimageIcon11" style="display:block">
                                         <img class="icon-area-2" id='output_icon11'
                                             src="{{ $data ? asset($data['WhyNeedUsSection']['Talent Discovery']['Icon']) : asset('assets/images/templates/talent-discovery.svg') }}"
@@ -557,15 +560,15 @@
                                     <input type="file" accept="image/*" id="attachmentIcon11"
                                         name="content[{{ $lang }}][WhyNeedUsSection][Talent Discovery][Icon]"
                                         value="" hidden>
-                                    <input type="text"
+                                    <input aria-label="Why Need Us Section Talent Discovery old Icon" type="text"
                                         name="content[{{ $lang }}][WhyNeedUsSection][Talent Discovery][old_Icon]"
                                         value="assets/images/templates/talent-discovery.svg" hidden>
                                 </label>
                                 <p class="title-input"
                                     id="content[{{ $lang }}][WhyNeedUsSection][Talent Discovery][Title]"
-                                    contenteditable="true">{!! $data ? $data['WhyNeedUsSection']['Talent Discovery']['Title'] : 'Talent Discovery' !!}</p>
-                                <input type="text" id="WhyNeedUsSection_talent_title"
-                                    value="{!! $data ? $data['WhyNeedUsSection']['Talent Discovery']['Title'] : 'Talent Discovery' !!}"
+                                    contenteditable="true">{{ $data ? $data['WhyNeedUsSection']['Talent Discovery']['Title'] : 'Talent Discovery' }}</p>
+                                <input aria-label="Why Need Us Section Talent Discovery Title" type="text" id="WhyNeedUsSection_talent_title"
+                                    value="{{ $data ? $data['WhyNeedUsSection']['Talent Discovery']['Title'] : 'Talent Discovery' }}"
                                     name="content[{{ $lang }}][WhyNeedUsSection][Talent Discovery][Title]"
                                     hidden>
                             </div>
@@ -575,7 +578,7 @@
                                 <span class="title-input"
                                     id="content[{{ $lang }}][WhyNeedUsSection][Talent Discovery][Description][One]"
                                     contenteditable="true">{{ $data ? $data['WhyNeedUsSection']['Talent Discovery']['Description']['One'] : 'Identify skilled individuals' }}</span>
-                                <input type="text" id="WhyNeedUsSection_talent_description_one_title"
+                                <input aria-label="Why Need Us Section Talent Discovery Description One" type="text" id="WhyNeedUsSection_talent_description_one_title"
                                     value="{{ $data ? $data['WhyNeedUsSection']['Talent Discovery']['Description']['One'] : 'Identify skilled individuals' }}"
                                     name="content[{{ $lang }}][WhyNeedUsSection][Talent Discovery][Description][One]"
                                     hidden>
@@ -586,7 +589,7 @@
                                 <span class="title-input"
                                     id="content[{{ $lang }}][WhyNeedUsSection][Talent Discovery][Description][Two]"
                                     contenteditable="true">{{ $data ? $data['WhyNeedUsSection']['Talent Discovery']['Description']['Two'] : 'Nurture emerging talent' }}</span>
-                                <input type="text" id="WhyNeedUsSection_talent_description_Two_title"
+                                <input aria-label="Why Need Us Section Talent Discovery Description Two" type="text" id="WhyNeedUsSection_talent_description_Two_title"
                                     value="{{ $data ? $data['WhyNeedUsSection']['Talent Discovery']['Description']['Two'] : 'Nurture emerging talent' }}"
                                     name="content[{{ $lang }}][WhyNeedUsSection][Talent Discovery][Description][Two]"
                                     hidden>
@@ -600,10 +603,10 @@
                         data-url="content[{{ $lang }}][WhyNeedUsSection][Register Now Button][Url]">{{ $data ? $data['WhyNeedUsSection']['Register Now Button']['Text'] : 'Register Now' }}
                         <img src="{{ asset('assets/images/templates/right-arrow.svg') }}"
                             alt="right-arrow" class="img-fluid"></a>
-                    <input type="text" hidden id="register_now_btn_text"
+                    <input aria-label="Why Need Us Section Register Now Button Text" type="text" hidden id="register_now_btn_text"
                         name="content[{{ $lang }}][WhyNeedUsSection][Register Now Button][Text]"
                         value="{{ $data ? $data['WhyNeedUsSection']['Register Now Button']['Text'] : 'Register Now' }}" />
-                    <input type="text" hidden id="register_now_btn_url"
+                    <input aria-label="Why Need Us Section Register Now Button Url" type="text" hidden id="register_now_btn_url"
                         name="content[{{ $lang }}][WhyNeedUsSection][Register Now Button][Url]"
                         value="{{ $data ? $data['WhyNeedUsSection']['Register Now Button']['Url'] : '#' }}" />
                 </div>
@@ -638,6 +641,7 @@
     <div class="container">
         <div class="benefit-top" data-aos="fade-down" data-aos-duration="1000">
             <label for="attachmentIcon12" class="pointer">
+                <span class="visually-hidden">Upload Benefits Section Title Icon</span>
                 <div id="preimageIcon12" style="display:block">
                     <img class="img-fluid" id='output_icon12'
                         src="{{ $data ? asset($data['BenefitsSection']['Title Icon']) : asset('assets/images/templates/ambsdr-icons-Group.svg') }}"
@@ -646,18 +650,18 @@
                 <input type="file" accept="image/*" id="attachmentIcon12"
                     name="content[{{ $lang }}][BenefitsSection][Title Icon]" value=""
                     hidden>
-                <input type="text" name="content[{{ $lang }}][BenefitsSection][old_Icon]"
+                <input aria-label="Benefits Section old Icon" type="text" name="content[{{ $lang }}][BenefitsSection][old_Icon]"
                     value="assets/images/templates/ambsdr-icons-Group.svg" hidden>
             </label>
             <span class="ms-2 title-input" id="content[{{ $lang }}][BenefitsSection][Title]"
                 contenteditable="true">{{ $data ? $data['BenefitsSection']['Title'] : 'Benefits' }}</span>
-            <input type="text" id="BenefitsSection_title"
+            <input aria-label="Benefits Section Title" type="text" id="BenefitsSection_title"
                 value="{{ $data ? $data['BenefitsSection']['Title'] : 'Benefits' }}"
                 name="content[{{ $lang }}][BenefitsSection][Title]" hidden>
 
             <h3 class="title-input" id="content[{{ $lang }}][BenefitsSection][Subtitle]"
-                contenteditable="true">{!! $data ? $data['BenefitsSection']['Subtitle'] : 'Benefits for <span>Professionals, Businesses, & the Nation.' !!}</h3>
-            <input type="text" id="BenefitsSection_subtitle" value="{!! $data ? $data['BenefitsSection']['Subtitle'] : 'Benefits for <span>Professionals, Businesses, & the Nation.' !!}"
+                contenteditable="true">{!! clean_html($data ? $data['BenefitsSection']['Subtitle'] : 'Benefits for <span>Professionals, Businesses, & the Nation.') !!}</h3>
+            <input aria-label="Benefits Section Subtitle" type="text" id="BenefitsSection_subtitle" value="{{ $data ? $data['BenefitsSection']['Subtitle'] : 'Benefits for <span>Professionals, Businesses, & the Nation.' }}"
                 name="content[{{ $lang }}][BenefitsSection][Subtitle]" hidden>
         </div>
         <div class="card-main-benefits">
@@ -686,22 +690,22 @@
                             <div>
                                 <h5 class="title-input"
                                     id="content[{{ $lang }}][BenefitsSection][Cards][For All User][Title]"
-                                    contenteditable="true">{!! $data ? $data['BenefitsSection']['Cards']['For All User']['Title'] : 'For All User' !!}</h5>
-                                <input type="text" id="BenefitsSection_subtitle"
-                                    value="{!! $data ? $data['BenefitsSection']['Cards']['For All User']['Title'] : 'For All User' !!}"
+                                    contenteditable="true">{{ $data ? $data['BenefitsSection']['Cards']['For All User']['Title'] : 'For All User' }}</h5>
+                                <input aria-label="Benefits Section Cards For All User Title" type="text" id="BenefitsSection_card_all_users_title"
+                                    value="{{ $data ? $data['BenefitsSection']['Cards']['For All User']['Title'] : 'For All User' }}"
                                     name="content[{{ $lang }}][BenefitsSection][Cards][For All User][Title]"
                                     hidden>
                                 <div class="description-input"
                                     id="content[{{ $lang }}][BenefitsSection][Cards][For All User][description]"
                                     data-text="content[{{ $lang }}][BenefitsSection][Cards][For All User][description]">
-                                    {!! $data
+                                    {!! clean_html($data
                                         ? $data['BenefitsSection']['Cards']['For All User']['description']
                                         : '<ul>
                                                                                                                                                                                                                                         <li>Easy access anytime</li>
                                                                                                                                                                                                                                         <li>Improved overall user experience</li>
                                                                                                                                                                                                                                         <li>Equal value for everyone</li>
-                                                                                                                                                                                                                                        </ul>' !!}</div>
-                                <input type="text" hidden id="benifit_card_all_users_description"
+                                                                                                                                                                                                                                        </ul>') !!}</div>
+                                <input aria-label="Benefits Section Cards For All User description" type="text" hidden id="benifit_card_all_users_description"
                                     name="content[{{ $lang }}][BenefitsSection][Cards][For All User][description]"
                                     value="{{ $data
                                         ? $data['BenefitsSection']['Cards']['For All User']['description']
@@ -740,22 +744,22 @@
                             <div>
                                 <h5 class="title-input"
                                     id="content[{{ $lang }}][BenefitsSection][Cards][For Diaspora][Title]"
-                                    contenteditable="true">{!! $data ? $data['BenefitsSection']['Cards']['For Diaspora']['Title'] : 'For Diaspora' !!}</h5>
-                                <input type="text" id="BenefitsSection_subtitle"
-                                    value="{!! $data ? $data['BenefitsSection']['Cards']['For Diaspora']['Title'] : 'For Diaspora' !!}"
+                                    contenteditable="true">{{ $data ? $data['BenefitsSection']['Cards']['For Diaspora']['Title'] : 'For Diaspora' }}</h5>
+                                <input aria-label="Benefits Section Cards For Diaspora Title" type="text" id="BenefitsSection_card_diaspora_title"
+                                    value="{{ $data ? $data['BenefitsSection']['Cards']['For Diaspora']['Title'] : 'For Diaspora' }}"
                                     name="content[{{ $lang }}][BenefitsSection][Cards][For Diaspora][Title]"
                                     hidden>
                                 <div class="description-input"
                                     id="content[{{ $lang }}][BenefitsSection][Cards][For Diaspora][description]"
                                     data-text="content[{{ $lang }}][BenefitsSection][Cards][For Diaspora][description]">
-                                    {!! $data
+                                    {!! clean_html($data
                                         ? $data['BenefitsSection']['Cards']['For Diaspora']['description']
                                         : '<ul>
                                                                                                                                                                                                                                         <li>Connect globally with diaspora</li>
                                                                                                                                                                                                                                         <li>Share culture and experiences</li>
                                                                                                                                                                                                                                         <li>Empower communities through unity</li>
-                                                                                                                                                                                                                                        </ul>' !!}</div>
-                                <input type="text" hidden id="benifit_card_for_dispora_description"
+                                                                                                                                                                                                                                        </ul>') !!}</div>
+                                <input aria-label="Benefits Section Cards For Diaspora description" type="text" hidden id="benifit_card_for_dispora_description"
                                     name="content[{{ $lang }}][BenefitsSection][Cards][For Diaspora][description]"
                                     value="{{ $data
                                         ? $data['BenefitsSection']['Cards']['For Diaspora']['description']
@@ -794,22 +798,22 @@
                             <div>
                                 <h5 class="title-input"
                                     id="content[{{ $lang }}][BenefitsSection][Cards][For Non-Diaspora][Title]"
-                                    contenteditable="true">{!! $data ? $data['BenefitsSection']['Cards']['For Non-Diaspora']['Title'] : 'For Non-Diaspora' !!}</h5>
-                                <input type="text" id="BenefitsSection_subtitle"
-                                    value="{!! $data ? $data['BenefitsSection']['Cards']['For Non-Diaspora']['Title'] : 'For Non-Diaspora' !!}"
+                                    contenteditable="true">{{ $data ? $data['BenefitsSection']['Cards']['For Non-Diaspora']['Title'] : 'For Non-Diaspora' }}</h5>
+                                <input aria-label="Benefits Section Cards For Non-Diaspora Title" type="text" id="BenefitsSection_card_non_diaspora_title"
+                                    value="{{ $data ? $data['BenefitsSection']['Cards']['For Non-Diaspora']['Title'] : 'For Non-Diaspora' }}"
                                     name="content[{{ $lang }}][BenefitsSection][Cards][For Non-Diaspora][Title]"
                                     hidden>
                                 <div class="description-input"
                                     id="content[{{ $lang }}][BenefitsSection][Cards][For Non-Diaspora][description]"
                                     data-text="content[{{ $lang }}][BenefitsSection][Cards][For Non-Diaspora][description]">
-                                    {!! $data
+                                    {!! clean_html($data
                                         ? $data['BenefitsSection']['Cards']['For Non-Diaspora']['description']
                                         : '<ul>
                                                                                                                                                                                                                                         <li>Learn about diverse cultures</li>
                                                                                                                                                                                                                                         <li>Connect with global communities</li>
                                                                                                                                                                                                                                         <li>Support inclusion and unity</li>
-                                                                                                                                                                                                                                        </ul>' !!}</div>
-                                <input type="text" hidden id="benifit_card_for_non_dispora_description"
+                                                                                                                                                                                                                                        </ul>') !!}</div>
+                                <input aria-label="Benefits Section Cards For Non-Diaspora description" type="text" hidden id="benifit_card_for_non_dispora_description"
                                     name="content[{{ $lang }}][BenefitsSection][Cards][For Non-Diaspora][description]"
                                     value="{{ $data
                                         ? $data['BenefitsSection']['Cards']['For Non-Diaspora']['description']
@@ -848,22 +852,22 @@
                             <div>
                                 <h5 class="title-input"
                                     id="content[{{ $lang }}][BenefitsSection][Cards][For Embassy][Title]"
-                                    contenteditable="true">{!! $data ? $data['BenefitsSection']['Cards']['For Embassy']['Title'] : 'For Embassy' !!}</h5>
-                                <input type="text" id="BenefitsSection_subtitle"
-                                    value="{!! $data ? $data['BenefitsSection']['Cards']['For Embassy']['Title'] : 'For Embassy' !!}"
+                                    contenteditable="true">{{ $data ? $data['BenefitsSection']['Cards']['For Embassy']['Title'] : 'For Embassy' }}</h5>
+                                <input aria-label="Benefits Section Cards For Embassy Title" type="text" id="BenefitsSection_card_embassy_title"
+                                    value="{{ $data ? $data['BenefitsSection']['Cards']['For Embassy']['Title'] : 'For Embassy' }}"
                                     name="content[{{ $lang }}][BenefitsSection][Cards][For Embassy][Title]"
                                     hidden>
                                 <div class="description-input"
                                     id="content[{{ $lang }}][BenefitsSection][Cards][For Embassy][description]"
                                     data-text="content[{{ $lang }}][BenefitsSection][Cards][For Embassy][description]">
-                                    {!! $data
+                                    {!! clean_html($data
                                         ? $data['BenefitsSection']['Cards']['For Embassy']['description']
                                         : '<ul>
                                                                                                                                                                                                                                         <li>Explore global cultures</li>
                                                                                                                                                                                                                                         <li>Build strong connections</li>
                                                                                                                                                                                                                                         <li>Foster lasting unity</li>
-                                                                                                                                                                                                                                        </ul>' !!}</div>
-                                <input type="text" hidden id="benifit_card_for_embassy_description"
+                                                                                                                                                                                                                                        </ul>') !!}</div>
+                                <input aria-label="Benefits Section Cards For Embassy description" type="text" hidden id="benifit_card_for_embassy_description"
                                     name="content[{{ $lang }}][BenefitsSection][Cards][For Embassy][description]"
                                     value="{{ $data
                                         ? $data['BenefitsSection']['Cards']['For Embassy']['description']
@@ -907,6 +911,7 @@
         <div class="journey-begins">
             <div data-aos="fade-down" data-aos-duration="1000">
                 <label for="attachmentIcon7" class="pointer">
+                    <span class="visually-hidden">Upload How It Works Section Title Icon</span>
                     <div id="preimageIcon7" style="display:block">
                         <img class="img-fluid invert-img" id='output_icon7'
                             src="{{ $data ? asset($data['HowItWorksSection']['Title Icon']) : asset('assets/images/templates/ambsdr-icons-Group.svg') }}"
@@ -915,14 +920,14 @@
                     <input type="file" accept="image/*" id="attachmentIcon7"
                         name="content[{{ $lang }}][HowItWorksSection][Title Icon]"
                         value="" hidden>
-                    <input type="text"
+                    <input aria-label="How It Works Section old Icon" type="text"
                         name="content[{{ $lang }}][HowItWorksSection][old_Icon]"
                         value="assets/images/templates/ambsdr-icons-Group.svg" hidden>
                 </label>
                 <span class="ms-2 title-input"
                     id="content[{{ $lang }}][HowItWorksSection][Title]"
                     contenteditable="true">{{ $data ? $data['HowItWorksSection']['Title'] : 'How it works' }}</span>
-                <input type="text" id="howitworks_title"
+                <input aria-label="How It Works Section Title" type="text" id="howitworks_title"
                     value="{{ $data ? $data['HowItWorksSection']['Title'] : 'How it works' }}"
                     name="content[{{ $lang }}][HowItWorksSection][Title]" hidden>
             </div>
@@ -930,7 +935,7 @@
                 id="content[{{ $lang }}][HowItWorksSection][Subtitle]" contenteditable="true">
                 {{ $data ? $data['HowItWorksSection']['Subtitle'] : 'Your Journey Begins in Just a Few Steps.' }}
             </h4>
-            <input type="text" id="howitworks_subtitle"
+            <input aria-label="How It Works Section Subtitle" type="text" id="howitworks_subtitle"
                 value="{{ $data ? $data['HowItWorksSection']['Subtitle'] : 'Your Journey Begins in Just a Few Steps.' }}"
                 name="content[{{ $lang }}][HowItWorksSection][Subtitle]" hidden>
             <div class="row g-5">
@@ -946,17 +951,17 @@
                                     contenteditable="true">
                                     {{ $data ? $data['HowItWorksSection']['Steps']['Step 1']['Title'] : 'Create your account with us.' }}
                                 </h5>
-                                <input type="text" id="step1_title"
+                                <input aria-label="How It Works Section Steps Step 1 Title" type="text" id="step1_title"
                                     value="{{ $data ? $data['HowItWorksSection']['Steps']['Step 1']['Title'] : 'Create your account with us.' }}"
                                     name="content[{{ $lang }}][HowItWorksSection][Steps][Step 1][Title]"
                                     hidden>
                                 <div class="description-input"
                                     id="content[{{ $lang }}][HowItWorksSection][Steps][Step 1][Description]"
                                     data-text="content[{{ $lang }}][HowItWorksSection][Steps][Step 1][Description]">
-                                    {!! $data
+                                    {!! clean_html($data
                                         ? $data['HowItWorksSection']['Steps']['Step 1']['Description']
-                                        : 'Sign up using your email and basic information to get started.' !!}</div>
-                                <input type="text" hidden id="HowItWorksSection_description1"
+                                        : 'Sign up using your email and basic information to get started.') !!}</div>
+                                <input aria-label="How It Works Section Steps Step 1 Description" type="text" hidden id="HowItWorksSection_description1"
                                     name="content[{{ $lang }}][HowItWorksSection][Steps][Step 1][Description]"
                                     value="{{ $data ? $data['HowItWorksSection']['Steps']['Step 1']['Description'] : 'Sign up using your email and basic information to get started.' }}" />
                             </div>
@@ -971,17 +976,17 @@
                                     contenteditable="true">
                                     {{ $data ? $data['HowItWorksSection']['Steps']['Step 2']['Title'] : 'Submit you documents & get verified by embassy.' }}
                                 </h5>
-                                <input type="text" id="step2_title"
+                                <input aria-label="How It Works Section Steps Step 2 Title" type="text" id="step2_title"
                                     value="{{ $data ? $data['HowItWorksSection']['Steps']['Step 2']['Title'] : 'Submit you documents & get verified by embassy.' }}"
                                     name="content[{{ $lang }}][HowItWorksSection][Steps][Step 2][Title]"
                                     hidden>
                                 <div class="description-input"
                                     id="content[{{ $lang }}][HowItWorksSection][Steps][Step 2][Description]"
                                     data-text="content[{{ $lang }}][HowItWorksSection][Steps][Step 2][Description]">
-                                    {!! $data
+                                    {!! clean_html($data
                                         ? $data['HowItWorksSection']['Steps']['Step 2']['Description']
-                                        : 'Upload required documents securely and wait for quick embassy verification.' !!}</div>
-                                <input type="text" hidden id="HowItWorksSection_description2"
+                                        : 'Upload required documents securely and wait for quick embassy verification.') !!}</div>
+                                <input aria-label="How It Works Section Steps Step 2 Description" type="text" hidden id="HowItWorksSection_description2"
                                     name="content[{{ $lang }}][HowItWorksSection][Steps][Step 2][Description]"
                                     value="{{ $data ? $data['HowItWorksSection']['Steps']['Step 2']['Description'] : 'Upload required documents securely and wait for quick embassy verification.' }}" />
                             </div>
@@ -996,17 +1001,17 @@
                                     contenteditable="true">
                                     {{ $data ? $data['HowItWorksSection']['Steps']['Step 3']['Title'] : 'Explore different benefit with us.' }}
                                 </h5>
-                                <input type="text" id="step3_title"
+                                <input aria-label="How It Works Section Steps Step 3 Title" type="text" id="step3_title"
                                     value="{{ $data ? $data['HowItWorksSection']['Steps']['Step 3']['Title'] : 'Explore different benefit with us.' }}"
                                     name="content[{{ $lang }}][HowItWorksSection][Steps][Step 3][Title]"
                                     hidden>
                                 <div class="description-input"
                                     id="content[{{ $lang }}][HowItWorksSection][Steps][Step 3][Description]"
                                     data-text="content[{{ $lang }}][HowItWorksSection][Steps][Step 3][Description]">
-                                    {!! $data
+                                    {!! clean_html($data
                                         ? $data['HowItWorksSection']['Steps']['Step 3']['Description']
-                                        : 'Access exclusive services, community support, and cultural programs.' !!}</div>
-                                <input type="text" hidden id="HowItWorksSection_description3"
+                                        : 'Access exclusive services, community support, and cultural programs.') !!}</div>
+                                <input aria-label="How It Works Section Steps Step 3 Description" type="text" hidden id="HowItWorksSection_description3"
                                     name="content[{{ $lang }}][HowItWorksSection][Steps][Step 3][Description]"
                                     value="{{ $data ? $data['HowItWorksSection']['Steps']['Step 3']['Description'] : 'Access exclusive services, community support, and cultural programs.' }}" />
                             </div>
@@ -1058,10 +1063,10 @@
                 data-url="content[{{ $lang }}][HowItWorksSection][Register Now Button][Url]">{{ $data ? $data['HowItWorksSection']['Register Now Button']['Text'] : 'Register Now' }}
                 <img src="{{ asset('assets/images/templates/right-arrow.svg') }}" alt="right-arrow"
                     class="img-fluid invert-img"></a>
-            <input type="text" hidden id="register_now_btn_text"
+            <input aria-label="How It Works Section Register Now Button Text" type="text" hidden id="howitworks_register_now_btn_text"
                 name="content[{{ $lang }}][HowItWorksSection][Register Now Button][Text]"
                 value="{{ $data ? $data['HowItWorksSection']['Register Now Button']['Text'] : 'Register Now' }}" />
-            <input type="text" hidden id="register_now_btn_url"
+            <input aria-label="How It Works Section Register Now Button Url" type="text" hidden id="howitworks_register_now_btn_url"
                 name="content[{{ $lang }}][HowItWorksSection][Register Now Button][Url]"
                 value="{{ $data ? $data['HowItWorksSection']['Register Now Button']['Url'] : '#' }}" />
         </div>
@@ -1072,6 +1077,7 @@
     <div class="container">
         <div class="event-top mb-4" data-aos="fade-down" data-aos-duration="1000">
             <label for="attachmentIcon6" class="pointer">
+                <span class="visually-hidden">Upload Events Section Title Icon</span>
                 <div id="preimageIcon6" style="display:block">
                     <img class="img-fluid" id='output_icon6'
                         src="{{ $data ? asset($data['EventsSection']['Title Icon']) : asset('assets/images/templates/ambsdr-icons-Group.svg') }}"
@@ -1080,19 +1086,19 @@
                 <input type="file" accept="image/*" id="attachmentIcon6"
                     name="content[{{ $lang }}][EventsSection][Title Icon]" value=""
                     hidden>
-                <input type="text" name="content[{{ $lang }}][EventsSection][old_Icon]"
+                <input aria-label="Events Section old Icon" type="text" name="content[{{ $lang }}][EventsSection][old_Icon]"
                     value="assets/images/templates/ambsdr-icons-Group.svg" hidden>
             </label>
             <span class="title-input" class="ms-2 title-input"
                 id="content[{{ $lang }}][EventsSection][Title]"
                 contenteditable="true">{{ $data ? $data['EventsSection']['Title'] : 'Upcoming events' }}</span>
-            <input type="text" id="upcoming_events_title"
+            <input aria-label="Events Section Title" type="text" id="upcoming_events_title"
                 value="{{ $data ? $data['EventsSection']['Title'] : 'Upcoming events' }}"
                 name="content[{{ $lang }}][EventsSection][Title]" hidden>
             <h3 class="title-input" data-aos="fade-down" data-aos-duration="1000"
                 id="content[{{ $lang }}][EventsSection][Subtitle]" contenteditable="true">
-                {!! $data ? $data['EventsSection']['Subtitle'] : 'Events That Connect. <span>Inspire. Elevate.</span>' !!}</h3>
-            <input type="text" id="upcoming_events_subtitle" value="{!! $data ? $data['EventsSection']['Subtitle'] : 'Events That Connect. <span>Inspire. Elevate.</span>' !!}"
+                {!! clean_html($data ? $data['EventsSection']['Subtitle'] : 'Events That Connect. <span>Inspire. Elevate.</span>') !!}</h3>
+            <input aria-label="Events Section Subtitle" type="text" id="upcoming_events_subtitle" value="{{ $data ? $data['EventsSection']['Subtitle'] : 'Events That Connect. <span>Inspire. Elevate.</span>' }}"
                 name="content[{{ $lang }}][EventsSection][Subtitle]" hidden>
         </div>
         <div class="row g-3">
@@ -1103,7 +1109,7 @@
                         <div class="card-txt">
                             <div>
                                 <h4>{{ $event->name }}</h4>
-                                <p>{!! $event->event_overview !!}</p>
+                                <p>{!! clean_html($event->event_overview) !!}</p>
                             </div>
                             <img src="assets/images/templates/card-inactive.svg" alt=""
                                 class="img-fluid">
@@ -1119,10 +1125,10 @@
                     data-url="content[{{ $lang }}][EventsSection][View More Events Button][Url]">{{ $data ? $data['EventsSection']['View More Events Button']['Text'] : 'View More' }}
                     <img src="{{ asset('assets/images/templates/right-arrow.svg') }}"
                         alt="right-arrow" class="img-fluid ms-2"></a>
-                <input type="text" hidden id="view_more_event_btn_text"
+                <input aria-label="Events Section View More Events Button Text" type="text" hidden id="view_more_event_btn_text"
                     name="content[{{ $lang }}][EventsSection][View More Events Button][Text]"
                     value="{{ $data ? $data['EventsSection']['View More Events Button']['Text'] : 'View More' }}" />
-                <input type="text" hidden id="view_more_event_btn_url"
+                <input aria-label="Events Section View More Events Button Url" type="text" hidden id="view_more_event_btn_url"
                     name="content[{{ $lang }}][EventsSection][View More Events Button][Url]"
                     value="{{ $data ? $data['EventsSection']['View More Events Button']['Url'] : '#' }}" />
             </div>

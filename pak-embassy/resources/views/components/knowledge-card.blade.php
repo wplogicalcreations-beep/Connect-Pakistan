@@ -14,7 +14,7 @@
             </p>
             <p class="card-text">
                 @if($knowledge->sections && $knowledge->sections->count() > 0)
-                    {!! Str::limit($knowledge->sections->first()->content, 150) !!}
+                    {!! clean_html(Str::limit($knowledge->sections->first()->content, 150)) !!}
                 @else
                     No content available.
                 @endif

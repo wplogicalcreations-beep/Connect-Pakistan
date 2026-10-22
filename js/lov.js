@@ -1,3 +1,14 @@
+// Returns the absolute URL only if it points to this site's own origin, otherwise null.
+// Prevents AJAX requests (and the HTML they return) from being redirected to another host.
+function toSameOriginUrl(rawUrl) {
+    try {
+        const parsed = new URL(rawUrl, window.location.href);
+        return parsed.origin === window.location.origin ? parsed.href : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 
 let currentLovId = null;
 let currentLovType = null;
@@ -108,7 +119,7 @@ function refreshLovsTable() {
     const perPage = urlParams.get('per_page') || $('.per-page-select').val() || 10;
     
     // Build refresh URL with current pagination
-    const refreshUrl = baseUrl + '?type=' + type + '&page=' + page + '&per_page=' + perPage;
+    const refreshUrl = baseUrl + '?type=' + encodeURIComponent(type) + '&page=' + encodeURIComponent(page) + '&per_page=' + encodeURIComponent(perPage);
     
     // Make AJAX call to refresh the table
     $.ajax({
@@ -119,9 +130,9 @@ function refreshLovsTable() {
         },
         success: function(response) {
             if (response.success) {
-                $("#lovsTable").html(response.html);
+                $("#lovsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
                 if (response.pagination) {
-                    $('.pagination-container').replaceWith(response.pagination);
+                    $('.pagination-container').replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
                 }
             }
         },
@@ -174,7 +185,8 @@ $(document).on('click', '#confirmDeleteBtn', function () {
 // Pagination link click handle
 $(document).on("click", ".pagination a", function (e) {
     e.preventDefault();
-    let url = $(this).attr("href");
+    let url = toSameOriginUrl($(this).attr("href"));
+    if (!url) return;
 
     $.ajax({
         url: url,
@@ -185,10 +197,10 @@ $(document).on("click", ".pagination a", function (e) {
         success: function (response) {
             if (response.success) {
                 // update table rows
-                $("#lovsTable").html(response.html);
+                $("#lovsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 // update pagination component
-                $(".pagination-container").replaceWith(response.pagination);
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
             }
         },
@@ -205,7 +217,7 @@ $(document).on("click", ".pagination a", function (e) {
 // per-page change (AJAX)
 $(document).on("change", ".per-page-select", function () {
     let perPage = $(this).val();
-    let url = "?per_page=" + perPage;
+    let url = "?per_page=" + encodeURIComponent(perPage);
 
     $.ajax({
         url: url,
@@ -216,10 +228,10 @@ $(document).on("change", ".per-page-select", function () {
         success: function (response) {
             if (response.success) {
                 // update table rows
-                $("#lovsTable").html(response.html);
+                $("#lovsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 // update pagination with new info
-                $(".pagination-container").replaceWith(response.pagination);
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
             }
         },
         complete: function () {
@@ -236,7 +248,8 @@ $(document).ready(function () {
     // Search input event
     $('#searchInput').on('keyup', function () {
         let search = $(this).val();
-        let url = window.location.href;
+        let url = toSameOriginUrl(window.location.href);
+        if (!url) return;
 
         $.ajax({
             url: url,
@@ -245,10 +258,10 @@ $(document).ready(function () {
             success: function (response) {
                 if (response.success) {
                     // update table rows
-                    $("#lovsTable").html(response.html);
+                    $("#lovsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                     // update pagination with new info
-                    $(".pagination-container").replaceWith(response.pagination);
+                    $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
 
                 }
             },
@@ -276,8 +289,8 @@ $(document).on("click", ".sort", function () {
         },
         success: function (response) {
             if (response.success) {
-                $("#lovsTable").html(response.html);
-                $(".pagination-container").replaceWith(response.pagination);
+                $("#lovsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
+                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
             }
         }
     });
