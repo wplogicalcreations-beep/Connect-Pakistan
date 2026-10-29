@@ -12,7 +12,7 @@
                     <form action="{{ route('settings.general.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="img-chose-input">
-                            <label class="picture" for="site_logo" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('site_logo').click();}">
+                            <label class="picture" for="site_logo">
                                 <span class="picture__image">
                                     <img id="preview_site_logo"
                                         src="{{ $settings?->site_logo ? asset('storage/' . $settings->site_logo) : '/images/logo-2.svg' }}"

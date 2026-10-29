@@ -64,6 +64,7 @@
                                 @isset($primary_button)
                                     @if($editable)
                                         <a type="button"
+                                           aria-label="Edit {{ $registerNowText }} button"
                                            class="btn embassay-register-btn button-input"
                                            data-aos="fade-up"
                                            data-aos-duration="1000"
@@ -93,6 +94,7 @@
                                 @isset($secondary_button)
                                     @if($editable)
                                         <a type="button"
+                                           aria-label="Edit {{ $learnMoreText }} button"
                                            class="btn embassay-learn-more pe-3 button-input"
                                            data-text="content[{{ $lang }}][BannerSection][Learn More Button][Text]"
                                            data-href="{{ $learnMoreUrl }}"
