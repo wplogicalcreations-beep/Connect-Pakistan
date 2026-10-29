@@ -350,7 +350,7 @@
                             @endif
                             <h1 class="mt-5">4- Upload Event Picture</h1>
                             <div class="img-chose-input">
-                                <label class="picture" for="picture__input" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('picture__input').click();}">
+                                <label class="picture" for="picture__input">
                                     <span class="picture__image">
                                         @if($event->images && $event->images->isNotEmpty())
                                             @foreach($event->images as $image)
