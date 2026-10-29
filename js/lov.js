@@ -115,12 +115,17 @@ function refreshLovsTable() {
     
     // Get current pagination parameters from URL
     const urlParams = new URLSearchParams(window.location.search);
-    const page = urlParams.get('page') || 1;
-    const perPage = urlParams.get('per_page') || $('.per-page-select').val() || 10;
-    
-    // Build refresh URL with current pagination
-    const refreshUrl = baseUrl + '?type=' + encodeURIComponent(type) + '&page=' + encodeURIComponent(page) + '&per_page=' + encodeURIComponent(perPage);
-    
+    const toPositiveInt = (value, fallback) => {
+        const n = Number.parseInt(value, 10);
+        return Number.isInteger(n) && n > 0 ? n : fallback;
+    };
+    const page = toPositiveInt(urlParams.get('page'), 1);
+    const perPage = toPositiveInt(urlParams.get('per_page') || $('.per-page-select').val(), 10);
+
+    // Build refresh URL with current pagination; only same-origin URLs are requested
+    const refreshUrl = toSameOriginUrl(baseUrl + '?type=' + encodeURIComponent(type) + '&page=' + page + '&per_page=' + perPage);
+    if (!refreshUrl) return;
+
     // Make AJAX call to refresh the table
     $.ajax({
         url: refreshUrl,
