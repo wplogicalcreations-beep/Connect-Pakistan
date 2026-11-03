@@ -242,6 +242,8 @@ if (!function_exists('clean_html')) {
 
             $config = \HTMLPurifier_Config::createDefault();
             $config->set('Cache.SerializerPath', $cachePath);
+            // Explicit allow-list (reviewed): only these link/image schemes; scripts, handlers and forms are always stripped.
+            $config->set('URI.AllowedSchemes', ['http' => true, 'https' => true, 'mailto' => true, 'tel' => true]);
             $config->set('HTML.SafeIframe', true);
             $config->set('URI.SafeIframeRegexp', '%^(https?:)?//(www\.youtube(?:-nocookie)?\.com/embed/|player\.vimeo\.com/video/)%');
             $config->set('Attr.AllowedFrameTargets', ['_blank']);

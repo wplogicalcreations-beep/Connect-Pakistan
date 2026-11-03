@@ -46,6 +46,7 @@
 <script src="{{ asset('js/jQuery-ui.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/url-utils.js') }}"></script>
 <script src="{{ asset('js/apex-chart.js') }}"></script>
 <script src="{{ asset('js/jQuery-ui.js') }}"></script>
 

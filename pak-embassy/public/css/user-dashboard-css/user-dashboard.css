@@ -1494,10 +1494,8 @@ a.btn.btn-dark {
 }
 .form-check-input:checked {
     background-color: var(--primary-color) !important;
-    border-color: none;
 }
 .form-check-input:focus {
-    border-color: none;
     /* box-shadow: 0 0 0 0.25rem rgb(11 128 133 / 27%); */
     box-shadow: none;
     background-color: #cccccc;
@@ -2888,7 +2886,6 @@ input[type="radio"]:checked + .radio-box::after {
     .profile-box.d-flex
         .d-flex.align-items-center.justify-content-between.mt-3 {
         flex-direction: column;
-        gap: 12;
     }
     .event-box h5 {
         font-size: 14px;

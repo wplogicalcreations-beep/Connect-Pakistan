@@ -285,7 +285,6 @@ body {
 
 .form-control:focus,
 .form-select:focus {
-    border-color: none;
     box-shadow: none;
     outline: none;
 }
@@ -348,7 +347,6 @@ body {
 }
 
 .btn-outline-secondary {
-    border-color: none;
     color: #000;
     background-color: var(--border-gray);
 }
