@@ -62,7 +62,8 @@ class EventManagementController extends Controller
 
             return view('super-admin.events.index', compact('events'));
         } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
+            report($e);
+            return response()->json(['error' => 'Failed to load events. Please try again.'], 500);
         }
     }
 
@@ -74,7 +75,7 @@ class EventManagementController extends Controller
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
             $statusCode = method_exists($exception, 'getStatusCode') ? $exception->getStatusCode() : 500;
-            return $this->failure($exception->getMessage(), $statusCode);
+            abort($statusCode);
         }
     }
 
@@ -89,7 +90,8 @@ class EventManagementController extends Controller
 
         } catch (\Exception $e) {
             DB::rollBack();
-            return response()->json(['error' => $e->getMessage()], 500);
+            report($e);
+            return response()->json(['error' => 'Failed to save minutes. Please try again.'], 500);
         }
     }
 
@@ -234,7 +236,8 @@ class EventManagementController extends Controller
             return response()->json(['message' => 'Event deleted successfully']);
         } catch (\Exception $e) {
             DB::rollBack();
-            return response()->json(['message' => 'Failed to delete Event', 'error' => $e->getMessage()], 500);
+            report($e);
+            return response()->json(['message' => 'Failed to delete Event', 'error' => 'Failed to delete Event'], 500);
         }
     }
 
@@ -304,7 +307,7 @@ class EventManagementController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error('Failed to create action item: ' . $e->getMessage());
-            return response()->json(['error' => $e->getMessage()], 500);
+            return response()->json(['error' => 'Failed to create action item. Please try again.'], 500);
         }
     }
 
@@ -336,7 +339,7 @@ class EventManagementController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error('Failed to update action item: ' . $e->getMessage());
-            return response()->json(['error' => $e->getMessage()], 500);
+            return response()->json(['error' => 'Failed to update action item. Please try again.'], 500);
         }
     }
 
@@ -357,7 +360,7 @@ class EventManagementController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error('Failed to delete action item: ' . $e->getMessage());
-            return response()->json(['error' => $e->getMessage()], 500);
+            return response()->json(['error' => 'Failed to delete action item. Please try again.'], 500);
         }
     }
 }

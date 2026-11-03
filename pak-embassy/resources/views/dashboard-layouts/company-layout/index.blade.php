@@ -39,6 +39,7 @@
 <script src="{{ asset('js/user-dashboard.js/font-awesome.js') }}"></script>
 <script src="{{ asset('js/user-dashboard.js/jQuery-ui.js') }}"></script>
 <script src="{{ asset('js/user-dashboard.js/main.js') }}"></script>
+<script src="{{ asset('js/url-utils.js') }}"></script>
 <script src="{{asset('js/user-dashboard.js/tel-script.js')}}"></script>
 <script src="{{asset('js/user-dashboard.js/country-script.js')}}"></script>
 <script>
