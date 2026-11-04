@@ -1,33 +1,5 @@
-// Pagination link click handle
-$(document).on("click", ".pagination a", function (e) {
-    e.preventDefault();
-    let url = toSameOriginUrl($(this).attr("href"));
-    if (!url) return;
-
-    $.ajax({
-        url: url,
-        type: "GET",
-        beforeSend: function () {
-            $("#table-container").addClass("loading");
-        },
-        success: function (response) {
-            if (response.success) {
-                // update table rows
-                $("#eventsTable").html(response.html); // NOSONAR - server-rendered Blade partial; data is escaped server-side
-
-                // update pagination component
-                $(".pagination-container").replaceWith(response.pagination); // NOSONAR - server-rendered Blade partial; data is escaped server-side
-
-            }
-        },
-        complete: function () {
-            $("#table-container").removeClass("loading");
-        },
-        error: function () {
-            alert("Pagination fetch error!");
-        }
-    });
-});
+// AJAX pagination (shared helper in url-utils.js)
+bindAjaxPagination("#eventsTable");
 
 let sortDirection = {};
 $(document).on('click', '.sortable', function() {
